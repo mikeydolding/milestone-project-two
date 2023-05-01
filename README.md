@@ -38,12 +38,15 @@ This website allows users to compare Price and cost of living comparison in diff
 
 *   ### Wireframes
 
-![Alt text](assets/images/Wireframes-home.png?raw=true "Optional Title")
 
 
-    -   Sitemap - [View](https://user-images.githubusercontent.com/97957684/235436817-d9ac39d4-91f1-4937-bb10-15b032a7f56c.png)
 
-    -   Home Page Wireframe  - [View](https://user-images.githubusercontent.com/97957684/235436828-5324c70e-d4ae-4e8d-8f68-9a1fb945b603.png)
+    -   Sitemap - 
+![Wireframe-sitemap](Wireframes-sitemap.png)
+
+    -   Home Page Wireframe  -
+
+![Wireframe-home](Wireframes-home.png)
 
     -   Contact Us Page Wireframe - [View](https://github.com/)
 
