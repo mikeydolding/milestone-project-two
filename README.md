@@ -42,11 +42,11 @@ This website allows users to compare Price and cost of living comparison in diff
 
 
     -   Sitemap - 
-![Wireframe-sitemap](Wireframes-sitemap.png)
+![Wireframe-sitemap](Wireframes-sitemap.jpg)
 
     -   Home Page Wireframe  -
 
-![Wireframe-home](Wireframes-home.png)
+![Wireframe-home](Wireframes-home.jpg)
 
     -   Contact Us Page Wireframe - [View](https://github.com/)
 
