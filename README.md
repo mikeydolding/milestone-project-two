@@ -225,6 +225,8 @@ Click [Here](https://help.github.com/en/github/creating-cloning-and-archiving-re
 
 ### Media
 
+- Thank-you-word-cloud.jpg, Ashashyou, "https://creativecommons.org/licenses/by-sa/4.0" CC BY-SA 4.0, via Wikimedia Commons
+
 -   All Images were created by the developer.
 
 ### Acknowledgements
