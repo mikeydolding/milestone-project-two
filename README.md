@@ -36,12 +36,11 @@ This website allows users to compare Price and cost of living comparison in diff
         -   Imagery is important. The large, background hero image is designed to be striking and catch the user's attention. It also has a modern, energetic aesthetic.
 
 *   ### Wireframes
-![Wireframes-home](https://user-images.githubusercontent.com/97957684/235436817-d9ac39d4-91f1-4937-bb10-15b032a7f56c.png)
-![Wireframes-sitemap](https://user-images.githubusercontent.com/97957684/235436828-5324c70e-d4ae-4e8d-8f68-9a1fb945b603.png)
 
-    -   Home Page Wireframe - [View](https://github.com/)
 
-    -   Mobile Wireframe - [View](https://github.com/)
+    -   Sitemap - [View](https://user-images.githubusercontent.com/97957684/235436817-d9ac39d4-91f1-4937-bb10-15b032a7f56c.png)
+
+    -   Home Page Wireframe  - [View](https://user-images.githubusercontent.com/97957684/235436828-5324c70e-d4ae-4e8d-8f68-9a1fb945b603.png)
 
     -   Contact Us Page Wireframe - [View](https://github.com/)
 
