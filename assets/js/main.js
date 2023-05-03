@@ -32,65 +32,53 @@ search.addEventListener('click', function() {
 
 
 const fetchNews = async() => {
-        const apiKey = 'pub_21398e1dede5e8992ed2af8c2bc59bf9c8202 ';
-        let url = `https://newsdata.io/api/1/news?apikey=${apiKey}&q=${topic}`;
+    const apiKey = 'pub_21398e1dede5e8992ed2af8c2bc59bf9c8202 ';
+    let url = `https://newsdata.io/api/1/news?apikey=${apiKey}&q=${topic}`;
 
-        const response = await fetch(url);
-        const data = await response.json();
-        newsDataArr = data.results;
+    const response = await fetch(url);
+    const data = await response.json();
+    newsDataArr = data.results;
+    console.log('newsDataArr', newsDataArr)
+    newsdetails.innnerHTML = "";
 
-        newsdetails.innnerHTML = "";
-
-        if (newsDataArr.length == 0) {
-            newsdetails.innerHTML = "<h5>No data found.</h5>"
-            return;
-        }
-
-        newsDataArr.forEach(news => {
-            var col = document.createElement('div');
-            col.className = "col-sm-12 col-md-4 col-lg-3 p-2 card";
-            var card = document.createElement('div');
-            card.className = "p-2";
-
-            var image = document.createElement('img');
-            image.setAttribute("height", "matchparent");
-            image.setAttribute("width", "100%");
-            image.src = news.image_url;
-
-            var cardBody = document.createElement('div');
-
-            var newsTitle = document.createElement('h5');
-            newsTitle.className = "card-title";
-            newsTitle.innerHTML = news.title;
-
-            cardBody.appendChild(newsTitle);
-            card.appendChild(cardBody);
-            col.appendChild(card);
-            newsdetails.appendChild(col);
-
-            //var newsContent = document.createElement('p');
-            //newsContent.className = "card-title";
-            //discription.innerHTML = news.description;
-
-        })
-
-        fetch(url).then((response) => {
-            return response.json()
-        }).then((data) => {
-            console.log(data)
-            data.results.forEach(results => {
-                let li = document.createElement('li');
-                let a = document.createElement('a');
-                a.setAttribute('href', results.link);
-                a.setAttribute('target', '_blank');
-                a.textContent = results.title;
-                li.appendChild(a);
-                newsList.appendChild(li);
-            });
-        }).catch((error) => { console.log(error) })
+    if (newsDataArr.length == 0) {
+        newsdetails.innerHTML = "<h5>No data found.</h5>"
+        return;
     }
-    //function fetchNews(e) {
-    //    e.preventDefault();
+
+    newsDataArr.forEach(news => {
+        var col = document.createElement('div');
+        col.className = "col-sm-12 col-md-4 col-lg-3 p-2 card";
+        var card = document.createElement('div');
+        card.className = "p-2";
+
+        var image = document.createElement('img');
+        image.setAttribute("height", "matchparent");
+        image.setAttribute("width", "100%");
+        image.src = news.image_url;
+
+        var cardBody = document.createElement('div');
+
+        var newsTitle = document.createElement('h5');
+        newsTitle.className = "card-title";
+        newsTitle.innerHTML = news.title;
+
+        cardBody.appendChild(newsTitle);
+        card.appendChild(cardBody);
+        col.appendChild(card);
+        newsdetails.appendChild(col);
+
+        //var newsContent = document.createElement('p');
+        //newsContent.className = "card-title";
+        //discription.innerHTML = news.description;
+
+    })
+
+}
+
+
+//function fetchNews(e) {
+//    e.preventDefault();
 
 //function fetchNews() {
 //    const apiKey = 'pub_21398e1dede5e8992ed2af8c2bc59bf9c8202 ';
