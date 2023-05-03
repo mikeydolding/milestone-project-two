@@ -1,4 +1,4 @@
-.card {
-    flex-direction: row;
-    align-items: center;
+.row {
+    --bs-gutter-x: 0.5rem;
+    --bs-gutter-y: 0.5rem;
 }
