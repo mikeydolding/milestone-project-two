@@ -32,7 +32,7 @@ search.addEventListener('click', function() {
 
 
 const fetchNews = async() => {
-    const apiKey = 'pub_21398e1dede5e8992ed2af8c2bc59bf9c8202 ';
+    const apiKey = 'pub_21398e1dede5e8992ed2af8c2bc59bf9c8202';
     let url = `https://newsdata.io/api/1/news?apikey=${apiKey}&q=${topic}`;
 
     const response = await fetch(url);
