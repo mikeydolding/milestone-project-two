@@ -36,10 +36,29 @@ const fetchNews = async() => {
     let url = `https://newsdata.io/api/1/news?apikey=${apiKey}&q=${topic}`;
 
     const response = await fetch(url);
-    const data = await response.json();
-    newsDataArr = data.results;
-    console.log('newsDataArr', newsDataArr)
+
+    if (response.status >= 200 && response.status < 300) {
+        const data = await response.json();
+        newsDataArr = data.results;
+        console.log('newsDataArr', newsDataArr)
+
+    } else {
+        //error handle
+        console.log(response.status, response.statusText);
+        newsdetails.innerHTML = "<h5>No data found.</h5>"
+        return;
+    }
+    displayNews();
+}
+
+function displayNews() {
+
+
+
     newsdetails.innnerHTML = "";
+
+
+
 
     if (newsDataArr.length == 0) {
         newsdetails.innerHTML = "<h5>No data found.</h5>"
@@ -73,10 +92,7 @@ const fetchNews = async() => {
         //discription.innerHTML = news.description;
 
     })
-
 }
-
-
 //function fetchNews(e) {
 //    e.preventDefault();
 
