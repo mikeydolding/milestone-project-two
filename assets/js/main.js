@@ -58,12 +58,15 @@ function fetchNews(e) {
     e.preventDefault();
     let url = `https://newsdata.io/api/1/news?apikey=${apiKey}&q=${topic}`;
 
-    fetch("https://newsdata.io/api/1/news?apikey=pub_21398e1dede5e8992ed2af8c2bc59bf9c8202&country=ru&category=business,entertainment,food,health,tourism").then((response) => {
+    //https: //newsdata.io/api/1/news?apikey=pub_21398e1dede5e8992ed2af8c2bc59bf9c8202&country=ru&category=business,entertainment,food,health,tourism
+
+
+    fetch("https://newsdata.io/api/1/news?apikey=pub_21398e1dede5e8992ed2af8c2bc59bf9c8202&country=ru&category=business").then((response) => {
         return response.json()
     }).then((data) => {
         let filteredData = data.results.filter(i => i.image_url !== null);
         newsDataArr = filteredData;
-        console.log('newsDataArr', newsDataArr);
+        //console.log('newsDataArr', newsDataArr);
         displayNews();
 
         //console.log(data)
@@ -76,7 +79,9 @@ function fetchNews(e) {
         //    li.appendChild(a);
         //    newsList.appendChild(li);
         //});
-    }).catch((error) => { console.log(error) })
+    }).catch((error) => {
+        //console.log(error)
+    })
 }
 
 
@@ -90,7 +95,7 @@ function displayNews() {
 
     newsDataArr.forEach(news => {
         var col = document.createElement('div');
-        col.className = "col-sm-6 col-lg-4 mb-3 d-flex align-items-stretch";
+        col.className = "col-sm-6 .col-md-6 col-lg-6 .col-xl-2 mb-3 d-flex align-items-stretch";
         var card = document.createElement('div');
         card.className = "card";
         //card.setAttribute("max-height", "50%");p-2
