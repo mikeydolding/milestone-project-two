@@ -92,9 +92,10 @@ function displayNews() {
         var col = document.createElement('div');
         col.className = "col-sm-6 col-lg-4 mb-3 d-flex align-items-stretch";
         var card = document.createElement('div');
-        card.className = "card p-2";
-        //card.setAttribute("max-height", "50%");
+        card.className = "card";
+        //card.setAttribute("max-height", "50%");p-2
         var cardBody = document.createElement('div');
+        cardBody.className = "card-body p-2";
 
         var img = document.createElement('div');
         img.className = "card-img-top";
@@ -115,13 +116,13 @@ function displayNews() {
         newsContent.innerHTML = news.content;
 
         img.appendChild(image);
+        card.appendChild(img);
+
         cardBody.appendChild(newsTitle);
         cardBody.appendChild(newsDescription);
         cardBody.appendChild(newsContent);
-
-        card.appendChild(img);
-
         card.appendChild(cardBody);
+
         col.appendChild(card);
         newsdetails.appendChild(col);
 
