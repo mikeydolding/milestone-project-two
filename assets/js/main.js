@@ -58,11 +58,12 @@ function fetchNews(e) {
     e.preventDefault();
     let url = `https://newsdata.io/api/1/news?apikey=${apiKey}&q=${topic}`;
 
-    fetch(url).then((response) => {
+    fetch("https://newsdata.io/api/1/news?apikey=pub_21398e1dede5e8992ed2af8c2bc59bf9c8202&country=ru&category=business,entertainment,food,health,tourism").then((response) => {
         return response.json()
     }).then((data) => {
-        newsDataArr = data.results;
-        console.log('newsDataArr', newsDataArr)
+        let filteredData = data.results.filter(i => i.image_url !== null);
+        newsDataArr = filteredData;
+        console.log('newsDataArr', newsDataArr);
         displayNews();
 
         //console.log(data)
@@ -89,22 +90,37 @@ function displayNews() {
 
     newsDataArr.forEach(news => {
         var col = document.createElement('div');
-        col.className = "col-sm-12 col-md-4 col-lg-3 p-2 card";
+        col.className = "col-sm-6 col-lg-4 mb-3 d-flex align-items-stretch";
         var card = document.createElement('div');
-        card.className = "p-2";
+        card.className = "card p-2";
+        //card.setAttribute("max-height", "50%");
+        var cardBody = document.createElement('div');
+
+        var img = document.createElement('div');
+        img.className = "card-img-top";
 
         var image = document.createElement('img');
         image.setAttribute("height", "matchparent");
         image.setAttribute("width", "100%");
         image.src = news.image_url;
 
-        var cardBody = document.createElement('div');
-
         var newsTitle = document.createElement('h5');
         newsTitle.className = "card-title";
         newsTitle.innerHTML = news.title;
+        var newsDescription = document.createElement('h6');
+        newsDescription.className = "card-title";
+        newsDescription.innerHTML = news.description;
+        var newsContent = document.createElement('p');
+        newsContent.className = "card-text  text-truncate";
+        newsContent.innerHTML = news.content;
 
+        img.appendChild(image);
         cardBody.appendChild(newsTitle);
+        cardBody.appendChild(newsDescription);
+        cardBody.appendChild(newsContent);
+
+        card.appendChild(img);
+
         card.appendChild(cardBody);
         col.appendChild(card);
         newsdetails.appendChild(col);
