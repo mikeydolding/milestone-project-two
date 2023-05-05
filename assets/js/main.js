@@ -81,7 +81,6 @@ function fetchNews() {
 
     //https: //newsdata.io/api/1/news?apikey=pub_21398e1dede5e8992ed2af8c2bc59bf9c8202&country=ru&category=business,entertainment,food,health,tourism
 
-
     fetch("https://newsdata.io/api/1/news?apikey=pub_21398e1dede5e8992ed2af8c2bc59bf9c8202&country=ru&category=business").then((response) => {
         return response.json()
     }).then((data) => {

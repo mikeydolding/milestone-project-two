@@ -191,13 +191,13 @@ By forking the GitHub Repository we make a copy of the original repository on ou
 6. Type `git clone`, and then paste the URL you copied in Step 3.
 
 ```
-$ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
+$ git clone https://mikeydolding.github.io/milestone-project-two/
 ```
 
 7. Press Enter. Your local clone will be created.
 
 ```
-$ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
+$ git clone https://mikeydolding.github.io/milestone-project-two/
 > Cloning into `CI-Clone`...
 > remote: Counting objects: 10, done.
 > remote: Compressing objects: 100% (8/8), done.
@@ -225,7 +225,7 @@ Click [Here](https://help.github.com/en/github/creating-cloning-and-archiving-re
 
 ### Media
 
-- Thank-you-word-cloud.jpg, Ashashyou, "https://creativecommons.org/licenses/by-sa/4.0" CC BY-SA 4.0, via Wikimedia Commons
+- Thank-you-word-cloud.jpg, [Wikimedia Commons](https://creativecommons.org/licenses/by-sa/4.0) CC BY-SA 4.0, via Wikimedia Commons
 
 -   All Images were created by the developer.
 
