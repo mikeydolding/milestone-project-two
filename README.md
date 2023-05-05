@@ -217,6 +217,8 @@ Click [Here](https://help.github.com/en/github/creating-cloning-and-archiving-re
 
 -   [MDN Web Docs](https://developer.mozilla.org/) : For Pattern Validation code. Code was modified to better fit my needs and to match an Irish phone number layout to ensure correct validation. Tutorial Found [Here](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/tel#Pattern_validation)
 
+- How to create an autocomplete search box in bootstrap [StackOverflow post](https://stackoverflow.com/questions/67353099/how-to-create-an-autocomplete-search-box-in-bootstrap)
+
 ### Content
 
 -   All content was written by the developer.
