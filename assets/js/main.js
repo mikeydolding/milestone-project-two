@@ -24,7 +24,6 @@ window.onload = function() {
     fetchHeadlines();
 };
 
-
 function fetchHeadlines() {
     let url = "https://newsdata.io/api/1/news?apikey=pub_21398e1dede5e8992ed2af8c2bc59bf9c8202&country=id&category=entertainment,food,health,tourism";
 
