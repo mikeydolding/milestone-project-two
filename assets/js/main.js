@@ -1,38 +1,65 @@
-const search = document.querySelector('.search');
-const input = document.querySelector('.input');
-const newsList = document.querySelector('.card-title');
-//const search = document.getElementById('search');
+import { MY_API_KEY } from './config.js';
 
 const topic = 'entertainment';
-const apiKey = 'pub_21398e1dede5e8992ed2af8c2bc59bf9c8202';
+const API_KEY = MY_API_KEY;
+
+const entertainmentBtn = document.getElementById("entertainment");
+const foodBtn = document.getElementById("food");
+const healthBtn = document.getElementById("health");
+
+//const search = document.querySelector('.search');
+const input = document.querySelector('.input');
+//const newsList = document.querySelector('.card-title');
+const newsQuery = document.getElementById('newsQuery');
 
 const newsType = document.getElementById("newsType");
+
 const newsTitle = document.getElementById("newsTitle");
 const newsContent = document.getElementById("newsContent");
 const newsDescription = document.getElementById("newsDescription");
-
-
 var newsDataArr = [];
 
-search.addEventListener('click', function() {
-    newsType.innerHTML = "<h4>Search: " + topic + "<h4>";
+//window.onload = function() {
+//    newsType.innerHTML = "<h4>Headlines</h4>";
+//    fetchHeadlines();
+//};
+
+entertainmentBtn.addEventListener("click", function() {
+    newsType.innerHTML = "<h4>Entertainment</h4>";
+    //fetchEntertainmentNews();
+});
+foodBtn.addEventListener("click", function() {
+    newsType.innerHTML = "<h4>Food</h4>";
+    //fetchEntertainmentNews();
+});
+healthBtn.addEventListener("click", function() {
+    newsType.innerHTML = "<h4>Health</h4>";
+    //fetchEntertainmentNews();
+});
+
+searchBtn.addEventListener('click', function() {
+    console.log('clicked');
+
+    //newsType.innerHTML = "<h4>Search: " + topic + "<h4>";
     fetchNews();
 });
 
-window.onload = function() {
-    //newsType.innerHTML = "<h4>Headlines</h4>";
-    fetchHeadlines();
-};
 
 function fetchHeadlines() {
-    let url = "https://newsdata.io/api/1/news?apikey=pub_21398e1dede5e8992ed2af8c2bc59bf9c8202&country=id&category=entertainment,food,health,tourism";
+    //e.preventDefault();
 
-    fetch(url).then((response) => {
+    let url = `https://newsdata.io/api/1/news?apikey=${API_KEY}`;
+
+    fetch(url, {
+        "method": "GET",
+        "headers": {}
+    }).then((response) => {
+        console.log('response', response);
         return response.json()
     }).then((data) => {
         let filteredData = data.results.filter(i => i.image_url !== null);
         newsDataArr = filteredData;
-        //console.log('newsDataArr', newsDataArr);
+        console.log('newsDataArr', newsDataArr);
         displayNews();
 
         //console.log(data)
@@ -45,8 +72,8 @@ function fetchHeadlines() {
         //    li.appendChild(a);
         //    newsList.appendChild(li);
         //});
-    }).catch((error) => {
-        //console.log(error)
+    }).catch(err => {
+        console.log('Request Failed', err)
     })
 }
 
@@ -77,16 +104,19 @@ function fetchHeadlines() {
 //}
 
 function fetchNews() {
-    let url = `https://newsdata.io/api/1/news?apikey=${apiKey}&q=${topic}`;
+    //let url = `https://newsdata.io/api/1/news?apikey=${apiKey}&q=${topic}`;
 
-    //https: //newsdata.io/api/1/news?apikey=pub_21398e1dede5e8992ed2af8c2bc59bf9c8202&country=ru&category=business,entertainment,food,health,tourism
+    //let url = `https://newsdata.io/api/1/news?apikey=${apiKey}&country=${country}&category=${category}`;
+    //https://newsdata.io/api/1/news?apikey=pub_21398e1dede5e8992ed2af8c2bc59bf9c8202&country=id&category=entertainment,food,health,tourism
 
-    fetch("https://newsdata.io/api/1/news?apikey=pub_21398e1dede5e8992ed2af8c2bc59bf9c8202&country=ru&category=business").then((response) => {
+    let url = `https://newsdata.io/api/1/news?apikey=${API_KEY}&country=id&category=entertainment,food,health,tourism`;
+
+    fetch(url).then((response) => {
         return response.json()
     }).then((data) => {
         let filteredData = data.results.filter(i => i.image_url !== null);
         newsDataArr = filteredData;
-        //console.log('newsDataArr', newsDataArr);
+        console.log('newsDataArr', newsDataArr);
         displayNews();
 
         //console.log(data)
@@ -108,10 +138,10 @@ function fetchNews() {
 function displayNews() {
     newsdetails.innnerHTML = "";
 
-    if (newsDataArr.length == 0) {
-        newsdetails.innerHTML = "<h5>No data found.</h5>"
-        return;
-    }
+    //if (newsDataArr.length == 0) {
+    //    newsdetails.innerHTML = "<h5>No data found.</h5>"
+    //    return;
+    //}
 
     newsDataArr.forEach(news => {
         var col = document.createElement('div');
