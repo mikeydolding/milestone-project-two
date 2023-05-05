@@ -18,6 +18,7 @@ search.addEventListener('click', function() {
     newsType.innerHTML = "<h4>Search: " + topic + "<h4>";
     fetchNews();
 });
+
 window.onload = function() {
     //newsType.innerHTML = "<h4>Headlines</h4>";
     fetchHeadlines();
@@ -25,7 +26,7 @@ window.onload = function() {
 
 
 function fetchHeadlines() {
-    let url = "https://newsdata.io/api/1/news?apikey=pub_21398e1dede5e8992ed2af8c2bc59bf9c8202&country=ru&category=entertainment,food,health,tourism";
+    let url = "https://newsdata.io/api/1/news?apikey=pub_21398e1dede5e8992ed2af8c2bc59bf9c8202&country=id&category=entertainment,food,health,tourism";
 
     fetch(url).then((response) => {
         return response.json()
