@@ -2,7 +2,7 @@
 
 [View the live project here.](https://mikeydolding.github.io/milestone-project-two/)
 
-This website allows users to compare Price and cost of living comparison in different cities and countries around the world and to update it with their own information.
+This website allows users to get entertainment information from countries around the world.
 
 <h2 align="center"><img src="https://i.ibb.co/TYvTXz1/Example-CI.png"></h2>
 
@@ -38,9 +38,6 @@ This website allows users to compare Price and cost of living comparison in diff
 
 *   ### Wireframes
 
-
-
-
     -   Sitemap - 
 ![Wireframe-sitemap](assets/images/sitemap.png)
 
@@ -61,13 +58,12 @@ This website allows users to compare Price and cost of living comparison in diff
 
 -   [HTML5](https://en.wikipedia.org/wiki/HTML5)
 -   [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
+-   [Javascript](https://en.wikipedia.org/wiki/JavaScript)
 
 ### Frameworks, Libraries & Programs Used
 
-1. [Bootstrap 4.4.1:](https://getbootstrap.com/docs/4.4/getting-started/introduction/)
+1. [Bootstrap 5.1:](https://getbootstrap.com/docs/5.1/)
     - Bootstrap was used to assist with the responsiveness and styling of the website.
-1. [Hover.css:](https://ianlunn.github.io/Hover/)
-    - Hover.css was used on the Social Media icons in the footer to add the float transition while being hovered over.
 1. [Google Fonts:](https://fonts.google.com/)
     - Google fonts were used to import the 'Titillium Web' font into the style.css file which is used on all pages throughout the project.
 1. [Font Awesome:](https://fontawesome.com/)
@@ -82,6 +78,8 @@ This website allows users to compare Price and cost of living comparison in diff
     - Photoshop was used to create the logo, resizing images and editing photos for the website.
 1. [Balsamiq:](https://balsamiq.com/)
     - Balsamiq was used to create the [wireframes](https://github.com/) during the design process.
+1. [smtp.elasticemail.com](https://smtpjs.com/v3/smtp.js)
+    -  To send email from Javascript
 
 ## Testing
 
@@ -211,19 +209,18 @@ Click [Here](https://help.github.com/en/github/creating-cloning-and-archiving-re
 
 ### Code
 
--   The full-screen hero image code came from this [StackOverflow post](https://stackoverflow.com)
+-  The full-screen hero image code came from this [StackOverflow post](https://stackoverflow.com)
 
--   [Bootstrap4](https://getbootstrap.com/docs/4.4/getting-started/introduction/): Bootstrap Library used throughout the project mainly to make site responsive using the Bootstrap Grid System.
+-  [Bootstrap 5.1:](https://getbootstrap.com/docs/5.1/)
+: Bootstrap Library used throughout the project mainly to make site responsive using the Bootstrap Grid System.
 
 -   [MDN Web Docs](https://developer.mozilla.org/) : For Pattern Validation code. Code was modified to better fit my needs and to match an Irish phone number layout to ensure correct validation. Tutorial Found [Here](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/tel#Pattern_validation)
 
-- How to create an autocomplete search box in bootstrap [StackOverflow post](https://stackoverflow.com/questions/67353099/how-to-create-an-autocomplete-search-box-in-bootstrap)
+- [StackOverflow post](https://stackoverflow.com/questions/67353099/how-to-create-an-autocomplete-search-box-in-bootstrap): How to create an autocomplete search box in bootstrap.
 
 ### Content
 
 -   All content was written by the developer.
-
--   Psychological properties of colours text in the README.md was found [here](http://www.colour-affects.co.uk/psychological-properties-of-colours)
 
 ### Media
 
