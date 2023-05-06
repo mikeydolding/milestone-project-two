@@ -37,11 +37,11 @@ healthBtn.addEventListener("click", function() {
     //fetchEntertainmentNews();
 });
 
-searchBtn.addEventListener('click', function() {
+searchBtn.addEventListener('click', function(e) {
     console.log('clicked');
 
     //newsType.innerHTML = "<h4>Search: " + topic + "<h4>";
-    fetchNews();
+    fetchNews(e);
 });
 
 
@@ -103,36 +103,45 @@ function fetchHeadlines() {
 //    displayNews();
 //}
 
-function fetchNews() {
+async function fetchNews(e) {
     //let url = `https://newsdata.io/api/1/news?apikey=${apiKey}&q=${topic}`;
-
-    //let url = `https://newsdata.io/api/1/news?apikey=${apiKey}&country=${country}&category=${category}`;
-    //https://newsdata.io/api/1/news?apikey=pub_21398e1dede5e8992ed2af8c2bc59bf9c8202&country=id&category=entertainment,food,health,tourism
-
+    e.preventDefault();
     let url = `https://newsdata.io/api/1/news?apikey=${API_KEY}&country=id&category=entertainment,food,health,tourism`;
 
-    fetch(url).then((response) => {
-        return response.json()
-    }).then((data) => {
-        let filteredData = data.results.filter(i => i.image_url !== null);
+    const response = await fetch(url);
+    if (!response.ok) {
+        console.log(response.status);
+        newsdetails.innerHTML = "<h5>No data found.</h5>"
+        return;
+        //const message = `An error has occured: ${response.status}`;
+        //throw new Error(message);
+    } else {
+        const data = await response.json();
+        const filteredData = await data.results;
+        //const filteredData = await data.results.filter(i => i.image_url !== null);
         newsDataArr = filteredData;
         console.log('newsDataArr', newsDataArr);
         displayNews();
+    }
 
-        //console.log(data)
-        //data.results.forEach(results => {
-        //    let li = document.createElement('li');
-        //    let a = document.createElement('a');
-        //    a.setAttribute('href', results.link);
-        //    a.setAttribute('target', '_blank');
-        //    a.textContent = results.title;
-        //    li.appendChild(a);
-        //    newsList.appendChild(li);
-        //});
-    }).catch((error) => {
-        //console.log(error)
-    })
 }
+
+//function fetchNews() {
+//    //let url = `https://newsdata.io/api/1/news?apikey=${apiKey}&q=${topic}`;
+
+//    let url = `https://newsdata.io/api/1/news?apikey=${API_KEY}&country=id&category=entertainment,food,health,tourism`;
+
+//    fetch(url).then((response) => {
+//        return response.json()
+//    }).then((data) => {
+//        let filteredData = data.results.filter(i => i.image_url !== null);
+//        newsDataArr = filteredData;
+//        console.log('newsDataArr', newsDataArr);
+//        displayNews();
+//    }).catch((error) => {
+//        //console.log(error)
+//    })
+//}
 
 
 function displayNews() {
