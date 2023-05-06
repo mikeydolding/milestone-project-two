@@ -2,48 +2,7 @@
 <html lang="en-us">
 
 <head>
-    <div class="alert alert-success alert-dismissible">
-        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-        <strong>Success!</strong> This alert box could indicate a successful or positive action.
-    </div>
 
-    <div class="container text-end">
-        <h1 display-1>Webzine Oy!</h1>
-        <p class="lead">Lifestyles around the world at your fingertips</p>
-    </div>
-
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-            <!--<a class="navbar-brand" href="#">Navbar</a>-->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#entertainment" id="entertainment">Entertainment</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#food" id="food">Food</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#health" id="health">Health</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact Us</a>
-                    </li>
-
-                </ul>
-                <form class="search d-flex">
-                    <input class="input form-control me-2" type="text" id="searchQuery" placeholder="Search Country" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit" id="searchBtn">Search</button>
-                </form>
-            </div>
-        </div>
-    </nav>
 
     <meta charset="utf-8">
     <title>WebzineOy!| Lifestyles around the world at your fingertips</title>
@@ -57,64 +16,71 @@
 
     <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
 
-
+    <script src="assets/js/jquery.min.jsm.js"></script>
 </head>
 
 <body>
-    <div class="container-fluid">
-        <div class="row bg-color-contact">
-            <div class="col">
-                <h3 class="contact-heading uppercase text-center">Contact Us?</h3>
-                <div class="container">
-                    <form action="https://formsubmit.co/3ff3c7d19757c90df59af76b7af0b0b9" method="POST">
-                        <div class="form-group">
-                            <div class="form-row">
-                                <div class="col">
-                                    <div class="mb-3">
-                                        <label for="exampleFormControlInput1" class="form-label">Full Name</label>
+    <section>
+        <div id="header-navbar">
+        </div>
+    </section>
+    <section>
+        <div class="container-fluid">
+            <div class="row bg-color-contact">
+                <div class="col">
+                    <h3 class="contact-heading uppercase text-center ">Contact Us?</h3>
+                    <div class="container">
+                        <form action="https://formsubmit.co/3ff3c7d19757c90df59af76b7af0b0b9 " method="POST ">
+                            <div class="form-group ">
+                                <div class="form-row ">
+                                    <div class="col ">
+                                        <div class="mb-3 ">
+                                            <label for="exampleFormControlInput1 " class="form-label ">Full Name</label>
 
-                                        <input type="text" class="form-control" name="name" placeholder="Full name" require>
+                                            <input type="text " class="form-control " name="name " placeholder="Full name " require>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col ">
-                                    <div class="mb-3">
-                                        <label for="exampleFormControlInput1" class="form-label">Email address</label>
-                                        <input type="email" name="email" class="form-control" placeholder="name@example.com" required>
+                                    <div class="col ">
+                                        <div class="mb-3 ">
+                                            <label for="exampleFormControlInput1 " class="form-label ">Email address</label>
+                                            <input type="email " name="email " class="form-control " placeholder="name@example.com" required>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col ">
-                                    <div class="mb-3">
-                                        <input type="hidden" name="_next" value="http://127.0.0.1:3000/webzinoy/contact.html">
+                                    <div class="col">
+                                        <div class="mb-3 ">
+                                            <input type="hidden" name="_next" value="http://127.0.0.1:3000/webzinoy/contact.html ">
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col ">
-                                    <div class="mb-3">
-                                        <textarea placeholder="Your Message " class="form-control " name="message" rows="10" required></textarea>
+                                    <div class="col ">
+                                        <div class="mb-3 ">
+                                            <textarea placeholder="Your Message " class="form-control " name="message " rows="10 " required></textarea>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <button type="submit" class="btn btn-lg btn-dark btn-block ">Submit Form</button>
-                    </form>
+                            <button type="submit " class="btn btn-lg btn-dark btn-block ">Submit Form</button>
+                        </form>
+                    </div>
                 </div>
             </div>
-        </div>
 
-    </div>
+        </div>
+    </section>
+
 
 </body>
-<script src="https://smtpjs.com/v3/smtp.js"></script>
+<script src="https://smtpjs.com/v3/smtp.js "></script>
 <script type="text/javascript ">
     function sendEmail(event) {
         event.preventDefault();
         console.log("contactForm ", event);
         Email.send({
-                Host: "smtp.elasticemail.com",
+                Host: "smtp.elasticemail.com ",
                 Username: "mikehdolding@proton.me ",
-                Password: "F564735E41BA2B601D9E4A16662B48169D57",
-                To: "papayob820@in2reach.com",
+                Password: "F564735E41BA2B601D9E4A16662B48169D57 ",
+                To: "papayob820@in2reach.com ",
                 From: "mikehdolding@proton.me ",
-                Subject: "Sending Email using javascript",
+                Subject: "Sending Email using javascript ",
                 Body: "Well that was easy!! ",
                 //Attachments: [{
                 //    name: "File_Name_with_Extension ",
@@ -131,6 +97,11 @@
             );
         return false; // To block from loading a new page
     }
+</script>
+<script>
+    $(function() {
+        $("#header-navbar ").load("header-navbar.html ");
+    });
 </script>
 
 </html>

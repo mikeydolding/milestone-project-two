@@ -59,7 +59,7 @@ This website allows users to get entertainment information from countries around
 -   [HTML5](https://en.wikipedia.org/wiki/HTML5)
 -   [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
 -   [Javascript](https://en.wikipedia.org/wiki/JavaScript)
-
+-   [jquery-3.6.4.min.js](https://code.jquery.com/)
 ### Frameworks, Libraries & Programs Used
 
 1. [Bootstrap 5.1:](https://getbootstrap.com/docs/5.1/)
@@ -217,6 +217,8 @@ Click [Here](https://help.github.com/en/github/creating-cloning-and-archiving-re
 -   [MDN Web Docs](https://developer.mozilla.org/) : For Pattern Validation code. Code was modified to better fit my needs and to match an Irish phone number layout to ensure correct validation. Tutorial Found [Here](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/tel#Pattern_validation)
 
 - [StackOverflow post](https://stackoverflow.com/questions/67353099/how-to-create-an-autocomplete-search-box-in-bootstrap): How to create an autocomplete search box in bootstrap.
+
+- [StackOverflow post](https://stackoverflow.com/questions/31954089/how-can-i-reuse-a-navigation-bar-on-multiple-pages): How can I reuse a navigation bar on multiple pages.
 
 ### Content
 
