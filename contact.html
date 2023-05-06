@@ -35,22 +35,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="contact.html">Contact Us</a>
                     </li>
-                    <!--<li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Dropdown
-                    </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">Entertainment</a></li>
-                            <li><a class="dropdown-item" href="#">Food</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">Health</a></li>
-                        </ul>
-                    </li>-->
-                    <!--<li class="nav-item">
-                        <a class="nav-link disabled">Disabled</a>
-                    </li>-->
+
                 </ul>
                 <form class="search d-flex">
                     <input class="input form-control me-2" type="text" id="searchQuery" placeholder="Search Country" aria-label="Search">
@@ -72,35 +57,7 @@
 
     <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
 
-    <script src="https://smtpjs.com/v3/smtp.js"></script>
-    <script type="text/javascript ">
-        function sendEmail(event) {
-            event.preventDefault();
-            console.log("contactForm ", event);
-            Email.send({
-                    Host: "smtp.elasticemail.com",
-                    Username: "mikehdolding@proton.me ",
-                    Password: "F564735E41BA2B601D9E4A16662B48169D57",
-                    To: "papayob820@in2reach.com",
-                    From: "mikehdolding@proton.me ",
-                    Subject: "Sending Email using javascript",
-                    Body: "Well that was easy!! ",
-                    //Attachments: [{
-                    //    name: "File_Name_with_Extension ",
-                    //    path: "Full Path of the file "
-                    //}]
-                })
-                .then(
-                    //function(response) {
-                    //    console.log("SUCCESS ", response);
-                    //},
-                    function(error) {
-                        console.log("FAILED ", error);
-                    }
-                );
-            return false; // To block from loading a new page
-        }
-    </script>
+
 </head>
 
 <body>
@@ -146,5 +103,34 @@
     </div>
 
 </body>
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+<script type="text/javascript ">
+    function sendEmail(event) {
+        event.preventDefault();
+        console.log("contactForm ", event);
+        Email.send({
+                Host: "smtp.elasticemail.com",
+                Username: "mikehdolding@proton.me ",
+                Password: "F564735E41BA2B601D9E4A16662B48169D57",
+                To: "papayob820@in2reach.com",
+                From: "mikehdolding@proton.me ",
+                Subject: "Sending Email using javascript",
+                Body: "Well that was easy!! ",
+                //Attachments: [{
+                //    name: "File_Name_with_Extension ",
+                //    path: "Full Path of the file "
+                //}]
+            })
+            .then(
+                //function(response) {
+                //    console.log("SUCCESS ", response);
+                //},
+                function(error) {
+                    console.log("FAILED ", error);
+                }
+            );
+        return false; // To block from loading a new page
+    }
+</script>
 
 </html>

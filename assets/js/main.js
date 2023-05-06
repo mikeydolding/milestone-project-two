@@ -45,8 +45,9 @@ searchBtn.addEventListener('click', function(e) {
 });
 
 
-function fetchHeadlines() {
+function fetchHeadlines(e) {
     //e.preventDefault();
+    e.preventDefault();
 
     let url = `https://newsdata.io/api/1/news?apikey=${API_KEY}`;
 
