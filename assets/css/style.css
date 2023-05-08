@@ -2,3 +2,142 @@
     --bs-gutter-x: 0.5rem;
     --bs-gutter-y: 0.5rem;
 }
+
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,200,300,400,500,600,700|Exo:100,200,300,400,500,600,700');
+
+/*--------------------------------------------Colors*/
+
+
+body {
+    font-family: Roboto, sans-serif;
+    font-weight: 300;
+    /*background-color: #525252;*/
+    color: #555555;
+}
+
+
+/*--------------------------------------------Special Paddings/Margins/Text*/
+
+h1,
+h2,
+h3,
+h4 {
+    margin: 0;
+}
+
+
+/*--------------------------------------------Heading*/
+
+header {
+    margin: 0;
+}
+
+.heading {
+    margin-left: 50px;
+}
+
+.logo {
+    background: url("../images/rosie.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 360px;
+    transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+    -webkit-transition: all .5s ease-in-out;
+}
+
+.name {
+    font-family: "Exo", sans-serif;
+    font-weight: 100;
+    font-size: 46px;
+    margin-top: 50px;
+    color: #ffffff;
+}
+
+.title {
+    font-family: "Roboto", sans-serif;
+    font-weight: 200;
+    font-size: 28px;
+    margin-top: 20px;
+    margin-bottom: 90px;
+    color: #ffffff;
+}
+
+#nav {
+    margin: 0;
+}
+
+footer {
+    background-color: #525252;
+    color: #fafafa;
+    min-height: 120px;
+    margin: 0;
+}
+
+
+.social-links {
+    padding-bottom: 15px;
+}
+
+.social-links li a i {
+    width: 32px;
+    height: 32px;
+    padding: 12px 0;
+    border-radius: 50%;
+    font-size: 13px;
+    line-height: 7px;
+    text-align: center;
+    color: #fafafa;
+    background: #8f8f8f;
+    transition: all 0.35s ease-in-out;
+    -moz-transition: all 0.35s ease-in-out;
+    -webkit-transition: all 0.35s ease-in-out;
+    -o-transition: all 0.35s ease-in-out;
+}
+
+.social-links li a i:hover {
+    background: #e84610;
+}
+
+#footer-details {
+    margin: 20px;
+}
+
+/*--------------------------------------------Three Reasons*/
+
+.three-reasons-icon {
+    font-size: 26px;
+    color: #e67e22;
+}
+
+.three-reasons-heading {
+    margin-bottom: 15px;
+}
+
+
+
+/*--------------------------------------------Map*/
+div#map {
+    min-height: 360px;
+}
+
+/*--------------------------------------------Media Queries*/
+
+@media(min-width: 992px) {
+    .section-column {
+        padding: 0 30px 30px;
+        float: none;
+        display: table-cell;
+    }
+
+    .center-form {
+        padding-top: 30px;
+        min-height: 240px;
+        margin: 0 auto;
+        max-width: 50%;
+    }
+}
+
+
