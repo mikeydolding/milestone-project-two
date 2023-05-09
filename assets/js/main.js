@@ -13,8 +13,9 @@ const input = document.querySelector(".input");
 const newsQuery = document.getElementById("newsQuery");
 
 const newsType = document.getElementById("newsType");
-const newsdetailsMedium = document.getElementById("newsdetailsMedium");
 const newsdetailsHigh = document.getElementById("newsdetailsHigh");
+const newsdetailsMedium = document.getElementById("newsdetailsMedium");
+const newsdetailsLow= document.getElementById("newsdetailsLow");
 
 const newsTitle = document.getElementById("newsTitle");
 const newsContent = document.getElementById("newsContent");
@@ -180,6 +181,8 @@ async function fetchNews(e) {
 function displayNews() {
   newsdetailsHigh.innnerHTML = "";
   newsdetailsMedium.innnerHTML = "";
+  newsdetailsLow.innnerHTML = "";
+
   //if (newsDataArr.length == 0) {
   //    newsdetails.innerHTML = "<h5>No data found.</h5>"
   //    return;
@@ -222,11 +225,11 @@ function displayNews() {
       newsTitle.innerHTML = newsDataArr[i].title;
 
       let newsDescription = document.createElement("h6");
-      newsDescription.className = "card-title";
+      newsDescription.className = "card-title text-truncate";
       newsDescription.innerHTML = newsDataArr[i].description;
       let newsContent = document.createElement("p");
 
-      newsContent.className = "card-text  text-truncate";
+      newsContent.className = "card-text text-truncate";
       newsContent.innerHTML = newsDataArr[i].content;
 
       img.appendChild(image);
@@ -242,6 +245,7 @@ function displayNews() {
       col.appendChild(card);
 
       newsdetailsHigh.appendChild(col);
+
     } else if (i >= 2 && i < 4) {
       var col = document.createElement("div");
       col.className = "col-sm-6";
@@ -274,11 +278,11 @@ function displayNews() {
       newsTitle.innerHTML = newsDataArr[i].title;
 
       let newsDescription = document.createElement("h6");
-      newsDescription.className = "card-title";
+      newsDescription.className = "card-title text-truncate";
       newsDescription.innerHTML = newsDataArr[i].description;
       let newsContent = document.createElement("p");
 
-      newsContent.className = "card-text  text-truncate";
+      newsContent.className = "card-text text-truncate";
       newsContent.innerHTML = newsDataArr[i].content;
 
       img.appendChild(image);
@@ -294,6 +298,59 @@ function displayNews() {
       col.appendChild(card);
 
       newsdetailsMedium.appendChild(col);
+      
+    } else {
+      var col = document.createElement("div");
+      col.className = "row g-2";
+      var card = document.createElement("div");
+      card.className = "col-md-6";
+      //card.setAttribute("max-height", "50%");p-2
+      var cardBody = document.createElement("div");
+      cardBody.className = "card-body p-2";
+
+      var img = document.createElement("div");
+      img.className = "img-fluid";
+
+      var image = document.createElement("img");
+      image.setAttribute("height", "matchparent");
+      image.setAttribute("width", "100%");
+      image.src = newsDataArr[i].image_url;
+
+      let pText = document.createTextNode("Source: ");
+      let li = document.createElement("small");
+      let a = document.createElement("a");
+      li.appendChild(a);
+      a.setAttribute("href", newsDataArr[i].link);
+      a.setAttribute("target", "_blank");
+      a.textContent = newsDataArr[i].link;
+      li.appendChild(pText);
+      li.appendChild(a);
+
+      let newsTitle = document.createElement("h5");
+      newsTitle.className = "card-title";
+      newsTitle.innerHTML = newsDataArr[i].title;
+
+      let newsDescription = document.createElement("h6");
+      newsDescription.className = "card-title text-truncate";
+      newsDescription.innerHTML = newsDataArr[i].description;
+      let newsContent = document.createElement("p");
+
+      newsContent.className = "card-text text-truncate";
+      newsContent.innerHTML = newsDataArr[i].content;
+
+      img.appendChild(image);
+      card.appendChild(img);
+
+      cardBody.appendChild(newsTitle);
+      cardBody.appendChild(newsDescription);
+      cardBody.appendChild(newsContent);
+      cardBody.appendChild(li);
+
+      card.appendChild(cardBody);
+
+      col.appendChild(card);
+
+      newsdetailsLow.appendChild(col);
     }
   }
 
