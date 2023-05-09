@@ -306,7 +306,7 @@ function displayNews() {
       card.className = "col-md-6";
       //card.setAttribute("max-height", "50%");p-2
       var cardBody = document.createElement("div");
-      cardBody.className = "card-body p-2";
+      cardBody.className = "col-md-6 card-body p-2";
 
       var img = document.createElement("div");
       img.className = "img-fluid";
@@ -346,9 +346,9 @@ function displayNews() {
       cardBody.appendChild(newsContent);
       cardBody.appendChild(li);
 
-      card.appendChild(cardBody);
-
       col.appendChild(card);
+      col.appendChild(cardBody);
+
 
       newsdetailsLow.appendChild(col);
     }
