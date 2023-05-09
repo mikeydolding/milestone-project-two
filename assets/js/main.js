@@ -1,6 +1,7 @@
 import { MY_API_KEY } from "./config.js";
 
-const topic = "entertainment";
+//const topic = document.getElementById("newsType");
+
 const API_KEY = MY_API_KEY;
 
 const entertainmentBtn = document.getElementById("entertainment");
@@ -12,7 +13,7 @@ const input = document.querySelector(".input");
 //const newsList = document.querySelector('.card-title');
 const newsQuery = document.getElementById("newsQuery");
 
-const newsType = document.getElementById("newsType");
+//const newsType = document.getElementById("newsType");
 const newsdetailsHigh = document.getElementById("newsdetailsHigh");
 const newsdetailsMedium = document.getElementById("newsdetailsMedium");
 const newsdetailsLow= document.getElementById("newsdetailsLow");
@@ -21,27 +22,30 @@ const newsTitle = document.getElementById("newsTitle");
 const newsContent = document.getElementById("newsContent");
 const newsDescription = document.getElementById("newsDescription");
 var newsDataArr = [];
-
+var newsType = '';
 //window.onload = function() {
 //    newsType.innerHTML = "<h4>Headlines</h4>";
 //    fetchHeadlines();
 //};
 
 entertainmentBtn.addEventListener("click", function () {
-  console.log("clicked");
-  newsType.innerHTML = "<h4>Entertainment</h4>";
+    newsType = "Entertainment"
+    document.getElementById("newsType").innerHTML = newsType;
+
+  //newsType.innerHTML = "<h4>Entertainment</h4>";
   //fetchEntertainmentNews();
 });
-foodBtn.addEventListener("click", function () {
-  console.log("clicked");
 
-  newsType.innerHTML = "<h4>Food</h4>";
+foodBtn.addEventListener("click", function () {
+  newsType = "Food"
+  document.getElementById("newsType").innerHTML = newsType;
+  //console.log("clicked");
+  //newsType.innerHTML = "<h4>Food</h4>";
   //fetchEntertainmentNews();
 });
 healthBtn.addEventListener("click", function () {
-  console.log("clicked");
-
-  newsType.innerHTML = "<h4>Health</h4>";
+  newsType = "Health"
+  document.getElementById("newsType").innerHTML = newsType;
   //fetchEntertainmentNews();
 });
 
@@ -51,6 +55,12 @@ searchBtn.addEventListener("click", function (e) {
   //newsType.innerHTML = "<h4>Search: " + topic + "<h4>";
   fetchNews(e);
 });
+
+
+function myTopic() {
+  var x = document.getElementById("myBtn").value;
+  document.getElementById("demo").innerHTML = x;
+}
 
 function fetchHeadlines(e) {
   //e.preventDefault();
@@ -88,61 +98,16 @@ function fetchHeadlines(e) {
     });
 }
 
-function fetchEntertainment(e) {
-  //e.preventDefault();
-  e.preventDefault();
-
-  let url = `https://newsdata.io/api/1/news?apikey=${API_KEY}`;
-
-  fetch(url, {
-    method: "GET",
-    headers: {},
-  })
-    .then((response) => {
-      console.log("response", response);
-      return response.json();
-    })
-    .then((data) => {
-      let filteredData = data.results.filter((i) => i.image_url !== null);
-      newsDataArr = filteredData;
-      console.log("newsDataArr", newsDataArr);
-      displayNews();
-    })
-    .catch((err) => {
-      console.log("Request Failed", err);
-    });
-}
-
-//search.addEventListener('submit', fetchNews);
-
-//const fetchNews = async() => {
-
-//    let url = `
-//https: //newsdata.io/api/1/news?apikey=${apiKey}&q=${topic}`;
-//    console.log('apiKey', apiKey)
-
-//    const response = await fetch(url);
-
-//    if (response.status >= 200 && response.status < 300) {
-//        const data = await response.json();
-//        newsDataArr = data.results;
-//        console.log('newsDataArr', newsDataArr)
-//    } else {
-//        //error handle
-//        console.log(response.status, response.statusText);
-//        newsdetails.innerHTML = "<h5>No data found.</h5>"
-//        return;
-//    }
-//    displayNews();
-//}
 
 async function fetchNews(e) {
+
   //let url = `https://newsdata.io/api/1/news?apikey=${apiKey}&q=${topic}`;
-  let topic = "entertainment";
+  //let topic = "entertainment";
+  console.log(newsType)
   let country = "id";
 
   e.preventDefault();
-  let url = `https://newsdata.io/api/1/news?apikey=${API_KEY}&country=${country}&category=${topic}`;
+  let url = `https://newsdata.io/api/1/news?apikey=${API_KEY}&country=${country}&category=${newsType}`;
 
   const response = await fetch(url);
   if (!response.ok) {
@@ -195,7 +160,7 @@ function displayNews() {
     if (i < 2) {
       var col = document.createElement("div");
       col.className =
-        "col-sm-6 .col-md-6 col-lg-6 .col-xl-2 mb-3 d-flex align-items-stretch";
+        "col-sm-12  col-lg-6  mb-3 d-flex align-items-stretch";
       var card = document.createElement("div");
       card.className = "card";
       //card.setAttribute("max-height", "50%");p-2
@@ -248,7 +213,7 @@ function displayNews() {
 
     } else if (i >= 2 && i < 4) {
       var col = document.createElement("div");
-      col.className = "col-sm-6";
+      col.className = "col-sm-12 col-lg-6";
       var card = document.createElement("div");
       card.className = "card";
       //card.setAttribute("max-height", "50%");p-2
@@ -302,11 +267,11 @@ function displayNews() {
     } else {
       var col = document.createElement("div");
       col.className = "row g-2";
-      var card = document.createElement("div");
-      card.className = "col-md-6";
+      var cardLeft = document.createElement("div");
+      cardLeft.className = "col-md-6 ";
       //card.setAttribute("max-height", "50%");p-2
-      var cardBody = document.createElement("div");
-      cardBody.className = "col-md-6 card-body p-2";
+      var cardRight = document.createElement("div");
+      cardRight.className = "col-md-6 card-body p-2";
 
       var img = document.createElement("div");
       img.className = "img-fluid";
@@ -339,15 +304,15 @@ function displayNews() {
       newsContent.innerHTML = newsDataArr[i].content;
 
       img.appendChild(image);
-      card.appendChild(img);
+      cardLeft.appendChild(img);
 
-      cardBody.appendChild(newsTitle);
-      cardBody.appendChild(newsDescription);
-      cardBody.appendChild(newsContent);
-      cardBody.appendChild(li);
+      cardRight.appendChild(newsTitle);
+      cardRight.appendChild(newsDescription);
+      cardRight.appendChild(newsContent);
+      cardRight.appendChild(li);
 
-      col.appendChild(card);
-      col.appendChild(cardBody);
+      col.appendChild(cardLeft);
+      col.appendChild(cardRight);
 
 
       newsdetailsLow.appendChild(col);
