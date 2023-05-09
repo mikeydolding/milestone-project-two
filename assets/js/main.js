@@ -28,24 +28,28 @@ var newsType = '';
 //    fetchHeadlines();
 //};
 
-entertainmentBtn.addEventListener("click", function () {
+entertainmentBtn.addEventListener("click", function(e) {
     newsType = "Entertainment"
     document.getElementById("newsType").innerHTML = newsType;
-
+    fetchNews(e);
   //newsType.innerHTML = "<h4>Entertainment</h4>";
   //fetchEntertainmentNews();
 });
 
-foodBtn.addEventListener("click", function () {
+foodBtn.addEventListener("click", function(e) {
   newsType = "Food"
   document.getElementById("newsType").innerHTML = newsType;
+  fetchNews(e);
+
   //console.log("clicked");
   //newsType.innerHTML = "<h4>Food</h4>";
   //fetchEntertainmentNews();
 });
-healthBtn.addEventListener("click", function () {
+healthBtn.addEventListener("click", function(e) {
   newsType = "Health"
   document.getElementById("newsType").innerHTML = newsType;
+  fetchNews(e);
+
   //fetchEntertainmentNews();
 });
 
