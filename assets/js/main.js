@@ -187,11 +187,10 @@ function displayNews() {
   //console.log(data)
   //data.results.forEach(results => {
   //});
+  for (var i = 0, len = arr.length; i < len; i++) {
 
-  newsDataArr.forEach((news) => {
     var col = document.createElement("div");
-    col.className =
-      "col-sm-6 .col-md-6 col-lg-6 .col-xl-2 mb-3 d-flex align-items-stretch";
+    col.className = "col-sm-6 .col-md-6 col-lg-6 .col-xl-2 mb-3 d-flex align-items-stretch";
     var card = document.createElement("div");
     card.className = "card";
     //card.setAttribute("max-height", "50%");p-2
@@ -204,39 +203,29 @@ function displayNews() {
     var image = document.createElement("img");
     image.setAttribute("height", "matchparent");
     image.setAttribute("width", "100%");
-    image.src = news.image_url;
+    image.src = newsDataArr[i].image_url;
 
-    //console.log(data)
-    //data.results.forEach(results => {
-    //    let li = document.createElement('li');
-    //    let a = document.createElement('a');
-    //    a.setAttribute('href', results.link);
-    //    a.setAttribute('target', '_blank');
-    //    a.textContent = results.title;
-    //    li.appendChild(a);
-    //    newsList.appendChild(li);
-    //});
     let pText = document.createTextNode('Source: ')
     let li = document.createElement("small");
     let a = document.createElement("a");
     li.appendChild(a);
-    a.setAttribute("href", news.link);
+    a.setAttribute("href", newsDataArr[i].link);
     a.setAttribute("target", "_blank");
-    a.textContent = news.link;
+    a.textContent = newsDataArr[i].link;
     li.appendChild(pText);
     li.appendChild(a);
 
     let newsTitle = document.createElement("h5");
     newsTitle.className = "card-title";
-    newsTitle.innerHTML = news.title;
+    newsTitle.innerHTML = newsDataArr[i].title;
 
     let newsDescription = document.createElement("h6");
     newsDescription.className = "card-title";
-    newsDescription.innerHTML = news.description;
+    newsDescription.innerHTML = newsDataArr[i].description;
     let newsContent = document.createElement("p");
 
     newsContent.className = "card-text  text-truncate";
-    newsContent.innerHTML = news.content;
+    newsContent.innerHTML = newsDataArr[i].content;
 
     img.appendChild(image);
     card.appendChild(img);
@@ -249,10 +238,66 @@ function displayNews() {
     card.appendChild(cardBody);
 
     col.appendChild(card);
-    newsdetails.appendChild(col);
+    if(i<2){
+      newsdetailsHigh.appendChild(col);
 
-    //var newsContent = document.createElement('p');
-    //newsContent.className = "card-title";
-    //discription.innerHTML = news.description;
-  });
+    }else{}
+
+  }
+
+  //newsDataArr.forEach((news) => {
+  //  var col = document.createElement("div");
+  //  col.className =
+  //    "col-sm-6 .col-md-6 col-lg-6 .col-xl-2 mb-3 d-flex align-items-stretch";
+  //  var card = document.createElement("div");
+  //  card.className = "card";
+  //  //card.setAttribute("max-height", "50%");p-2
+  //  var cardBody = document.createElement("div");
+  //  cardBody.className = "card-body p-2";
+
+  //  var img = document.createElement("div");
+  //  img.className = "card-img-top";
+
+  //  var image = document.createElement("img");
+  //  image.setAttribute("height", "matchparent");
+  //  image.setAttribute("width", "100%");
+  //  image.src = news.image_url;
+
+  //  let pText = document.createTextNode('Source: ')
+  //  let li = document.createElement("small");
+  //  let a = document.createElement("a");
+  //  li.appendChild(a);
+  //  a.setAttribute("href", news.link);
+  //  a.setAttribute("target", "_blank");
+  //  a.textContent = news.link;
+  //  li.appendChild(pText);
+  //  li.appendChild(a);
+
+  //  let newsTitle = document.createElement("h5");
+  //  newsTitle.className = "card-title";
+  //  newsTitle.innerHTML = news.title;
+
+  //  let newsDescription = document.createElement("h6");
+  //  newsDescription.className = "card-title";
+  //  newsDescription.innerHTML = news.description;
+  //  let newsContent = document.createElement("p");
+
+  //  newsContent.className = "card-text  text-truncate";
+  //  newsContent.innerHTML = news.content;
+
+  //  img.appendChild(image);
+  //  card.appendChild(img);
+
+  //  cardBody.appendChild(newsTitle);
+  //  cardBody.appendChild(newsDescription);
+  //  cardBody.appendChild(newsContent);
+  //  cardBody.appendChild(li);
+
+  //  card.appendChild(cardBody);
+
+  //  col.appendChild(card);
+  //  newsdetails.appendChild(col);
+  //});
+
+
 }
