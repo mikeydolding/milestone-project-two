@@ -13,7 +13,8 @@ const input = document.querySelector(".input");
 const newsQuery = document.getElementById("newsQuery");
 
 const newsType = document.getElementById("newsType");
-const newsdetails = document.getElementById("newsdetails");
+const newsdetailsMedium = document.getElementById("newsdetailsMedium");
+const newsdetailsHigh = document.getElementById("newsdetailsHigh");
 
 const newsTitle = document.getElementById("newsTitle");
 const newsContent = document.getElementById("newsContent");
@@ -145,7 +146,7 @@ async function fetchNews(e) {
   const response = await fetch(url);
   if (!response.ok) {
     console.log(response.status);
-    newsdetails.innerHTML = "<h5>No data found.</h5>";
+    newsdetailsHigh.innerHTML = "<h5>No data found.</h5>";
     return;
     //const message = `An error has occured: ${response.status}`;
     //throw new Error(message);
@@ -177,8 +178,8 @@ async function fetchNews(e) {
 //}
 
 function displayNews() {
-  newsdetails.innnerHTML = "";
-
+  newsdetailsHigh.innnerHTML = "";
+  newsdetailsMedium.innnerHTML = "";
   //if (newsDataArr.length == 0) {
   //    newsdetails.innerHTML = "<h5>No data found.</h5>"
   //    return;
@@ -187,7 +188,7 @@ function displayNews() {
   //console.log(data)
   //data.results.forEach(results => {
   //});
-  for (var i = 0, len = arr.length; i < len; i++) {
+  for (var i = 0, len = newsDataArr.length; i < len; i++) {
 
     var col = document.createElement("div");
     col.className = "col-sm-6 .col-md-6 col-lg-6 .col-xl-2 mb-3 d-flex align-items-stretch";
@@ -241,7 +242,10 @@ function displayNews() {
     if(i<2){
       newsdetailsHigh.appendChild(col);
 
-    }else{}
+    }else{
+      newsdetailsMedium.appendChild(col);
+
+    }
 
   }
 
