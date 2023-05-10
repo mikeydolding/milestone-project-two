@@ -2,7 +2,7 @@
 <html lang="en-us">
   <head>
     <meta charset="utf-8" />
-    <title>WebzineOy!| Lifestyles around the world at your fingertips</title>
+    <title>WebzineOy!| Information on the ground</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link href="assets/css/bootstrap/bootstrap.min.css" rel="stylesheet" />
@@ -13,9 +13,26 @@
       crossorigin="anonymous"
     />
 
-    <link href="assets/css/fontawesome.css" rel="stylesheet" />
+    <link
+      href="assets/css/fontawesome/css/fontawesome.min.css"
+      rel="stylesheet"
+    />
 
     <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
+
+    <script type="text/javascript">
+    $(window).load(function() {
+        $(".carousel .carousel-item").each(function() {
+            var i = $(this).next();
+            i.length || (i = $(this).siblings(":first")),
+            i.children(":first-child").clone().appendTo($(this));
+             
+            for (var n = 0; n < 4; n++)(i = i.next()).length ||
+            (i = $(this).siblings(":first")),
+            i.children(":first-child").clone().appendTo($(this))
+        })
+    });
+</script>
   </head>
 
   <body>
@@ -30,15 +47,13 @@
         <strong>Success!</strong> This alert box could indicate a successful or
         positive action.
       </div>
-      <div class="container py-md-4">
+      <div class="container py-md-1">
         <!--<div class="clearfix">-->
 
         <h1 display-1 class="mx-auto">Webzine Oy!</h1>
         <!--</div>
         <div  class="clearfix">-->
-        <p class="lead mx-auto">
-          Lifestyles around the world at your fingertips
-        </p>
+        <p class="lead mx-auto">Information on the ground</p>
         <!--</div>-->
       </div>
 
@@ -98,14 +113,13 @@
       </nav>
     </section>
 
-
     <div class="container mt-1">
       <!--<div class="title" id="newsType"></div>-->
-       <!--<div class="row m-3" id="newsType"></div>-->
-       <h1 class="subtitle" id="newsType"></h1>
+      <!--<div class="row m-3" id="newsType"></div>-->
+      <h1 class="subtitle" id="newsType"></h1>
 
       <div class="row">
-          <div class="row" id="newsdetailsHigh"></div>
+        <div class="row" id="newsdetailsHigh"></div>
         <!--High Priority / Articles of the Day-->
         <!--<div class="col-sm-6">
             <img
@@ -209,8 +223,7 @@
 
         <!--Medium Priority / Articles of the Day-->
         <div class="col-md-6 col-sm-12">
-          <div class="row"  id="newsdetailsMedium"></div>
-           
+          <div class="row" id="newsdetailsMedium"></div>
 
           <!--<div id="newsdetailsMedium"></div>-->
 
@@ -256,21 +269,285 @@
       </div>
     </div>
 
-    <div class="container"></div>
+    <div class="container">
+      <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+          <!--<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="5" aria-label="Slide 6"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="6" aria-label="Slide 7"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="7" aria-label="Slide 8"></button>-->
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="assets/images/carousel/carousel1.jpg" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h1>Lifestyle comparisons in different cities and countries around the world for digital nomads.</h1>
+              <p class="lead">
+                Sign up today to book a thirty minute consultation with our specialist
+                travel consultants. €99.99
+              </p>
+              <p><button class="btn btn-lg btn-success">Sign Up!</button></p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="assets/images/carousel/carousel2.jpg" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h1>Lifestyle comparisons in different cities and countries around the world for digital nomads.</h1>
+              <p class="lead">
+                Sign up today to book a thirty minute consultation with our specialist
+                travel consultants. €99.99
+              </p>
+              <p><button class="btn btn-lg btn-success">Sign Up!</button></p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="assets/images/carousel/carousel3.jpg" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h1>Lifestyle comparisons in different cities and countries around the world for digital nomads.</h1>
+              <p class="lead">
+                Sign up today to book a thirty minute consultation with our specialist
+                travel consultants. €99.99
+              </p>
+              <p><button class="btn btn-lg btn-success">Sign Up!</button></p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="assets/images/carousel/carousel4.jpg" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h1>Lifestyle comparisons in different cities and countries around the world for digital nomads.</h1>
+              <p class="lead">
+                Sign up today to book a thirty minute consultation with our specialist
+                travel consultants. €99.99
+              </p>
+              <p><button class="btn btn-lg btn-success">Sign Up!</button></p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="assets/images/carousel/carousel5.jpg" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h1>Lifestyle comparisons in different cities and countries around the world for digital nomads.</h1>
+              <p class="lead">
+                Sign up today to book a thirty minute consultation with our specialist
+                travel consultants. €99.99
+              </p>
+              <p><button class="btn btn-lg btn-success">Sign Up!</button></p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="assets/images/carousel/carousel6.jpg" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h1>Lifestyle comparisons in different cities and countries around the world for digital nomads.</h1>
+              <p class="lead">
+                Sign up today to book a thirty minute consultation with our specialist
+                travel consultants. €99.99
+              </p>
+              <p><button class="btn btn-lg btn-success">Sign Up!</button></p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="assets/images/carousel/carousel7.jpg" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h1>Lifestyle comparisons in different cities and countries around the world for digital nomads.</h1>
+              <p class="lead">
+                Sign up today to book a thirty minute consultation with our specialist
+                travel consultants. €99.99
+              </p>
+              <p><button class="btn btn-lg btn-success">Sign Up!</button></p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="assets/images/carousel/carousel8.jpg" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h1>Lifestyle comparisons in different cities and countries around the world for digital nomads.</h1>
+              <p class="lead">
+                Sign up today to book a thirty minute consultation with our specialist
+                travel consultants. €99.99
+              </p>
+              <p><button class="btn btn-lg btn-success">Sign Up!</button></p>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+      <!--<div class="callout text-center py-50">
+        <h1>
+          Lifestyle comparisons in different cities and countries around the
+          world for digital nomads.
+        </h1>
+        <p class="lead">
+          Sign up today to book a thirty minute consultation with our specialist
+          travel consultants. €99.99
+
+          <strong><mark>First month is free!</mark></strong></p>
+        </p>
+
+        <p><button class="btn btn-lg btn-success">Sign Up!</button></p>
+      </div>-->
+
+      <!-- /.callout -->
+      <hr />
+
+      <!-- Quotes -->
+      <section class="quotes">
+        <h2 class="text-uppercase">Quotes:</h2>
+        <blockquote class="quote">
+          <p>I't's not what you know but who you know that counts!</p>
+          <footer>Mike Dolding on <cite title="Twitter">Telegram</cite></footer>
+        </blockquote>
+        <blockquote class="quote">
+          <p>
+            I act as a generalist advisor for you to better understand the Asian
+            and Chinese markets.
+          </p>
+          <footer>John Guevel on <cite title="Twitter">Telegram</cite></footer>
+        </blockquote>
+      </section>
+      <!-- /.quotes -->
+      <hr />
+
+      <!-- Features -->
+      <section class="features">
+        <h2 class="text-uppercase">Features:</h2>
+        <div class="feature">
+          <h3>Feature 1</h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat.
+          </p>
+          <p><a class="btn btn-sm btn-default" href="">Read More</a></p>
+        </div>
+        <div class="feature">
+          <h3>Feature 2</h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat.
+          </p>
+          <p><a class="btn btn-sm btn-default" href="">Read More</a></p>
+        </div>
+        <div class="feature">
+          <h3>Feature 3</h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat.
+          </p>
+          <p><a class="btn btn-sm btn-default" href="">Read More</a></p>
+        </div>
+      </section>
+    </div>
     <br /><br />
 
-    <footer class="container-fluid text-center">
-      <p>Online Store Copyright</p>
-      <form class="form-inline">
-        Get deals:
-        <input
-          type="email "
-          class="form-control"
-          size="50 "
-          placeholder="Email Address "
-        />
-        <button type="button " class="btn btn-danger">Sign Up</button>
-      </form>
+    <footer class="container">
+      <div class="row">
+        <div class="col-lg-4 col-sm-12">
+          <h5 class="uppercase general-sub">About</h5>
+          <p class="inline-block">
+            A set of services and tools designed for "Digital Nomads" or on-line
+            entrepreneurs.
+          </p>
+        </div>
+        <div class="col-lg-4 col-sm-12">
+          <h5 class="uppercase general-sub">Founder Portfolio</h5>
+          <p class="inline-block">
+            Need a printable version of portfolio? Download it here.
+            <a
+              href="assets/pdf/Portfolio_de_David_Guevel-fr.pdf"
+              target="_blank"
+            >
+              <i class="fas fa-file-download"></i>
+              <span class="sr-only">Download link.</span>
+              <i class="fas fa-user"></i>
+              <!-- uses solid style -->
+              <i class="far fa-user"></i>
+              <!-- uses regular style -->
+              <i class="fab fa-github-square"></i>
+              <!-- uses brands style -->
+            </a>
+          </p>
+        </div>
+        <div class="col-lg-4 col-sm-12">
+          <h5 class="uppercase general-sub">Social</h5>
+          <ul class="list-inline social-links">
+            <li class="list-inline-item">
+              <a target="_blank" href="#">
+                <i class="fa fa-facebook" aria-hidden="true"></i>
+                <span class="sr-only">Facebook</span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a target="_blank" href="#">
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+                <span class="sr-only">Twitter</span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a target="_blank" href="#">
+                <i class="fa fa-linkedin" aria-hidden="true"></i>
+                <span class="sr-only">LinkedIn</span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a target="_blank" href="#">
+                <i class="fa fa-pinterest" aria-hidden="true"></i>
+                <span class="sr-only">Pinterest</span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a target="_blank" href="#">
+                <i class="fa fa-instagram" aria-hidden="true"></i>
+                <span class="sr-only">Instagram</span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a target="_blank" href="#">
+                <i class="fa fa-youtube" aria-hidden="true"></i>
+                <span class="sr-only">YouTube</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+    <footer class="container p-4 rounded">
+      <div class="d-lg-flex justify-content-between">
+        <div>
+          <span>LOGO</span>
+        </div>
+        <div class="copyright">
+          <p>
+            developed and maintained by <a href="#" target="_blank">company</a>
+          </p>
+        </div>
+        <div>
+          <ul class="d-flex gap-3 list-unstyled">
+            <li>
+              <a href="#"><i class="bi bi-facebook"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="bi bi-twitter"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="bi bi-instagram"></i></a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </footer>
   </body>
   <script src="assets/js/jquery.min.jsm.js "></script>
