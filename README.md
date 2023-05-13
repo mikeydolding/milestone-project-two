@@ -220,7 +220,9 @@ Click [Here](https://help.github.com/en/github/creating-cloning-and-archiving-re
 
 - [StackOverflow post](https://stackoverflow.com/questions/31954089/how-can-i-reuse-a-navigation-bar-on-multiple-pages): How can I reuse a navigation bar on multiple pages.
 
--[Youtube video](https://youtu.be/KHF6nysy0-c): Hacking the Bootstrap 5 Carousel: Consistent Height Carousels with CSS Gradients and Object Fit. 
+-[Youtube video](https://youtu.be/KHF6nysy0-c): Hacking the Bootstrap 5 Carousel: Consistent Height Carousels with CSS Gradients and Object Fit.
+
+-[w3schools]https://www.w3schools.com/howto/howto_js_autocomplete.asp: Create an Autocomplete Form
 
 ### Content
 

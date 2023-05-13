@@ -20,19 +20,7 @@
 
     <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
 
-    <script type="text/javascript">
-      $(window).load(function () {
-        $(".carousel .carousel-item").each(function () {
-          var i = $(this).next();
-          i.length || (i = $(this).siblings(":first")),
-            i.children(":first-child").clone().appendTo($(this));
-
-          for (var n = 0; n < 4; n++)
-            (i = i.next()).length || (i = $(this).siblings(":first")),
-              i.children(":first-child").clone().appendTo($(this));
-        });
-      });
-    </script>
+     <script src="assets/js/autocompleteSearch.js" type="module "></script>
   </head>
 
   <body>
@@ -42,17 +30,16 @@
         <button
           type="button"
           class="btn-close"
-          data-bs-dismiss="alert"
+          data-bs-dismiss="alert" 
         ></button>
-        <strong>Success!</strong> This alert box could indicate a successful or
-        positive action.
+        <p><strong data-bs-toggle="modal"
+          data-bs-target="#signUpModal">Special Offer! Contact us to book a thirty minute consultation with our experienced travel consultants.<del>€129.99</del> <mark>€99.99</mark></strong></p>
       </div>
       <div class="container py-md-1">
         <!--<div class="clearfix">-->
 
         <h1 display-1 class="mx-auto">Webzine Oy!</h1>
-        <!--</div>
-        <div  class="clearfix">-->
+
         <p class="lead mx-auto">Information on the ground</p>
         <!--</div>-->
       </div>
@@ -92,71 +79,23 @@
                 <a class="nav-link" href="contact.html">Contact Us</a>
               </li>
             </ul>
-            <form class="search d-flex">
-              <input
-                class="input form-control me-2"
-                type="text"
-                id="searchQuery"
-                placeholder="Search Country"
-                aria-label="Search"
-              />
-              <button
-                class="btn btn-outline-success"
-                type="submit"
-                id="searchBtn"
-              >
-                Search
-              </button>
-            </form>
+            <form autocomplete="off" class="search d-flex">
+              <div class="autocomplete">
+                <input class="input form-control me-2" type="text" id="myInput" placeholder="Search Country" aria-label="Search">
+              </div>
+              
+              <button class="btn btn-outline-success" type="submit" id="searchBtn">Search</button>
+          </form>
           </div>
         </div>
       </nav>
     </section>
 
     <div class="container mt-1">
-      <!--<div class="title" id="newsType"></div>-->
-      <!--<div class="row m-3" id="newsType"></div>-->
       <h1 class="subtitle" id="newsType"></h1>
 
       <div class="row">
         <div class="row" id="newsdetailsHigh"></div>
-        <!--High Priority / Articles of the Day-->
-        <!--<div class="col-sm-6">
-            <img
-              class="card-img-top"
-              src="assets/images/chonqing.png"
-              alt="Card imag "
-            />
-            <div class="card-body">
-              <h5 class="card-title">High priority #1 Card title</h5>
-              <p class="card-text">
-                This is a wider card with supporting text below as a natural
-                lead-in to additional content. This content is a little bit
-                longer.
-              </p>
-              <p class="card-text">
-                <small class="text-muted">Last updated 3 mins ago</small>
-              </p>
-            </div>
-          </div>
-          <div class="col-sm-6">
-            <img
-              class="card-img-top"
-              src="assets/images/chonqing.png"
-              alt="Card image"
-            />
-            <div class="card-body">
-              <h5 class="card-title">High Priority #2 Card title</h5>
-              <p class="card-text">
-                This is a wider card with supporting text below as a natural
-                lead-in to additional content. This content is a little bit
-                longer.
-              </p>
-              <p class="card-text">
-                <small class="text-muted">Last updated 3 mins ago</small>
-              </p>
-            </div>
-          </div>-->
       </div>
       <!--<hr />-->
 
@@ -166,58 +105,6 @@
       <div class="row">
         <div class="col-md-6 col-sm-12">
           <div id="newsdetailsLow"></div>
-
-          <!--<div class="row g-2">
-            <div class="col-md-6">
-              <img
-                src="assets/images/chonqing.png "
-                class="img-fluid"
-                alt="... "
-              />
-            </div>
-            <div class="col-md-6">
-              <div class="card-body">
-                <h5 class="card-title">Card title row 2</h5>
-                <p class="card-text">
-                  This is a wider card with supporting text below.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="row g-2">
-            <div class="col-md-6">
-              <img
-                src="assets/images/chonqing.png "
-                class="img-fluid"
-                alt="... "
-              />
-            </div>
-            <div class="col-md-6">
-              <div class="card-body">
-                <h5 class="card-title">Card title row 2</h5>
-                <p class="card-text">
-                  This is a wider card with supporting text below.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="row g-2">
-            <div class="col-md-6">
-              <img
-                src="assets/images/chonqing.png "
-                class="img-fluid"
-                alt="... "
-              />
-            </div>
-            <div class="col-md-6">
-              <div class="card-body">
-                <h5 class="card-title">Card title row 2</h5>
-                <p class="card-text">
-                  This is a wider card with supporting text below.
-                </p>
-              </div>
-            </div>
-          </div>-->
         </div>
         <!--End Low Priority / Articles of the Day-->
 
@@ -225,44 +112,6 @@
         <div class="col-md-6 col-sm-12">
           <div class="row" id="newsdetailsMedium"></div>
 
-          <!--<div id="newsdetailsMedium"></div>-->
-
-          <!--<div class="col-sm-3">
-            <img
-              class="card-img-top"
-              src="assets/images/chonqing.png "
-              alt="Card image "
-            />
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">
-                This is a wider card with supporting text below as a natural
-                lead-in to additional content. This content is a little bit
-                longer.
-              </p>
-              <p class="card-text">
-                <small class="text-muted">Last updated 3 mins ago</small>
-              </p>
-            </div>
-          </div>
-          <div class="col-sm-3">
-            <img
-              class="card-img-top"
-              src="assets/images/chonqing.png "
-              alt="Card image "
-            />
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">
-                This is a wider card with supporting text below as a natural
-                lead-in to additional content. This content is a little bit
-                longer.
-              </p>
-              <p class="card-text">
-                <small class="text-muted">Last updated 3 mins ago</small>
-              </p>
-            </div>
-          </div>-->
         </div>
 
         <!--End Medium Priority / Articles of the Day-->
@@ -458,7 +307,7 @@
         <p class="lead">
           <strong
             >Sign up today to book a thirty minute consultation with our
-            specialist travel consultants. €99.99</strong
+            specialist travel consultants.<del>€129.99</del> <mark>€99.99</mark></strong
           >
           <!--<strong><mark>First month is free!</mark></strong></p>-->
         </p>
@@ -595,7 +444,7 @@
           <!-- /.features -->
       </div>
   </div>
-  
+
     <br /><br />
 
     <footer class="container">
@@ -669,31 +518,7 @@
         </div>
       </div>
     </footer>
-    <!--<footer class="container p-4 rounded">
-      <div class="d-lg-flex justify-content-between">
-        <div>
-          <span>LOGO</span>
-        </div>
-        <div class="copyright">
-          <p>
-            Developed and maintained by <a href="#" target="_blank">Skael Creative</a>
-          </p>
-        </div>
-        <div>
-          <ul class="d-flex gap-3 list-unstyled">
-            <li>
-              <a href="#"><i class="bi bi-facebook"></i></a>
-            </li>
-            <li>
-              <a href="#"><i class="bi bi-twitter"></i></a>
-            </li>
-            <li>
-              <a href="#"><i class="bi bi-instagram"></i></a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </footer>-->
+    
 
     <!-- The Modal -->
     <div class="modal" id="signUpModal">
@@ -781,13 +606,25 @@
     </div>-->
   </body>
 
-  <script src="assets/js/jquery.min.jsm.js "></script>
-  <script src="assets/js/popper.min.js "></script>
+  <script src="assets/js/jquery.min.jsm.js"></script>
+  <script src="assets/js/popper.min.js"></script>
   <script src="assets/js/bootstrap/bootstrap.min.js "></script>
-  <script src="assets/js/main.js " type="module "></script>
-  <!--<script>
+  <script src="assets/js/main.js" type="module "></script>
+  <script src="assets/js/autocompleteSearch.js" type="module "></script>
+  <script>
+    fetch('https://api.country.is')
+.then( res => res.json())
+.then(response => {
+    console.log("Country: ", response.country);
+ })
+ .catch((data, status) => {
+    console.log('Request failed');
+ })
+  </script>
+  
+  <script>
     $(function () {
       $("#header-navbar ").load("header-navbar.html ");
     });
-  </script>-->
+  </script>
 </html>

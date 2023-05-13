@@ -53,12 +53,12 @@ healthBtn.addEventListener("click", function(e) {
   //fetchEntertainmentNews();
 });
 
-searchBtn.addEventListener("click", function (e) {
-  console.log("clicked");
+//searchBtn.addEventListener("click", function (e) {
+//  console.log("clicked");
 
-  //newsType.innerHTML = "<h4>Search: " + topic + "<h4>";
-  fetchNews(e);
-});
+//  //newsType.innerHTML = "<h4>Search: " + topic + "<h4>";
+//  fetchNews(e);
+//});
 
 
 function myTopic() {
