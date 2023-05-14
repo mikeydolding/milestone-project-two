@@ -1,4 +1,5 @@
 import { MY_API_KEY } from "./config.js";
+import {countries} from './countries.js'
 
 //const topic = document.getElementById("newsType");
 
@@ -9,24 +10,47 @@ const foodBtn = document.getElementById("food");
 const healthBtn = document.getElementById("health");
 
 //const search = document.querySelector('.search');
-const input = document.querySelector(".input");
+var input = document.querySelector(".input");
 //const newsList = document.querySelector('.card-title');
-const newsQuery = document.getElementById("newsQuery");
+var newsQuery = document.getElementById("newsQuery");
 
-//const newsType = document.getElementById("newsType");
-const newsdetailsHigh = document.getElementById("newsdetailsHigh");
-const newsdetailsMedium = document.getElementById("newsdetailsMedium");
-const newsdetailsLow= document.getElementById("newsdetailsLow");
+var newsdetailsHigh = document.getElementById("newsdetailsHigh");
+var newsdetailsMedium = document.getElementById("newsdetailsMedium");
+var newsdetailsLow= document.getElementById("newsdetailsLow");
 
-const newsTitle = document.getElementById("newsTitle");
-const newsContent = document.getElementById("newsContent");
-const newsDescription = document.getElementById("newsDescription");
+var newsTitle = document.getElementById("newsTitle");
+var newsContent = document.getElementById("newsContent");
+var newsDescription = document.getElementById("newsDescription");
+
 var newsDataArr = [];
-var newsType = '';
-//window.onload = function() {
-//    newsType.innerHTML = "<h4>Headlines</h4>";
-//    fetchHeadlines();
-//};
+var newsType = 'entertainment';
+var countryCode = '';
+var countryName = '';
+
+window.onload = function(e) {
+  fetch('https://api.country.is')
+  .then( res => res.json())
+  .then(response => {
+      countryCode = response.country;
+      let country = countries.find(item => item.code === countryCode);
+      countryName = country.name;
+      document.getElementById('myInput').placeholder=countryName;
+      console.log("Country: ", countryName);
+      let newsType = document.getElementById("newsType");
+      newsType.innerHTML = "<h1>Headlines</h1>";
+      //fetchNewsDefault(e);
+  })
+  .catch((data, status) => {
+      console.log('Request failed');
+  })
+
+      //countryCode = document.getElementById("countryCode").value;
+      //console.log('window.onload',countryCode)
+
+      //let newsType = document.getElementById("newsType");
+      //newsType.innerHTML = "<h1>Headlines</h1>";
+      //fetchNewsDefault(e);
+};
 
 entertainmentBtn.addEventListener("click", function(e) {
     newsType = "Entertainment"
@@ -39,79 +63,25 @@ entertainmentBtn.addEventListener("click", function(e) {
 foodBtn.addEventListener("click", function(e) {
   newsType = "Food"
   document.getElementById("newsType").innerHTML = newsType;
+  console.log("newsType",newsType);
   fetchNews(e);
-
-  //console.log("clicked");
-  //newsType.innerHTML = "<h4>Food</h4>";
-  //fetchEntertainmentNews();
 });
+
 healthBtn.addEventListener("click", function(e) {
   newsType = "Health"
   document.getElementById("newsType").innerHTML = newsType;
+  console.log("newsType",newsType);
   fetchNews(e);
-
-  //fetchEntertainmentNews();
 });
 
-//searchBtn.addEventListener("click", function (e) {
-//  console.log("clicked");
+//function myTopic() {
+//  var x = document.getElementById("myBtn").value;
+//  document.getElementById("demo").innerHTML = x;
+//}
 
-//  //newsType.innerHTML = "<h4>Search: " + topic + "<h4>";
-//  fetchNews(e);
-//});
-
-
-function myTopic() {
-  var x = document.getElementById("myBtn").value;
-  document.getElementById("demo").innerHTML = x;
-}
-
-function fetchHeadlines(e) {
-  //e.preventDefault();
+async function fetchNewsDefault(e) {
   e.preventDefault();
-
-  let url = `https://newsdata.io/api/1/news?apikey=${API_KEY}`;
-
-  fetch(url, {
-    method: "GET",
-    headers: {},
-  })
-    .then((response) => {
-      console.log("response", response);
-      return response.json();
-    })
-    .then((data) => {
-      let filteredData = data.results.filter((i) => i.image_url !== null);
-      newsDataArr = filteredData;
-      console.log("newsDataArr", newsDataArr);
-      displayNews();
-
-      //console.log(data)
-      //data.results.forEach(results => {
-      //    let li = document.createElement('li');
-      //    let a = document.createElement('a');
-      //    a.setAttribute('href', results.link);
-      //    a.setAttribute('target', '_blank');
-      //    a.textContent = results.title;
-      //    li.appendChild(a);
-      //    newsList.appendChild(li);
-      //});
-    })
-    .catch((err) => {
-      console.log("Request Failed", err);
-    });
-}
-
-
-async function fetchNews(e) {
-
-  //let url = `https://newsdata.io/api/1/news?apikey=${apiKey}&q=${topic}`;
-  //let topic = "entertainment";
-  console.log(newsType)
-  let country = "id";
-
-  e.preventDefault();
-  let url = `https://newsdata.io/api/1/news?apikey=${API_KEY}&country=${country}&category=${newsType}`;
+  let url = `https://newsdata.io/api/1/news?apikey=${API_KEY}&country=${countryCode}&category=${newsType}`;
 
   const response = await fetch(url);
   if (!response.ok) {
@@ -122,30 +92,37 @@ async function fetchNews(e) {
     //throw new Error(message);
   } else {
     const data = await response.json();
-    const filteredData = await data.results;
-    //const filteredData = await data.results.filter(i => i.image_url !== null);
+    const filteredData = await data.results.filter(i => i.image_url !== null);
     newsDataArr = filteredData;
     console.log("newsDataArr", newsDataArr);
     displayNews();
   }
 }
 
-//function fetchNews() {
-//    //let url = `https://newsdata.io/api/1/news?apikey=${apiKey}&q=${topic}`;
+async function fetchNews(e) {
+  document.getElementById("newsdetailsHigh").innerHTML = ''
+  document.getElementById("newsdetailsMedium").innerHTML = ''
+  document.getElementById("newsdetailsLow").innerHTML = ''
 
-//    let url = `https://newsdata.io/api/1/news?apikey=${API_KEY}&country=id&category=entertainment,food,health,tourism`;
+  //let url = `https://newsdata.io/api/1/news?apikey=${apiKey}&q=${topic}`;
+  //let topic = "entertainment";
+  //console.log(newsType)
+  newsDataArr = '';
+  e.preventDefault();
+  let url = `https://newsdata.io/api/1/news?apikey=${API_KEY}&country=${countryCode}&category=${newsType}`;
 
-//    fetch(url).then((response) => {
-//        return response.json()
-//    }).then((data) => {
-//        let filteredData = data.results.filter(i => i.image_url !== null);
-//        newsDataArr = filteredData;
-//        console.log('newsDataArr', newsDataArr);
-//        displayNews();
-//    }).catch((error) => {
-//        //console.log(error)
-//    })
-//}
+  const response = await fetch(url);
+  if (!response.ok) {
+    newsdetailsHigh.innerHTML = "<h5>No data found.</h5>";
+    return;
+  } else {
+    const data = await response.json();
+    const filteredData = await data.results.filter(i => i.image_url !== null);
+    newsDataArr = filteredData;
+    displayNews();
+  }
+}
+
 
 function displayNews() {
   newsdetailsHigh.innnerHTML = "";
@@ -223,15 +200,12 @@ function displayNews() {
       //card.setAttribute("max-height", "50%");p-2
       var cardBody = document.createElement("div");
       cardBody.className = "card-body p-2";
-
       var img = document.createElement("div");
       img.className = "card-img-top";
-
       var image = document.createElement("img");
       image.setAttribute("height", "matchparent");
       image.setAttribute("width", "100%");
       image.src = newsDataArr[i].image_url;
-
       let pText = document.createTextNode("Source: ");
       let li = document.createElement("small");
       let a = document.createElement("a");
@@ -241,31 +215,23 @@ function displayNews() {
       a.textContent = newsDataArr[i].link;
       li.appendChild(pText);
       li.appendChild(a);
-
       let newsTitle = document.createElement("h5");
       newsTitle.className = "card-title";
       newsTitle.innerHTML = newsDataArr[i].title;
-
       let newsDescription = document.createElement("h6");
       newsDescription.className = "card-title text-truncate";
       newsDescription.innerHTML = newsDataArr[i].description;
       let newsContent = document.createElement("p");
-
       newsContent.className = "card-text text-truncate";
       newsContent.innerHTML = newsDataArr[i].content;
-
       img.appendChild(image);
       card.appendChild(img);
-
       cardBody.appendChild(newsTitle);
       cardBody.appendChild(newsDescription);
       cardBody.appendChild(newsContent);
       cardBody.appendChild(li);
-
       card.appendChild(cardBody);
-
       col.appendChild(card);
-
       newsdetailsMedium.appendChild(col);
       
     } else {
@@ -273,7 +239,6 @@ function displayNews() {
       col.className = "row g-2";
       var cardLeft = document.createElement("div");
       cardLeft.className = "col-md-6 ";
-      //card.setAttribute("max-height", "50%");p-2
       var cardRight = document.createElement("div");
       cardRight.className = "col-md-6 card-body p-2";
 
@@ -317,63 +282,9 @@ function displayNews() {
 
       col.appendChild(cardLeft);
       col.appendChild(cardRight);
-
-
       newsdetailsLow.appendChild(col);
     }
   }
 
-  //newsDataArr.forEach((news) => {
-  //  var col = document.createElement("div");
-  //  col.className =
-  //    "col-sm-6 .col-md-6 col-lg-6 .col-xl-2 mb-3 d-flex align-items-stretch";
-  //  var card = document.createElement("div");
-  //  card.className = "card";
-  //  //card.setAttribute("max-height", "50%");p-2
-  //  var cardBody = document.createElement("div");
-  //  cardBody.className = "card-body p-2";
 
-  //  var img = document.createElement("div");
-  //  img.className = "card-img-top";
-
-  //  var image = document.createElement("img");
-  //  image.setAttribute("height", "matchparent");
-  //  image.setAttribute("width", "100%");
-  //  image.src = news.image_url;
-
-  //  let pText = document.createTextNode('Source: ')
-  //  let li = document.createElement("small");
-  //  let a = document.createElement("a");
-  //  li.appendChild(a);
-  //  a.setAttribute("href", news.link);
-  //  a.setAttribute("target", "_blank");
-  //  a.textContent = news.link;
-  //  li.appendChild(pText);
-  //  li.appendChild(a);
-
-  //  let newsTitle = document.createElement("h5");
-  //  newsTitle.className = "card-title";
-  //  newsTitle.innerHTML = news.title;
-
-  //  let newsDescription = document.createElement("h6");
-  //  newsDescription.className = "card-title";
-  //  newsDescription.innerHTML = news.description;
-  //  let newsContent = document.createElement("p");
-
-  //  newsContent.className = "card-text  text-truncate";
-  //  newsContent.innerHTML = news.content;
-
-  //  img.appendChild(image);
-  //  card.appendChild(img);
-
-  //  cardBody.appendChild(newsTitle);
-  //  cardBody.appendChild(newsDescription);
-  //  cardBody.appendChild(newsContent);
-  //  cardBody.appendChild(li);
-
-  //  card.appendChild(cardBody);
-
-  //  col.appendChild(card);
-  //  newsdetails.appendChild(col);
-  //});
 }

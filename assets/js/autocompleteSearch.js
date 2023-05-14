@@ -1,19 +1,5 @@
 import {countries} from './countries.js'
-var countryCode = '';
-var countryName = '';
 
-fetch('https://api.country.is')
-.then( res => res.json())
-.then(response => {
-    countryCode = response.country;
-    let country = countries.find(item => item.code === countryCode);
-    countryName = country.name;
-    document.getElementById('myInput').placeholder=countryName;
-    console.log("Country: ", countryName);
- })
- .catch((data, status) => {
-    console.log('Request failed');
- })
 
 // fetch('https://api.country.is')
 //.then( res => res.json())
@@ -27,7 +13,7 @@ fetch('https://api.country.is')
 
 
 function autocomplete(inp, arr) {
-    console.log('arr',arr[0].name)
+    //console.log('arr',arr[0].name)
     /*the autocomplete function takes two arguments,
     the text field element and an array of possible autocompleted values:*/
     var currentFocus;
