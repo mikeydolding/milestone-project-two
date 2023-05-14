@@ -222,20 +222,22 @@ Click [Here](https://help.github.com/en/github/creating-cloning-and-archiving-re
 
 -[Youtube video](https://youtu.be/KHF6nysy0-c): Hacking the Bootstrap 5 Carousel: Consistent Height Carousels with CSS Gradients and Object Fit.
 
--[w3schools]https://www.w3schools.com/howto/howto_js_autocomplete.asp: Create an Autocomplete Form
+-[w3schools](https://www.w3schools.com/howto/howto_js_autocomplete.asp): Create an Autocomplete Form.
+
+-[How to simplify your codebase with map(), reduce(), and filter() in JavaScript](https://www.freecodecamp.org/news/15-useful-javascript-examples-of-map-reduce-and-filter-74cbbb5e0a1f):A simple search (case-insensitive).
 
 ### Content
 
--   All content was written by the developer.
+- All content was written by the developer.
 
 ### Media
 
 - Thank-you-word-cloud.jpg, [Wikimedia Commons](https://creativecommons.org/licenses/by-sa/4.0) CC BY-SA 4.0, via Wikimedia Commons
 
--   All Images were created by the developer.
+- All Images were created by the developer.
 
 ### Acknowledgements
 
--   My Mentor for continuous helpful feedback.
+- My Mentor for continuous helpful feedback.
 
--   Tutor support at Code Institute for their support.
+- Tutor support at Code Institute for their support.
