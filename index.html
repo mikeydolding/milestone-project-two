@@ -20,7 +20,29 @@
 
     <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
 
-     <script src="assets/js/autocompleteSearch.js" type="module "></script>
+     <script src="assets/js/autocompleteSearch.js" type="module"></script>
+
+    <script>
+      function openPage(pageName, elmnt) {
+        // Hide all elements with class="tabcontent" by default */
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display ="none";
+        }
+        // Remove the background color of all tablinks/buttons
+        //tablinks = document.getElementsByClassName("tablink");
+        //for (i = 0; i < tablinks.length; i++) {
+        //  tablinks[i].style.backgroundColor ="";
+        //}
+        // Show the specific tab content
+        document.getElementById(pageName).style.display ="block";
+        // Add the specific color to the button used to open the tab content
+        //elmnt.style.backgroundColor = color;
+      }
+      // Get the element with id="defaultOpen" and click on it
+      document.getElementById("defaultOpen").click(); 
+    </script>
   </head>
 
   <body>
@@ -60,19 +82,14 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="index.html"
-                  >Home</a
+                <a class="nav-link tablink" onclick="openPage('Home', this)" href="index.html">Home</a
                 >
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="about.html" 
-                  >About</a
-                >
+                <a class="nav-link tablink" onclick="openPage('About', this)" href="#About">About</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#entertainment" id="entertainment"
-                  >Entertainment</a
-                >
+                <a class="nav-link" href="#entertainment" id="entertainment">Entertainment</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#food" id="food">Food</a>
@@ -81,16 +98,14 @@
                 <a class="nav-link" href="#health" id="health">Health</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="contact.html">Contact Us</a>
+                <a class="nav-link tablink" onclick="openPage('Contact', this)" href="#Contact">Contact Us</a>
               </li>
             </ul>
             <form autocomplete="off" class="search d-flex">
               <div class="autocomplete">
                 <input class="input form-control me-2" type="text" id="myInput" placeholder="Search Country" aria-label="Search">
               </div>
-              
-              <button class="btn btn-outline-success" type="submit" id="searchBtn">Search</button>
-                 
+               <button class="btn btn-outline-success" type="submit" id="searchBtn">Search</button>               
               <div id="countryCode"></div>
           </form>
           </div>
@@ -98,34 +113,9 @@
       </nav>
     </section>
 
-    <div class="container mt-1">
-      <h1 class="subtitle" id="newsType"></h1>
 
-      <div class="row">
-        <div class="row" id="newsdetailsHigh"></div>
-      </div>
-      <!--<hr />-->
 
-      <!--End High Priority / Articles of the Day-->
-
-      <!--Low Priority / Articles of the Day-->
-      <div class="row">
-        <div class="col-md-6 col-sm-12">
-          <div id="newsdetailsLow"></div>
-        </div>
-        <!--End Low Priority / Articles of the Day-->
-
-        <!--Medium Priority / Articles of the Day-->
-        <div class="col-md-6 col-sm-12">
-          <div class="row" id="newsdetailsMedium"></div>
-
-        </div>
-
-        <!--End Medium Priority / Articles of the Day-->
-      </div>
-    </div>
-
-    <div class="container">
+  <div id="About" class="container tabcontent">
       <div
         id="carouselExampleIndicators"
         class="carousel slide carousel-fade"
@@ -328,10 +318,8 @@
           Sign Up!
         </button>
       </div>
-
       <!-- /.callout -->
       <br />
-
       <!-- Quotes -->
       <!--<div class="container-wrapper">-->
       <!--<div class="container quotes-container content-container">-->
@@ -413,7 +401,6 @@
       <!--</div>-->
       <!--</div>-->
       <hr />
-
       <!-- Features -->
     <div class="container-wrapper container-wrapper--red">
       <div class="container features-container content-container">
@@ -450,7 +437,97 @@
           </section>
           <!-- /.features -->
       </div>
+    </div>
   </div>
+
+  <div id="Contact" class="container tabcontent">
+    <div class="row">
+      <div class="col">
+        <h3 class="contact-heading uppercase text-center">Contact Us?</h3>
+        <div class="container">
+          <form
+            action="https://formsubmit.co/3ff3c7d19757c90df59af76b7af0b0b9"
+            method="POST"
+          >
+            <div class="form-group">
+              <div class="form-row">
+                <div class="col">
+                  <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Full Name</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      name="name"
+                      placeholder="Full name"
+                      require
+                    />
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label"
+                      >Email address</label>
+                    <input
+                      type="email"
+                      name="email"
+                      class="form-control"
+                      placeholder="name@example.com"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="mb-3">
+                    <input
+                      type="hidden"
+                      name="_next"
+                      value="http://127.0.0.1:3000/webzinoy/index.html"
+                    />
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="mb-3">
+                    <textarea
+                      placeholder="Your Message"
+                      class="form-control"
+                      name="message"
+                      rows="10"
+                      required
+                    ></textarea>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-lg btn-dark btn-block">
+              Submit Form
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="Home" class="container mt-1">
+    <h1 class="subtitle" id="newsType"></h1>
+    <div class="row">
+      <div class="row" id="newsdetailsHigh"></div>
+    </div>
+    <!--<hr />-->
+    <!--End High Priority / Articles of the Day-->
+    <!--Low Priority / Articles of the Day-->
+    <div class="row">
+      <div class="col-md-6 col-sm-12">
+        <div id="newsdetailsLow"></div>
+      </div>
+      <!--End Low Priority / Articles of the Day-->
+      <!--Medium Priority / Articles of the Day-->
+      <div class="col-md-6 col-sm-12">
+        <div class="row" id="newsdetailsMedium"></div>
+      </div>
+      <!--End Medium Priority / Articles of the Day-->
+    </div>
+  </div>
+
 
     <br /><br />
 
@@ -615,25 +692,62 @@
 
   <script src="assets/js/jquery.min.jsm.js"></script>
   <script src="assets/js/popper.min.js"></script>
-  <script src="assets/js/bootstrap/bootstrap.min.js "></script>
-  <script src="assets/js/autocompleteSearch.js" type="module "></script>
-  <script src="assets/js/main.js" type="module "></script>
+  <script src="assets/js/bootstrap/bootstrap.min.js"></script>
+  <script src="assets/js/autocompleteSearch.js" type="module"></script>
+  <script src="assets/js/main.js" type="module"></script>
 
-  <!--<script>
-
-    fetch('https://api.country.is')
-.then( res => res.json())
-.then(response => {
-    console.log("Country: ", response.country);
- })
- .catch((data, status) => {
-    console.log('Request failed');
- })
-  </script>-->
-  
-  <!--<script>
+  <script src="https://smtpjs.com/v3/smtp.js"></script>
+  <script type="text/javascript">
+    function sendEmail(event) {
+        event.preventDefault();
+        console.log("contactForm", event);
+        Email.send({
+                Host:"smtp.elasticemail.com",
+                Username:"mikehdolding@proton.me",
+                Password:"F564735E41BA2B601D9E4A16662B48169D57",
+                To:"papayob820@in2reach.com",
+                From:"mikehdolding@proton.me",
+                Subject:"Sending Email using javascript",
+                Body:"Well that was easy!! ",
+                //Attachments: [{
+                //    name:"File_Name_with_Extension",
+                //    path:"Full Path of the file"
+                //}]
+            })
+            .then(
+              alert("Email Sent")
+                //function(response) {
+                //    console.log("SUCCESS", response);
+                //},
+                //function(error) {
+                //    console.log("FAILED", error);
+                //}
+            );
+        return false; // To block from loading a new page
+    }
+  </script>
+  <!--
+  <script>
     $(function () {
-      $("#header-navbar ").load("header-navbar.html ");
+      $("#header-navbar").load("header-navbar.html");
     });
   </script>-->
+
+    <!--<script>
+
+      fetch('https://api.country.is')
+  .then( res => res.json())
+  .then(response => {
+      console.log("Country:", response.country);
+  })
+  .catch((data, status) => {
+      console.log('Request failed');
+  })
+    </script>-->
+    
+    <!--<script>
+      $(function () {
+        $("#header-navbar").load("header-navbar.html");
+      });
+    </script>-->
 </html>
