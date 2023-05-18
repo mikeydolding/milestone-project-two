@@ -8,6 +8,7 @@ const API_KEY = MY_API_KEY;
 const searchBtn = document.getElementById("searchCountry");
 const entertainmentBtn = document.getElementById("entertainment");
 const foodBtn = document.getElementById("food");
+const environmentBtn = document.getElementById("environment");
 const technologyBtn = document.getElementById("technology");
 const businessBtn = document.getElementById("business");
 
@@ -44,7 +45,6 @@ searchBtn.addEventListener("click", function (e) {
 entertainmentBtn.addEventListener("click", function (e) {
   newsType = "entertainment";
   document.getElementById("newsType").innerHTML = newsType;
-  console.log("EntertainmentNewsType", newsType);
   fetchNews(e);
   //newsType.innerHTML = "<h4>Entertainment</h4>";
   //fetchEntertainmentNews();
@@ -53,21 +53,24 @@ entertainmentBtn.addEventListener("click", function (e) {
 foodBtn.addEventListener("click", function (e) {
   newsType = "food,health";
   document.getElementById("newsType").innerHTML = newsType;
-  console.log("FoodNewsType", newsType);
   fetchNews(e);
 });
 
 technologyBtn.addEventListener("click", function (e) {
   newsType = "technology,science";
   document.getElementById("newsType").innerHTML = newsType;
-  console.log("technologyNewsType", newsType);
   fetchNews(e);
 });
 
 businessBtn.addEventListener("click", function (e) {
   newsType = "business,tourism";
   document.getElementById("newsType").innerHTML = newsType;
-  console.log("businessNewsType", newsType);
+  fetchNews(e);
+});
+
+environmentBtn.addEventListener("click", function (e) {
+  newsType = "environment";
+  document.getElementById("newsType").innerHTML = newsType;
   fetchNews(e);
 });
 
@@ -86,7 +89,7 @@ if (newsType === "home" && countryCode === "") {
         console.log("Country: ", countryName);
         let newsType = document.getElementById("newsType");
         //newsType.innerHTML = "<h1>Headlines</h1>";
-        newsType.innerHTML = `<div class="d-flex justify-content-center"><div id="loader"><img src="assets/css/loader.gif" alt="loading..." /></div></div>`
+        newsType.innerHTML = `<div class="d-flex justify-content-center"><div id="loader"><img src="assets/images/loader.gif" alt="O" /></div></div>`
         fetchNewsDefault(e);
       })
       .catch((data, status) => {

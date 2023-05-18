@@ -20,7 +20,7 @@
 
     <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
 
-     <!--<script src="assets/js/autocompleteSearch.js" type="module"></script>-->
+    <!--<script src="assets/js/autocompleteSearch.js" type="module"></script>-->
 
     <script>
       function openPage(pageName, elmnt) {
@@ -28,7 +28,7 @@
         var i, tabcontent, tablinks;
         tabcontent = document.getElementsByClassName("tabcontent");
         for (i = 0; i < tabcontent.length; i++) {
-          tabcontent[i].style.display ="none";
+          tabcontent[i].style.display = "none";
         }
         // Remove the background color of all tablinks/buttons
         //tablinks = document.getElementsByClassName("tablink");
@@ -36,12 +36,12 @@
         //  tablinks[i].style.backgroundColor ="";
         //}
         // Show the specific tab content
-        document.getElementById(pageName).style.display ="block";
+        document.getElementById(pageName).style.display = "block";
         // Add the specific color to the button used to open the tab content
         //elmnt.style.backgroundColor = color;
       }
       // Get the element with id="defaultOpen" and click on it
-      //document.getElementById("Home").click(); 
+      //document.getElementById("Home").click();
     </script>
   </head>
 
@@ -52,15 +52,30 @@
         <button
           type="button"
           class="btn-close"
-          data-bs-dismiss="alert" 
+          data-bs-dismiss="alert"
         ></button>
-        <p><strong data-bs-toggle="modal"
-          data-bs-target="#signUpModal">Special Offer! Contact us to book a thirty minute consultation with our experienced travel consultants.<del>€129.99</del> <mark>€99.99</mark></strong></p>
+        <p>
+          <strong data-bs-toggle="modal" data-bs-target="#signUpModal"
+            >Special Offer! Contact us to book a thirty minute consultation with
+            our experienced travel consultants.<del>€129.99</del>
+            <mark>€99.99</mark></strong
+          >
+        </p>
       </div>
       <div class="container py-md-1">
         <!--<div class="clearfix">-->
 
-        <h1 display-1 class="mx-auto"><a class="text-decoration-none" href="index.html"><p class="text-dark">Webzine <img src="assets/images/webzineoylogo.png" alt="" width="40" height="40">y!</p></a></h1>
+        <h1 display-1 class="mx-auto">
+          <a class="text-decoration-none" href="index.html">
+            <p class="text-dark">
+              Webzine <img id="logo" class="d-inline-block align-text-bottom" src="assets/images/loader.gif"  height="50"  alt="O" />y!
+            </p></a
+          >
+          <!--<a class="navbar-brand" href="#">
+            <img src="assets/images/loader.gif" alt="" width="30" height="24" class="d-inline-block align-text-top">
+            Bootstrap
+          </a>-->
+        </h1>
 
         <p class="lead mx-auto">Information on the ground</p>
         <!--</div>-->
@@ -85,46 +100,101 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link" onclick="openPage('Home', this)" id="Home" href="index.html">Home</a
+                <a
+                  class="nav-link"
+                  onclick="openPage('Home', this)"
+                  id="Home"
+                  href="index.html"
+                  >Home</a
                 >
               </li>
               <li class="nav-item">
-                <a class="nav-link" onclick="openPage('About', this)" href="#About">About</a>
+                <a
+                  class="nav-link"
+                  onclick="openPage('About', this)"
+                  href="#About"
+                  >About</a
+                >
               </li>
               <li class="nav-item">
-                <a class="nav-link" onclick="openPage('Home', this)" id="entertainment" href="#entertainment">Entertainment</a>
+                <a
+                  class="nav-link"
+                  onclick="openPage('Home', this)"
+                  id="entertainment"
+                  href="#entertainment"
+                  >Entertainment</a
+                >
               </li>
               <li class="nav-item">
-                <a class="nav-link" onclick="openPage('Home', this)" id="food" href="#food&health">Food & Health</a>
+                <a
+                  class="nav-link"
+                  onclick="openPage('Home', this)"
+                  id="food"
+                  href="#food&health"
+                  >Food & Health</a
+                >
               </li>
               <li class="nav-item">
-                <a class="nav-link" onclick="openPage('Home', this)" id="technology" href="#technology&science">Technology & Science</a>
+                <a
+                  class="nav-link"
+                  onclick="openPage('Home', this)"
+                  id="technology"
+                  href="#technology&science"
+                  >Technology & Science</a
+                >
               </li>
               <li class="nav-item">
-                <a class="nav-link" onclick="openPage('Home', this)" id="environment" href="#environment">Environment</a>
+                <a
+                  class="nav-link"
+                  onclick="openPage('Home', this)"
+                  id="environment"
+                  href="#environment"
+                  >Environment</a
+                >
               </li>
               <li class="nav-item">
-                <a class="nav-link" onclick="openPage('Home', this)" id="business" href="#business">Business</a>
+                <a
+                  class="nav-link"
+                  onclick="openPage('Home', this)"
+                  id="business"
+                  href="#business"
+                  >Business</a
+                >
               </li>
               <li class="nav-item">
-                <a class="nav-link" onclick="openPage('Contact', this)" href="#Contact">Contact Us</a>
+                <a
+                  class="nav-link"
+                  onclick="openPage('Contact', this)"
+                  href="#Contact"
+                  >Contact Us</a
+                >
               </li>
             </ul>
             <form autocomplete="off" class="search d-flex">
               <div class="autocomplete">
-                <input class="input form-control me-2" type="text" id="inputCountry" placeholder="Search Country" aria-label="Search">
+                <input
+                  class="input form-control me-2"
+                  type="text"
+                  id="inputCountry"
+                  placeholder="Search Country"
+                  aria-label="Search"
+                />
               </div>
-               <button class="btn btn-outline-success" type="submit" id="searchCountry">Search</button>               
+              <button
+                class="btn btn-outline-success"
+                type="submit"
+                id="searchCountry"
+              >
+                Search
+              </button>
               <div id="countryCode"></div>
-          </form>
+            </form>
           </div>
         </div>
       </nav>
     </section>
 
-
-
-  <div id="About" class="container tabcontent">
+    <div id="About" class="container tabcontent">
       <div
         id="carouselExampleIndicators"
         class="carousel slide carousel-fade"
@@ -313,7 +383,8 @@
         <p class="lead">
           <strong
             >Sign up today to book a thirty minute consultation with our
-            specialist travel consultants.<del>€129.99</del> <mark>€99.99</mark></strong
+            specialist travel consultants.<del>€129.99</del>
+            <mark>€99.99</mark></strong
           >
           <!--<strong><mark>First month is free!</mark></strong></p>-->
         </p>
@@ -411,135 +482,162 @@
       <!--</div>-->
       <hr />
       <!-- Features -->
-    <div class="container-wrapper container-wrapper--red">
-      <div class="container features-container content-container">
+      <div class="container-wrapper container-wrapper--red">
+        <div class="container features-container content-container">
           <section class="features">
-              <div class="row">
-                  <div class="col-12 page-header">
-                      <h2 class="text-uppercase">Features:</h2>
-                      <hr class="block-divider block-divider--short block-divider--white">
-                  </div>
+            <div class="row">
+              <div class="col-12 page-header">
+                <h2 class="text-uppercase">Features:</h2>
+                <hr
+                  class="block-divider block-divider--short block-divider--white"
+                />
               </div>
-              <div class="row">
-                  <div class="col-12 col-md-6 col-lg-4">
-                      <div class="feature">
-                          <h3><i class="fas fa-gift d-none d-sm-block"></i> Feature 1 <span class="badge badge-success">NEW!</span></h3>
-                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                          <p><a class="btn btn-sm btn-light" href="">Read More</a></p>
-                      </div>
-                  </div>
-                  <div class="col-12 col-md-6 col-lg-4">
-                      <div class="feature">
-                          <h3><i class="fas fa-credit-card d-none d-sm-block"></i> Feature 2</h3>
-                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                          <p><a class="btn btn-sm btn-light" href="">Read More</a></p>
-                      </div>
-                  </div>
-                  <div class="col-12 d-md-none d-lg-block col-lg-4">
-                      <div class="feature">
-                          <h3><i class="fas fa-times-circle d-none d-sm-block"></i> Feature 3</h3>
-                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                          <p><a class="btn btn-sm btn-light" href="">Read More</a></p>
-                      </div>
-                  </div>
+            </div>
+            <div class="row">
+              <div class="col-12 col-md-6 col-lg-4">
+                <div class="feature">
+                  <h3>
+                    <i class="fas fa-gift d-none d-sm-block"></i> Feature 1
+                    <span class="badge badge-success">NEW!</span>
+                  </h3>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                  </p>
+                  <p><a class="btn btn-sm btn-light" href="">Read More</a></p>
+                </div>
               </div>
-          </section>
-          <!-- /.features -->
-      </div>
-    </div>
-  </div>
-
-  <div id="Contact" class="container tabcontent">
-    <div class="row">
-      <div class="col">
-        <h3 class="contact-heading uppercase text-center">Contact Us?</h3>
-        <div class="container">
-          <form
-            action="https://formsubmit.co/3ff3c7d19757c90df59af76b7af0b0b9"
-            method="POST"
-          >
-            <div class="form-group">
-              <div class="form-row">
-                <div class="col">
-                  <div class="mb-3">
-                    <label for="exampleFormControlInput1" class="form-label">Full Name</label>
-                    <input
-                      type="text"
-                      class="form-control"
-                      name="name"
-                      placeholder="Full name"
-                      require
-                    />
-                  </div>
+              <div class="col-12 col-md-6 col-lg-4">
+                <div class="feature">
+                  <h3>
+                    <i class="fas fa-credit-card d-none d-sm-block"></i> Feature
+                    2
+                  </h3>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                  </p>
+                  <p><a class="btn btn-sm btn-light" href="">Read More</a></p>
                 </div>
-                <div class="col">
-                  <div class="mb-3">
-                    <label for="exampleFormControlInput1" class="form-label"
-                      >Email address</label>
-                    <input
-                      type="email"
-                      name="email"
-                      class="form-control"
-                      placeholder="name@example.com"
-                      required
-                    />
-                  </div>
-                </div>
-                <div class="col">
-                  <div class="mb-3">
-                    <input
-                      type="hidden"
-                      name="_next"
-                      value="http://127.0.0.1:3000/webzinoy/index.html"
-                    />
-                  </div>
-                </div>
-                <div class="col">
-                  <div class="mb-3">
-                    <textarea
-                      placeholder="Your Message"
-                      class="form-control"
-                      name="message"
-                      rows="10"
-                      required
-                    ></textarea>
-                  </div>
+              </div>
+              <div class="col-12 d-md-none d-lg-block col-lg-4">
+                <div class="feature">
+                  <h3>
+                    <i class="fas fa-times-circle d-none d-sm-block"></i>
+                    Feature 3
+                  </h3>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                  </p>
+                  <p><a class="btn btn-sm btn-light" href="">Read More</a></p>
                 </div>
               </div>
             </div>
-            <button type="submit" class="btn btn-lg btn-dark btn-block">
-              Submit Form
-            </button>
-          </form>
+          </section>
+          <!-- /.features -->
         </div>
       </div>
     </div>
-  </div>
 
-  <div id="Home" class="container mt-1">
-    <h1 class="subtitle" id="newsType"></h1>
-    <div class="row">
-      <div class="row" id="newsdetailsHigh"></div>
-    </div>
-    <!--<hr />-->
-    <!--End High Priority / Articles of the Day-->
-    <!--Low Priority / Articles of the Day-->
-    <div class="row">
-      <div class="col-md-6 col-sm-12">
-        <div id="newsdetailsLow"></div>
+    <div id="Contact" class="container tabcontent">
+      <div class="row">
+        <div class="col">
+          <h3 class="contact-heading uppercase text-center">Contact Us?</h3>
+          <div class="container">
+            <form
+              action="https://formsubmit.co/3ff3c7d19757c90df59af76b7af0b0b9"
+              method="POST"
+            >
+              <div class="form-group">
+                <div class="form-row">
+                  <div class="col">
+                    <div class="mb-3">
+                      <label for="exampleFormControlInput1" class="form-label"
+                        >Full Name</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control"
+                        name="name"
+                        placeholder="Full name"
+                        require
+                      />
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="mb-3">
+                      <label for="exampleFormControlInput1" class="form-label"
+                        >Email address</label
+                      >
+                      <input
+                        type="email"
+                        name="email"
+                        class="form-control"
+                        placeholder="name@example.com"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="mb-3">
+                      <input
+                        type="hidden"
+                        name="_next"
+                        value="http://127.0.0.1:3000/webzinoy/index.html"
+                      />
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="mb-3">
+                      <textarea
+                        placeholder="Your Message"
+                        class="form-control"
+                        name="message"
+                        rows="10"
+                        required
+                      ></textarea>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <button type="submit" class="btn btn-lg btn-dark btn-block">
+                Submit Form
+              </button>
+            </form>
+          </div>
+        </div>
       </div>
-      <!--End Low Priority / Articles of the Day-->
-      <!--Medium Priority / Articles of the Day-->
-      <div class="col-md-6 col-sm-12">
-        <div class="row" id="newsdetailsMedium"></div>
-      </div>
-      <!--End Medium Priority / Articles of the Day-->
     </div>
-  </div>
 
+    <div id="Home" class="container mt-1">
+      <h2 class="subtitle text-capitalize" id="newsType"></h2>
+      <div class="row">
+        <div class="row" id="newsdetailsHigh"></div>
+      </div>
+      <!--<hr />-->
+      <!--End High Priority / Articles of the Day-->
+      <!--Low Priority / Articles of the Day-->
+      <div class="row">
+        <div class="col-md-6 col-sm-12">
+          <div id="newsdetailsLow"></div>
+        </div>
+        <!--End Low Priority / Articles of the Day-->
+        <!--Medium Priority / Articles of the Day-->
+        <div class="col-md-6 col-sm-12">
+          <div class="row" id="newsdetailsMedium"></div>
+        </div>
+        <!--End Medium Priority / Articles of the Day-->
+      </div>
+    </div>
 
-    <br /><br />
-<!--
+    <!--
     <footer class="container">
       <div class="row">
         <div class="col-lg-4 col-sm-12">
@@ -608,7 +706,6 @@
         </div>
       </div>
     </footer>-->
-    
 
     <!-- The Modal -->
     <div class="modal" id="signUpModal">
@@ -617,11 +714,7 @@
           <!-- Modal Header -->
           <div class="modal-header">
             <h4 class="modal-title">Modal Heading</h4>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-            ></button>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
           </div>
 
           <!-- Modal body -->
@@ -701,36 +794,33 @@
   <script src="assets/js/bootstrap/bootstrap.min.js"></script>
   <script src="assets/js/autocompleteSearch.js" type="module"></script>
   <script src="assets/js/main.js" type="module"></script>
-
   <script src="https://smtpjs.com/v3/smtp.js"></script>
   <script type="text/javascript">
     function sendEmail(event) {
-        event.preventDefault();
-        console.log("contactForm", event);
-        Email.send({
-                Host:"smtp.elasticemail.com",
-                Username:"mikehdolding@proton.me",
-                Password:"F564735E41BA2B601D9E4A16662B48169D57",
-                To:"papayob820@in2reach.com",
-                From:"mikehdolding@proton.me",
-                Subject:"Sending Email using javascript",
-                Body:"Well that was easy!! ",
-                //Attachments: [{
-                //    name:"File_Name_with_Extension",
-                //    path:"Full Path of the file"
-                //}]
-            })
-            .then(
-              alert("Email Sent")
-                //function(response) {
-                //    console.log("SUCCESS", response);
-                //},
-                //function(error) {
-                //    console.log("FAILED", error);
-                //}
-            );
-        return false; // To block from loading a new page
+      event.preventDefault();
+      console.log("contactForm", event);
+      Email.send({
+        Host: "smtp.elasticemail.com",
+        Username: "mikehdolding@proton.me",
+        Password: "F564735E41BA2B601D9E4A16662B48169D57",
+        To: "papayob820@in2reach.com",
+        From: "mikehdolding@proton.me",
+        Subject: "Sending Email using javascript",
+        Body: "Well that was easy!! ",
+        //Attachments: [{
+        //    name:"File_Name_with_Extension",
+        //    path:"Full Path of the file"
+        //}]
+      }).then(
+        alert("Email Sent")
+        //function(response) {
+        //    console.log("SUCCESS", response);
+        //},
+        //function(error) {
+        //    console.log("FAILED", error);
+        //}
+      );
+      return false; // To block from loading a new page
     }
   </script>
- 
 </html>

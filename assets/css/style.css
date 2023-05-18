@@ -26,7 +26,6 @@ body {
     color: #555555;
 }
 
-
 /*--------------------------------------------Footer*/
 /*
 footer {
@@ -119,7 +118,6 @@ footer .cv-pdf i:hover {
   body {
     font: 16px Arial;
   }
-  
   
   /*the container must be positioned relative:*/
   
@@ -215,16 +213,21 @@ footer .cv-pdf i:hover {
   /*height: 100%;*/
 }
 
+/*#logo {
+  vertical-align: text-bottom;
+  width:5%;
+  height:5%;
+}*/
+
 #loader {
-  .loader{
+  .loader {
     position: fixed;
-    left: 50%;
-    top: 50%;
-    display: block;
-    width: 100%;
-    height: 100%;
-    z-index: 9999;
- 
+    /*left: 50%;
+    top: 50%;*/
+    /*display: block;*/
+    /*width: 100%;
+    height: 100%;*/
+    /*z-index: 9999;*/
   }
 }
 
