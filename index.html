@@ -20,7 +20,7 @@
 
     <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
 
-     <script src="assets/js/autocompleteSearch.js" type="module"></script>
+     <!--<script src="assets/js/autocompleteSearch.js" type="module"></script>-->
 
     <script>
       function openPage(pageName, elmnt) {
@@ -41,7 +41,7 @@
         //elmnt.style.backgroundColor = color;
       }
       // Get the element with id="defaultOpen" and click on it
-      document.getElementById("defaultOpen").click(); 
+      //document.getElementById("Home").click(); 
     </script>
   </head>
 
@@ -101,7 +101,7 @@
                 <a class="nav-link" onclick="openPage('Home', this)" id="environment" href="#environment">Environment</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" onclick="openPage('Home', this)" id="business" href="#business&politics">Business & Politics</a>
+                <a class="nav-link" onclick="openPage('Home', this)" id="business" href="#business">Business</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" onclick="openPage('Contact', this)" href="#Contact">Contact Us</a>
@@ -109,9 +109,9 @@
             </ul>
             <form autocomplete="off" class="search d-flex">
               <div class="autocomplete">
-                <input class="input form-control me-2" type="text" id="myInput" placeholder="Search Country" aria-label="Search">
+                <input class="input form-control me-2" type="text" id="inputCountry" placeholder="Search Country" aria-label="Search">
               </div>
-               <button class="btn btn-outline-success" type="submit" id="searchBtn">Search</button>               
+               <button class="btn btn-outline-success" type="submit" id="searchCountry">Search</button>               
               <div id="countryCode"></div>
           </form>
           </div>
@@ -536,7 +536,7 @@
 
 
     <br /><br />
-
+<!--
     <footer class="container">
       <div class="row">
         <div class="col-lg-4 col-sm-12">
@@ -557,11 +557,8 @@
               <i class="fas fa-file-download"></i>
               <span class="sr-only">Download link.</span>
               <i class="fas fa-user"></i>
-              <!-- uses solid style -->
               <i class="far fa-user"></i>
-              <!-- uses regular style -->
               <i class="fab fa-github-square"></i>
-              <!-- uses brands style -->
             </a>
           </p>
         </div>
@@ -607,7 +604,7 @@
           </ul>
         </div>
       </div>
-    </footer>
+    </footer>-->
     
 
     <!-- The Modal -->
@@ -732,28 +729,5 @@
         return false; // To block from loading a new page
     }
   </script>
-  <!--
-  <script>
-    $(function () {
-      $("#header-navbar").load("header-navbar.html");
-    });
-  </script>-->
-
-    <!--<script>
-
-      fetch('https://api.country.is')
-  .then( res => res.json())
-  .then(response => {
-      console.log("Country:", response.country);
-  })
-  .catch((data, status) => {
-      console.log('Request failed');
-  })
-    </script>-->
-    
-    <!--<script>
-      $(function () {
-        $("#header-navbar").load("header-navbar.html");
-      });
-    </script>-->
+ 
 </html>

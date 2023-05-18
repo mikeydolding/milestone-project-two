@@ -1,96 +1,101 @@
 import { MY_API_KEY } from "./config.js";
-import {countries} from './countries.js'
-
+import { countries } from "./countries.js";
+//import * as Search from './autocompleteSearch';
 //const topic = document.getElementById("newsType");
 
 const API_KEY = MY_API_KEY;
 
+const searchBtn = document.getElementById("searchCountry");
 const entertainmentBtn = document.getElementById("entertainment");
 const foodBtn = document.getElementById("food");
 const technologyBtn = document.getElementById("technology");
 const businessBtn = document.getElementById("business");
 
 //const search = document.querySelector('.search');
-var input = document.querySelector(".input");
+var input = document.querySelector("inputCountry");
 //const newsList = document.querySelector('.card-title');
 var newsQuery = document.getElementById("newsQuery");
 
 var newsdetailsHigh = document.getElementById("newsdetailsHigh");
 var newsdetailsMedium = document.getElementById("newsdetailsMedium");
-var newsdetailsLow= document.getElementById("newsdetailsLow");
+var newsdetailsLow = document.getElementById("newsdetailsLow");
 
 var newsTitle = document.getElementById("newsTitle");
 var newsContent = document.getElementById("newsContent");
 var newsDescription = document.getElementById("newsDescription");
 
 var newsDataArr = [];
-var newsType = 'Home';
-var countryCode = '';
-var countryName = '';
+var newsType = "home";
+var countryCode = "vi";
+var countryName = "";
 
+searchBtn.addEventListener("click", function (e) {
+  countryCode = document.getElementById("inputCountry").value;
+  console.log("Search Button countryCode", countryCode);
 
-entertainmentBtn.addEventListener("click", function(e) {
-  newsType = "entertainment"
+  //document.getElementById("newsType").innerHTML = newsType;
+  //console.log("EntertainmentNewsType",newsType);
+  fetchNewsDefault(e);
+  //newsType.innerHTML = "<h4>Entertainment</h4>";
+  //fetchEntertainmentNews();
+});
+
+entertainmentBtn.addEventListener("click", function (e) {
+  newsType = "entertainment";
   document.getElementById("newsType").innerHTML = newsType;
-  console.log("EntertainmentNewsType",newsType);
+  console.log("EntertainmentNewsType", newsType);
   fetchNews(e);
-//newsType.innerHTML = "<h4>Entertainment</h4>";
-//fetchEntertainmentNews();
+  //newsType.innerHTML = "<h4>Entertainment</h4>";
+  //fetchEntertainmentNews();
 });
 
-foodBtn.addEventListener("click", function(e) {
-newsType = "food,health"
-document.getElementById("newsType").innerHTML = newsType;
-console.log("FoodNewsType",newsType);
-fetchNews(e);
-});
-
-technologyBtn.addEventListener("click", function(e) {
-newsType = "technology,science"
-document.getElementById("newsType").innerHTML = newsType;
-console.log("technologyNewsType",newsType);
-fetchNews(e);
-});
-
-
-businessBtn.addEventListener("click", function(e) {
-  newsType = "business,politics"
+foodBtn.addEventListener("click", function (e) {
+  newsType = "food,health";
   document.getElementById("newsType").innerHTML = newsType;
-  console.log("businessNewsType",newsType);
+  console.log("FoodNewsType", newsType);
   fetchNews(e);
-  });
+});
 
-if(newsType === 'Home'){
-  console.log('HomenewsType',newsType)
-  window.onload = function(e) {
-    fetch('https://api.country.is')
-    .then( res => res.json())
-    .then(response => {
+technologyBtn.addEventListener("click", function (e) {
+  newsType = "technology,science";
+  document.getElementById("newsType").innerHTML = newsType;
+  console.log("technologyNewsType", newsType);
+  fetchNews(e);
+});
+
+businessBtn.addEventListener("click", function (e) {
+  newsType = "business,tourism";
+  document.getElementById("newsType").innerHTML = newsType;
+  console.log("businessNewsType", newsType);
+  fetchNews(e);
+});
+
+if (newsType === "home") {
+  console.log("HomenewsType", newsType);
+  window.onload = function (e) {
+    fetch("https://api.country.is")
+      .then((res) => res.json())
+      .then((response) => {
         countryCode = response.country;
-        let country = countries.find(item => item.code === countryCode);
+        let country = countries.find((item) => item.code === countryCode);
         countryName = country.name;
-        document.getElementById('myInput').placeholder=countryName;
+        document.getElementById("inputCountry").placeholder = countryName;
         console.log("Country: ", countryName);
         let newsType = document.getElementById("newsType");
         newsType.innerHTML = "<h1>Headlines</h1>";
         fetchNewsDefault(e);
-    })
-    .catch((data, status) => {
-        console.log('Request failed');
-    })
+      })
+      .catch((data, status) => {
+        console.log("Request failed");
+      });
   };
-}else if(newsType === 'Entertainment'){
-  console.log('HomenewsType',newsType)
-
-}else if(newsType === 'Food'){
-  console.log('HomenewsType',newsType)
-
-}else{
-  console.log('HomenewsType',newsType)
-
+} else if (newsType === "Entertainment") {
+  console.log("HomenewsType", newsType);
+} else if (newsType === "Food") {
+  console.log("HomenewsType", newsType);
+} else {
+  console.log("HomenewsType", newsType);
 }
-
-
 
 //function myTopic() {
 //  var x = document.getElementById("myBtn").value;
@@ -98,10 +103,9 @@ if(newsType === 'Home'){
 //}
 
 async function fetchNewsDefault(e) {
-  console.log('fetchNewsDefault');
+  console.log("fetchNewsDefault");
   e.preventDefault();
   let url = `https://newsdata.io/api/1/news?apikey=${API_KEY}&country=${countryCode}&category=environment,food,health,technology`;
-
   const response = await fetch(url);
   if (!response.ok) {
     console.log(response.status);
@@ -111,7 +115,7 @@ async function fetchNewsDefault(e) {
     //throw new Error(message);
   } else {
     const data = await response.json();
-    const filteredData = await data.results.filter(i => i.image_url !== null);
+    const filteredData = await data.results.filter((i) => i.image_url !== null);
     newsDataArr = filteredData;
     console.log("newsDataArr", newsDataArr);
     displayNews();
@@ -119,14 +123,14 @@ async function fetchNewsDefault(e) {
 }
 
 async function fetchNews(e) {
-  document.getElementById("newsdetailsHigh").innerHTML = ''
-  document.getElementById("newsdetailsMedium").innerHTML = ''
-  document.getElementById("newsdetailsLow").innerHTML = ''
+  document.getElementById("newsdetailsHigh").innerHTML = "";
+  document.getElementById("newsdetailsMedium").innerHTML = "";
+  document.getElementById("newsdetailsLow").innerHTML = "";
 
   //let url = `https://newsdata.io/api/1/news?apikey=${apiKey}&q=${topic}`;
   //let topic = "entertainment";
   //console.log(newsType)
-  newsDataArr = '';
+  newsDataArr = "";
   e.preventDefault();
   let url = `https://newsdata.io/api/1/news?apikey=${API_KEY}&country=${countryCode}&category=${newsType}`;
 
@@ -136,12 +140,11 @@ async function fetchNews(e) {
     return;
   } else {
     const data = await response.json();
-    const filteredData = await data.results.filter(i => i.image_url !== null);
+    const filteredData = await data.results.filter((i) => i.image_url !== null);
     newsDataArr = filteredData;
     displayNews();
   }
 }
-
 
 function displayNews() {
   newsdetailsHigh.innnerHTML = "";
@@ -159,8 +162,7 @@ function displayNews() {
   for (var i = 0, len = newsDataArr.length; i < len; i++) {
     if (i < 2) {
       var col = document.createElement("div");
-      col.className =
-        "col-sm-12  col-lg-6  mb-3 d-flex align-items-stretch";
+      col.className = "col-sm-12  col-lg-6  mb-3 d-flex align-items-stretch";
       var card = document.createElement("div");
       card.className = "card";
       //card.setAttribute("max-height", "50%");p-2
@@ -210,7 +212,6 @@ function displayNews() {
       col.appendChild(card);
 
       newsdetailsHigh.appendChild(col);
-
     } else if (i >= 2 && i < 4) {
       var col = document.createElement("div");
       col.className = "col-sm-12 col-lg-6";
@@ -252,7 +253,6 @@ function displayNews() {
       card.appendChild(cardBody);
       col.appendChild(card);
       newsdetailsMedium.appendChild(col);
-      
     } else {
       var col = document.createElement("div");
       col.className = "row g-2";
@@ -304,6 +304,4 @@ function displayNews() {
       newsdetailsLow.appendChild(col);
     }
   }
-
-
 }
