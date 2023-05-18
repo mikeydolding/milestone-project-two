@@ -7,7 +7,8 @@ const API_KEY = MY_API_KEY;
 
 const entertainmentBtn = document.getElementById("entertainment");
 const foodBtn = document.getElementById("food");
-const healthBtn = document.getElementById("health");
+const technologyBtn = document.getElementById("technology");
+const businessBtn = document.getElementById("business");
 
 //const search = document.querySelector('.search');
 var input = document.querySelector(".input");
@@ -23,56 +24,73 @@ var newsContent = document.getElementById("newsContent");
 var newsDescription = document.getElementById("newsDescription");
 
 var newsDataArr = [];
-var newsType = 'entertainment';
+var newsType = 'Home';
 var countryCode = '';
 var countryName = '';
 
-window.onload = function(e) {
-  fetch('https://api.country.is')
-  .then( res => res.json())
-  .then(response => {
-      countryCode = response.country;
-      let country = countries.find(item => item.code === countryCode);
-      countryName = country.name;
-      document.getElementById('myInput').placeholder=countryName;
-      console.log("Country: ", countryName);
-      let newsType = document.getElementById("newsType");
-      newsType.innerHTML = "<h1>Headlines</h1>";
-      //fetchNewsDefault(e);
-  })
-  .catch((data, status) => {
-      console.log('Request failed');
-  })
-
-      //countryCode = document.getElementById("countryCode").value;
-      //console.log('window.onload',countryCode)
-
-      //let newsType = document.getElementById("newsType");
-      //newsType.innerHTML = "<h1>Headlines</h1>";
-      //fetchNewsDefault(e);
-};
 
 entertainmentBtn.addEventListener("click", function(e) {
-    newsType = "Entertainment"
-    document.getElementById("newsType").innerHTML = newsType;
-    fetchNews(e);
-  //newsType.innerHTML = "<h4>Entertainment</h4>";
-  //fetchEntertainmentNews();
+  newsType = "entertainment"
+  document.getElementById("newsType").innerHTML = newsType;
+  console.log("EntertainmentNewsType",newsType);
+  fetchNews(e);
+//newsType.innerHTML = "<h4>Entertainment</h4>";
+//fetchEntertainmentNews();
 });
 
 foodBtn.addEventListener("click", function(e) {
-  newsType = "Food"
-  document.getElementById("newsType").innerHTML = newsType;
-  console.log("newsType",newsType);
-  fetchNews(e);
+newsType = "food,health"
+document.getElementById("newsType").innerHTML = newsType;
+console.log("FoodNewsType",newsType);
+fetchNews(e);
 });
 
-healthBtn.addEventListener("click", function(e) {
-  newsType = "Health"
-  document.getElementById("newsType").innerHTML = newsType;
-  console.log("newsType",newsType);
-  fetchNews(e);
+technologyBtn.addEventListener("click", function(e) {
+newsType = "technology,science"
+document.getElementById("newsType").innerHTML = newsType;
+console.log("technologyNewsType",newsType);
+fetchNews(e);
 });
+
+
+businessBtn.addEventListener("click", function(e) {
+  newsType = "business,politics"
+  document.getElementById("newsType").innerHTML = newsType;
+  console.log("businessNewsType",newsType);
+  fetchNews(e);
+  });
+
+if(newsType === 'Home'){
+  console.log('HomenewsType',newsType)
+  window.onload = function(e) {
+    fetch('https://api.country.is')
+    .then( res => res.json())
+    .then(response => {
+        countryCode = response.country;
+        let country = countries.find(item => item.code === countryCode);
+        countryName = country.name;
+        document.getElementById('myInput').placeholder=countryName;
+        console.log("Country: ", countryName);
+        let newsType = document.getElementById("newsType");
+        newsType.innerHTML = "<h1>Headlines</h1>";
+        fetchNewsDefault(e);
+    })
+    .catch((data, status) => {
+        console.log('Request failed');
+    })
+  };
+}else if(newsType === 'Entertainment'){
+  console.log('HomenewsType',newsType)
+
+}else if(newsType === 'Food'){
+  console.log('HomenewsType',newsType)
+
+}else{
+  console.log('HomenewsType',newsType)
+
+}
+
+
 
 //function myTopic() {
 //  var x = document.getElementById("myBtn").value;
@@ -80,8 +98,9 @@ healthBtn.addEventListener("click", function(e) {
 //}
 
 async function fetchNewsDefault(e) {
+  console.log('fetchNewsDefault');
   e.preventDefault();
-  let url = `https://newsdata.io/api/1/news?apikey=${API_KEY}&country=${countryCode}&category=${newsType}`;
+  let url = `https://newsdata.io/api/1/news?apikey=${API_KEY}&country=${countryCode}&category=environment,food,health,technology`;
 
   const response = await fetch(url);
   if (!response.ok) {
