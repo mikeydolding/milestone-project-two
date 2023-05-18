@@ -85,7 +85,8 @@ if (newsType === "home" && countryCode === "") {
         document.getElementById("inputCountry").placeholder = countryName;
         console.log("Country: ", countryName);
         let newsType = document.getElementById("newsType");
-        newsType.innerHTML = "<h1>Headlines</h1>";
+        //newsType.innerHTML = "<h1>Headlines</h1>";
+        newsType.innerHTML = `<div class="d-flex justify-content-center"><div id="loader"><img src="assets/css/loader.gif" alt="loading..." /></div></div>`
         fetchNewsDefault(e);
       })
       .catch((data, status) => {
@@ -108,7 +109,7 @@ async function fetchNewsDefault(e) {
 
   console.log("fetchNewsDefault");
   e.preventDefault();
-  let url = `https://newsdata.io/api/1/news?apikey=${API_KEY}&country=${countryCode}&category=environment,food,health,technology`;
+  let url = `https://newsdata.io/api/1/news?apikey=${API_KEY}&country=${countryCode}&category=tourism,environment,food,health,technology`;
   const response = await fetch(url);
   if (!response.ok) {
     console.log(response.status);
