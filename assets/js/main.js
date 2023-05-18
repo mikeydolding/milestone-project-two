@@ -26,13 +26,14 @@ var newsDescription = document.getElementById("newsDescription");
 
 var newsDataArr = [];
 var newsType = "home";
-var countryCode = "vi";
+var countryCode = "";
 var countryName = "";
 
 searchBtn.addEventListener("click", function (e) {
-  countryCode = document.getElementById("inputCountry").value;
-  console.log("Search Button countryCode", countryCode);
-
+  countryName = document.getElementById("inputCountry").value;
+  console.log("Search Button countryCode", countryName);
+  let country = countries.find((item) => item.name === countryName);
+  countryCode = country.code;
   //document.getElementById("newsType").innerHTML = newsType;
   //console.log("EntertainmentNewsType",newsType);
   fetchNewsDefault(e);
@@ -70,8 +71,10 @@ businessBtn.addEventListener("click", function (e) {
   fetchNews(e);
 });
 
-if (newsType === "home") {
+if (newsType === "home" && countryCode === "") {
   console.log("HomenewsType", newsType);
+  console.log("countryCode", countryCode);
+
   window.onload = function (e) {
     fetch("https://api.country.is")
       .then((res) => res.json())
@@ -89,10 +92,6 @@ if (newsType === "home") {
         console.log("Request failed");
       });
   };
-} else if (newsType === "Entertainment") {
-  console.log("HomenewsType", newsType);
-} else if (newsType === "Food") {
-  console.log("HomenewsType", newsType);
 } else {
   console.log("HomenewsType", newsType);
 }
@@ -103,6 +102,10 @@ if (newsType === "home") {
 //}
 
 async function fetchNewsDefault(e) {
+  document.getElementById("newsdetailsHigh").innerHTML = "";
+  document.getElementById("newsdetailsMedium").innerHTML = "";
+  document.getElementById("newsdetailsLow").innerHTML = "";
+
   console.log("fetchNewsDefault");
   e.preventDefault();
   let url = `https://newsdata.io/api/1/news?apikey=${API_KEY}&country=${countryCode}&category=environment,food,health,technology`;
