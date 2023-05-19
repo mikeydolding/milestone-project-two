@@ -82,14 +82,18 @@ if (newsType === "home" && countryCode === "") {
     fetch("https://api.country.is")
       .then((res) => res.json())
       .then((response) => {
+        if(!response){
+          let newsType = document.getElementById("newsType");
+          newsType.innerHTML = `<div class="d-flex justify-content-center"><div id="loader"><img src="assets/images/loader.gif" alt="O" /></div></div>`
+        }
         countryCode = response.country;
         let country = countries.find((item) => item.code === countryCode);
         countryName = country.name;
         document.getElementById("inputCountry").placeholder = countryName;
         console.log("Country: ", countryName);
         let newsType = document.getElementById("newsType");
-        //newsType.innerHTML = "<h1>Headlines</h1>";
-        newsType.innerHTML = `<div class="d-flex justify-content-center"><div id="loader"><img src="assets/images/loader.gif" alt="O" /></div></div>`
+        newsType.innerHTML = "<h1>Headlines</h1>";
+        //newsType.innerHTML = `<div class="d-flex justify-content-center"><div id="loader"><img src="assets/images/loader.gif" alt="O" /></div></div>`
         fetchNewsDefault(e);
       })
       .catch((data, status) => {
@@ -97,6 +101,9 @@ if (newsType === "home" && countryCode === "") {
       });
   };
 } else {
+  let newsType = document.getElementById("newsType");
+        //newsType.innerHTML = "<h1>Headlines</h1>";
+        newsType.innerHTML = `<div class="d-flex justify-content-center"><div id="loader"><img src="assets/images/loader.gif" alt="O" /></div></div>`
   console.log("HomenewsType", newsType);
 }
 
