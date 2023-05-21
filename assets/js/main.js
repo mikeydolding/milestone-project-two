@@ -111,19 +111,19 @@ async function fetchNewsDefault(e) {
   document.getElementById("newsdetailsHigh").innerHTML = "";
   document.getElementById("newsdetailsMedium").innerHTML = "";
   document.getElementById("newsdetailsLow").innerHTML = "";
+  heading.innerHTML = `<div class="d-flex justify-content-center"><div id="loader"><img src="assets/images/loading.gif" alt="O" /></div></div>`
 
   console.log("fetchNewsDefault");
   e.preventDefault();
   let url = `https://newsdata.io/api/1/news?apikey=${API_KEY}&country=${countryCode}&category=top`;
   const response = await fetch(url);
   if(!response.ok) {
-    console.log(response.status);
+    console.log(response.statusText);
     heading.innerHTML = `<h5>No data found.</h5>`;
     return;
     //const message = `An error has occured: ${response.status}`;
     //throw new Error(message);
   } else {
-    heading.innerHTML = `<div class="d-flex justify-content-center"><div id="loader"><img src="assets/images/loader.gif" alt="O" /></div></div>`
     const data = await response.json();
     const filteredData = await data.results.filter((i) => i.image_url !== null);
     newsDataArr = filteredData;
@@ -146,7 +146,10 @@ async function fetchNews(e) {
 
   const response = await fetch(url);
   if (!response.ok) {
-    newsdetailsHigh.innerHTML = "<h5>No data found.</h5>";
+    console.log('response',response)
+    newsdetailsHigh.innerHTML = `<h5>No data found.</h5>`;
+    //var resetTime = new Date(errorResponse.getResponseHeader('X-RateLimit-Reset') * 1000);
+    //            $("#gh-user-data").html(`<h4>Too many requests, please wait until ${resetTime.toLocaleTimeString()}</h4>`);
     return;
   } else {
     const data = await response.json();
