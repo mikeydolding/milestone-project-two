@@ -30,7 +30,7 @@ var countryCode = "";
 var countryName = "";
 var newsType ="home"
 var heading = document.getElementById("heading");
-heading.innerHTML = `<div class="d-flex justify-content-center"><div id="loader"><img src="assets/images/loader.gif" alt="O" /></div></div>`
+heading.innerHTML = `<div class="d-flex justify-content-center"><div id="loader"><img src="assets/images/loading.gif" alt="O" /></div></div>`
 
 searchBtn.addEventListener("click", function (e) {
   countryName = document.getElementById("inputCountry").value;
