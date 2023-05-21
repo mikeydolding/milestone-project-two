@@ -19,20 +19,20 @@ This website allows users to get entertainment information from countries around
 
     -   #### Returning Visitor Goals
 
-        1. As a Returning Visitor, I want to compare the cost of living and price in different cities and countries around the world and be able to provide my own feedback .
+        1. As a Returning Visitor, I want to find the news in different cities and countries around the world and be able to provide my own feedback .
         2. As a Returning Visitor, I want to find the best way to get in contact with the organisation with any questions I may have.
-        3. As a Returning Visitor, I want to find community links.
-
+        <!--3. As a Returning Visitor, I want to find community links.-->
+<!--
     -   #### Frequent User Goals
         1. As a Frequent User, I want to check to see if there are any newly updated pricess.
         2. As a Frequent User, I want to check to see if there are any new updated news from the organisation.
-        3. As a Frequent User, I want to sign up to the Newsletter so that I am emailed any major updates and/or changes to the website or organisation.
+        3. As a Frequent User, I want to sign up to the Newsletter so that I am emailed any major updates and/or changes to the website or organisation.-->
 
 -   ### Design
     -   #### Colour Scheme
-        -   The two main colours used are Code Insititue orange, cyan white, black.
+        -   The two main colours used are Code Insititue cyan, blue,  white, black.
     -   #### Typography
-        -   The Montserrat font is the main font used throughout the whole website with Sans Serif as the fallback font in case for any reason the font isn't being imported into the site correctly. Montserrat is a clean font used frequently in programming, so it is both attractive and appropriate.
+        -   The Roboto font is the main font used throughout the whole website with Sans Serif as the fallback font in case for any reason the font isn't being imported into the site correctly. Roboto is a clean font used frequently in programming, so it is both attractive and appropriate.
     -   #### Imagery
         -   Imagery is important. The large, background hero image is designed to be striking and catch the user's attention. It also has a modern, energetic aesthetic.
 
@@ -235,6 +235,18 @@ Click [Here](https://help.github.com/en/github/creating-cloning-and-archiving-re
 - Thank-you-word-cloud.jpg, [Wikimedia Commons](https://creativecommons.org/licenses/by-sa/4.0) CC BY-SA 4.0, via Wikimedia Commons
 
 - Gif loader, [Logo](https://schtirlitz.ru/800/600/http/luxe-host.ru/wp-content/uploads/b/4/9/b49112a201d5f7bf04fcf051337f725f.gif)
+
+- Crop animated GIF [ezgif.com](https://ezgif.com/crop)
+ezgif.com
+
+- Carousel image#1, [Iran Royal Holiday](https://iranroyalholidays.com/pakages/)
+- Carousel image#2,[14 Days Vietnam and Cambodia Discovery - Asia Vacation Group NZ](https://asiavacationgroup.com/nz/14-days-vietnam-cambodia-discovery/)
+- Carousel image#3,[uzbekstan.fun](https://uzbekstan.fun/)
+- Carousel image#4,[Qeshm banner Laft.png](https://commons.wikimedia.org/wiki/File:Qeshm_banner_Laft.png)
+- Carousel image#5,[Larung Gar (Setta, Sedda), Sichuan](https://commons.m.wikimedia.org/wiki/File:Larung_Gar_(Setta,_Sedda),_Sichuan_(22106949845).jpg)
+- Carousel image#6,[Golden fall in Russia: 11 atmospheric PHOTOS](https://www.rbth.com/lifestyle/335562-golden-fall-russia)
+- Carousel image#7[du-lich-quang-tay-trung-quoc-khoi-hanh-thu-5-hang-tuan-1555125464.jpg](https://vngo.vn/du-lich/carnaval-trung-thu-dem-ram-xuong-pho-tai-pho-di-bo-ho-guom-dl3609),
+
 
 <!--- All Images were created by the developer.-->
 
