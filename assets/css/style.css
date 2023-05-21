@@ -1,192 +1,105 @@
 .row {
-    --bs-gutter-x: 0.5rem;
-    --bs-gutter-y: 0.5rem;
+  --bs-gutter-x: 0.5rem;
+  --bs-gutter-y: 0.5rem;
 }
-/*.a {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-}*/
-
-/*.nav-link .active {
-    color: red;
-  }
-  */
-/*
-
-@import url('https://fonts.googleapis.com/css?family=Roboto:100,200,300,400,500,600,700|Exo:100,200,300,400,500,600,700');*/
-
-/*--------------------------------------------Colors*/
 
 
 body {
-    font-family: Roboto, sans-serif;
-    font-weight: 300;
-    /*background-color: #525252;*/
-    color: #555555;
+  font-family: Roboto, sans-serif;
+  font-weight: 300;
+  /*background-color: #525252;*/
+  color: #555555;
 }
 
-/*--------------------------------------------Footer*/
-/*
-footer {
-    background-color: #525252;
-    color: #fafafa;
-    min-height: 120px;
-    margin: 0;
-}
-
-footer .cv-pdf i {
-    color: #fafafa;
-    text-align: center;
-    font-size: 18px;
-    padding-left: 5px;
-}
-
-footer .cv-pdf i:hover {
-    color: #e84610;
-    transition: all 0.35s ease-in-out;
-    -moz-transition: all 0.35s ease-in-out;
-    -webkit-transition: all 0.35s ease-in-out;
-    -o-transition: all 0.35s ease-in-out;
-}
-
-.social-links {
-    padding-bottom: 15px;
-}
-
-.social-links li a i {
-    width: 32px;
-    height: 32px;
-    padding: 12px 0;
-    border-radius: 50%;
-    font-size: 13px;
-    line-height: 7px;
-    text-align: center;
-    color: #fafafa;
-    background: #8f8f8f;
-    transition: all 0.35s ease-in-out;
-    -moz-transition: all 0.35s ease-in-out;
-    -webkit-transition: all 0.35s ease-in-out;
-    -o-transition: all 0.35s ease-in-out;
-}
-
-.social-links li a i:hover {
-    background: #e84610;
-}
-
-#footer-details {
-    margin: 20px;
-}*/
 
 .carousel-item img {
-    /*opacity: 0.5;*/
-    object-fit: cover;
-    object-position: center;
-    height: 50vh;
-    overflow: hidden;
+  /*opacity: 0.5;*/
+  object-fit: cover;
+  object-position: center;
+  height: 50vh;
+  overflow: hidden;
 }
 
 .carousel-item h1 {
-    color:white;
- }
-
-.carousel-item {
-    border-radius: 20px 20px 20px 20px;
-    overflow: hidden;   
+  color: white;
 }
 
-.carousel .carousel-item .carousel-caption { text-shadow: #000 0.1em 0.1em 0.2em; }
+.carousel-item {
+  border-radius: 20px 20px 20px 20px;
+  overflow: hidden;
+}
 
-/*.carousel-item:before {
- content: "";
- background-image: 
- linear-gradient(
-    bottom, transparent,
-     rgba(0,0,0,0.5)
-     );
- display:block;
- position: absolute;
- top: 0;
- width: 100vw;
- height: 100vh;
-}*/
+.carousel .carousel-item .carousel-caption {
+  text-shadow: #000 0.1em 0.1em 0.2em;
+}
+
 
 * {
-    box-sizing: border-box;
-  }
-  
-  body {
-    font: 16px Arial;
-  }
-  
-  /*the container must be positioned relative:*/
-  
-  .autocomplete {
-    position: relative;
-    display: inline-block;
-  }
-  
-  input {
-    border: 1px solid transparent;
-    background-color: #f1f1f1;
-    padding: 10px;
-    font-size: 16px;
-  }
-  
-  input[type=text] {
-    background-color: #f1f1f1;
-    width: 100%;
-  }
-  
-  input[type=submit] {
-    background-color: DodgerBlue;
-    color: #fff;
-    cursor: pointer;
-  }
-  
-  .autocomplete-items {
-    position: absolute;
-    border: 1px solid #d4d4d4;
-    border-bottom: none;
-    border-top: none;
-    z-index: 99;
-    /*position the autocomplete items to be the same width as the container:*/
-    top: 100%;
-    left: 0;
-    right: 0;
-  }
-  
-  .autocomplete-items div {
-    padding: 10px;
-    cursor: pointer;
-    background-color: #fff;
-    border-bottom: 1px solid #d4d4d4;
-  }
-  
-  
-  /*when hovering an item:*/
-  
-  .autocomplete-items div:hover {
-    background-color: #e9e9e9;
-  }
-  
-  
-  /*when navigating through the items using the arrow keys:*/
-  
-  .autocomplete-active {
-    background-color: DodgerBlue !important;
-    color: #ffffff;
-  }
+  box-sizing: border-box;
+}
+
+body {
+  font: 16px Arial;
+}
+
+/*the container must be positioned relative:*/
+
+.autocomplete {
+  position: relative;
+  display: inline-block;
+}
+
+input {
+  border: 1px solid transparent;
+  background-color: #f1f1f1;
+  padding: 10px;
+  font-size: 16px;
+}
+
+input[type=text] {
+  background-color: #f1f1f1;
+  width: 100%;
+}
+
+input[type=submit] {
+  background-color: DodgerBlue;
+  color: #fff;
+  cursor: pointer;
+}
+
+.autocomplete-items {
+  position: absolute;
+  border: 1px solid #d4d4d4;
+  border-bottom: none;
+  border-top: none;
+  z-index: 99;
+  /*position the autocomplete items to be the same width as the container:*/
+  top: 100%;
+  left: 0;
+  right: 0;
+}
+
+.autocomplete-items div {
+  padding: 10px;
+  cursor: pointer;
+  background-color: #fff;
+  border-bottom: 1px solid #d4d4d4;
+}
 
 
+/*when hovering an item:*/
 
+.autocomplete-items div:hover {
+  background-color: #e9e9e9;
+}
 
-  /* Set height of body and the document to 100% to enable "full page tabs" */
-/*body, html {
-  height: 100%;
-  margin: 0;
-  font-family: Arial;
-}*/
+/*when navigating through the items using the arrow keys:*/
+
+.autocomplete-active {
+  background-color: DodgerBlue !important;
+  color: #ffffff;
+}
+
 
 /* Style tab links */
 .tablink {
@@ -213,26 +126,3 @@ footer .cv-pdf i:hover {
   /*height: 100%;*/
 }
 
-/*#logo {
-  vertical-align: text-bottom;
-  width:5%;
-  height:5%;
-}*/
-
-#loader {
-  .loader {
-    position: fixed;
-    /*left: 50%;
-    top: 50%;*/
-    /*display: block;*/
-    /*width: 100%;
-    height: 100%;*/
-    /*z-index: 9999;*/
-  }
-}
-
-/*
-#Home {background-color: red;}
-#News {background-color: green;}
-#Contact {background-color: blue;}
-#About {background-color: orange;}*/

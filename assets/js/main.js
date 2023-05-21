@@ -92,29 +92,20 @@ if (newsType === "home" ) {
           countryName = country.name;
           document.getElementById("inputCountry").placeholder = countryName;
           console.log("Country: ", countryName);
-          heading.innerHTML = "<h1>Headlines</h1>";
-          //newsType.innerHTML = `<div class="d-flex justify-content-center"><div id="loader"><img src="assets/images/loader.gif" alt="O" /></div></div>`
-          fetchNewsDefault(e);
-        
-       
+          heading.innerHTML = `<h1>${countryName}</h1>`;
+          fetchNewsDefault(e);       
       })
-      .catch((data, status) => {
-        console.log("Request failed");
+      .catch((error) => {
+        console.log("Request failed",error);
       });
   };
-} else if(countryName) {
-  let heading = document.getElementById("heading");
-        //newsType.innerHTML = "<h1>Headlines</h1>";
-        heading.innerHTML = `<div class="d-flex justify-content-center"><div id="loader">Enter a country`
-  console.log("HomenewsType", newsType);
+} else if(!countryName) {
+  //let heading = document.getElementById("heading");
+        heading.innerHTML = "<h1>Enter a country</h1>";
 } else {
   
 }
 
-//function myTopic() {
-//  var x = document.getElementById("myBtn").value;
-//  document.getElementById("demo").innerHTML = x;
-//}
 
 async function fetchNewsDefault(e) {
   document.getElementById("newsdetailsHigh").innerHTML = "";
@@ -125,9 +116,9 @@ async function fetchNewsDefault(e) {
   e.preventDefault();
   let url = `https://newsdata.io/api/1/news?apikey=${API_KEY}&country=${countryCode}&category=tourism,environment,food,health,technology,entertainment`;
   const response = await fetch(url);
-  if (!response.ok) {
+  if(!response) {
     console.log(response.status);
-    newsdetailsHigh.innerHTML = "<h5>No data found.</h5>";
+    heading.innerHTML = `<h5>No data found.</h5>`;
     return;
     //const message = `An error has occured: ${response.status}`;
     //throw new Error(message);

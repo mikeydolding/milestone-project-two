@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <title>WebzineOy!| Information on the ground</title>
@@ -20,8 +20,6 @@
 
     <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
 
-    <!--<script src="assets/js/autocompleteSearch.js" type="module"></script>-->
-
     <script>
       function openPage(pageName, elmnt) {
         // Hide all elements with class="tabcontent" by default */
@@ -30,11 +28,9 @@
         for (i = 0; i < tabcontent.length; i++) {
           tabcontent[i].style.display = "none";
         }
- 
+
         document.getElementById(pageName).style.display = "block";
-
       }
-
     </script>
   </head>
 
@@ -61,13 +57,16 @@
         <h1 display-1 class="mx-auto">
           <a class="text-decoration-none" href="index.html">
             <p class="text-dark">
-              Webzine <img id="logo" class="d-inline-block align-text-bottom" src="assets/images/loader.gif"  height="50"  alt="O" />y!
+              Webzine
+              <img
+                id="logo"
+                class="d-inline-block align-text-bottom"
+                src="assets/images/loader.gif"
+                height="50"
+                alt="O"
+              />y!
             </p></a
           >
-          <!--<a class="navbar-brand" href="#">
-            <img src="assets/images/loader.gif" alt="" width="30" height="24" class="d-inline-block align-text-top">
-            Bootstrap
-          </a>-->
         </h1>
 
         <p class="lead mx-auto">Information on the ground</p>
@@ -76,9 +75,6 @@
 
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-          <!--<a class="navbar-brand" href="#">
-            <img src="assets/images/webzineoylogo.png" alt="" width="25" height="25">
-          </a>-->
           <button
             class="navbar-toggler"
             type="button"
@@ -394,13 +390,10 @@
       <!-- /.callout -->
       <br />
       <!-- Quotes -->
-      <!--<div class="container-wrapper">-->
-      <!--<div class="container quotes-container content-container">-->
       <div class="quotes">
         <div class="row">
           <div class="col-12 page-header">
             <h2 class="text-uppercase">Consultants:</h2>
-            <!--<hr class="block-divider block-divider--short" />-->
           </div>
         </div>
         <div class="row">
@@ -471,8 +464,6 @@
         </div>
       </div>
       <!-- /.quotes -->
-      <!--</div>-->
-      <!--</div>-->
       <hr />
     </div>
 
@@ -546,9 +537,15 @@
       </div>
     </div>
 
-    <div id="Home" class="container mt-1">
-      <a class="nav-link" onclick="openPage('Home', this)" id="Home" href="index.html"><p class="text-bg-light" id="heading"></p></a>
-                 
+    <div id="Home" class="container">
+      <a
+        class="nav-link"
+        onclick="openPage('Home', this)"
+        id="Home"
+        href="index.html"
+        ><p id="heading"></p
+      ></a>
+
       <div class="row">
         <div class="row" id="newsdetailsHigh"></div>
       </div>
@@ -645,79 +642,92 @@
           <!-- Modal Header -->
           <div class="modal-header">
             <h4 class="modal-title">Contact Us</h4>
-            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
           </div>
 
           <!-- Modal body -->
-          <div class="modal-body"><div id="Contact">
-            <div class="row">
-              <div class="col">
-                <!--<h3 class="contact-heading uppercase text-center">Contact Us?</h3>-->
-                <div class="container">
-                  <form
-                    action="https://formsubmit.co/3ff3c7d19757c90df59af76b7af0b0b9"
-                    method="POST"
-                  >
-                    <div class="form-group">
-                      <div class="form-row">
-                        <div class="col">
-                          <div class="mb-3">
-                            <label for="exampleFormControlInput1" class="form-label"
-                              >Full Name</label
-                            >
-                            <input
-                              type="text"
-                              class="form-control"
-                              name="name"
-                              placeholder="Full name"
-                              require
-                            />
+          <div class="modal-body">
+            <div id="Contact">
+              <div class="row">
+                <div class="col">
+                  <!--<h3 class="contact-heading uppercase text-center">Contact Us?</h3>-->
+                  <div class="container">
+                    <form
+                      action="https://formsubmit.co/3ff3c7d19757c90df59af76b7af0b0b9"
+                      method="POST"
+                    >
+                      <div class="form-group">
+                        <div class="form-row">
+                          <div class="col">
+                            <div class="mb-3">
+                              <label
+                                for="exampleFormControlInput1"
+                                class="form-label"
+                                >Full Name</label
+                              >
+                              <input
+                                type="text"
+                                class="form-control"
+                                name="name"
+                                placeholder="Full name"
+                                require
+                              />
+                            </div>
                           </div>
-                        </div>
-                        <div class="col">
-                          <div class="mb-3">
-                            <label for="exampleFormControlInput1" class="form-label"
-                              >Email address</label
-                            >
-                            <input
-                              type="email"
-                              name="email"
-                              class="form-control"
-                              placeholder="name@example.com"
-                              required
-                            />
+                          <div class="col">
+                            <div class="mb-3">
+                              <label
+                                for="exampleFormControlInput1"
+                                class="form-label"
+                                >Email address</label
+                              >
+                              <input
+                                type="email"
+                                name="email"
+                                class="form-control"
+                                placeholder="name@example.com"
+                                required
+                              />
+                            </div>
                           </div>
-                        </div>
-                        <div class="col">
-                          <div class="mb-3">
-                            <input
-                              type="hidden"
-                              name="_next"
-                              value="http://127.0.0.1:3000/webzinoy/index.html"
-                            />
+                          <div class="col">
+                            <div class="mb-3">
+                              <input
+                                type="hidden"
+                                name="_next"
+                                value="http://127.0.0.1:3000/webzinoy/index.html"
+                              />
+                            </div>
                           </div>
-                        </div>
-                        <div class="col">
-                          <div class="mb-3">
-                            <textarea
-                              placeholder="Your Message"
-                              class="form-control"
-                              name="message"
-                              rows="10"
-                              required
-                            ></textarea>
+                          <div class="col">
+                            <div class="mb-3">
+                              <textarea
+                                placeholder="Your Message"
+                                class="form-control"
+                                name="message"
+                                rows="10"
+                                required
+                              ></textarea>
+                            </div>
                           </div>
                         </div>
                       </div>
-                    </div>
-                    <button type="submit" class="btn btn-lg btn-dark btn-block">
-                      Submit Form
-                    </button>
-                  </form>
+                      <button
+                        type="submit"
+                        class="btn btn-lg btn-dark btn-block"
+                      >
+                        Submit Form
+                      </button>
+                    </form>
+                  </div>
                 </div>
               </div>
             </div>
-          </div></div>
+          </div>
 
           <!-- Modal footer -->
           <div class="modal-footer">
@@ -732,60 +742,6 @@
         </div>
       </div>
     </div>
-
-    <!--<div class="modal" tabindex="-1" role="dialog" id="signUpModal">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">Sign Up To Whiskey Drop!</h5>
-            <button
-              type="button"
-              class="close"
-              data-dismiss="modal"
-              aria-label="Close"
-            >
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <form>
-              <div class="form-group">
-                <label for="exampleInputEmail1">Email address</label>
-                <input
-                  type="email"
-                  class="form-control"
-                  id="exampleInputEmail1"
-                  aria-describedby="emailHelp"
-                  placeholder="Enter email"
-                />
-                <small id="emailHelp" class="form-text text-muted"
-                  >We'll never share your email with anyone else.</small
-                >
-              </div>
-              <div class="form-group">
-                <label for="password">Password</label>
-                <input
-                  type="password"
-                  class="form-control"
-                  id="password"
-                  placeholder="Password"
-                />
-              </div>
-              <div class="form-group">
-                <label for="repeatPassword">Repeat Password</label>
-                <input
-                  type="password"
-                  class="form-control"
-                  id="repeatPassword"
-                  placeholder="Repeat Password"
-                />
-              </div>
-              <button type="submit" class="btn btn-success">Submit</button>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>-->
   </body>
 
   <script src="assets/js/jquery.min.jsm.js"></script>
