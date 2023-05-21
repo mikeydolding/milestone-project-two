@@ -30,18 +30,11 @@
         for (i = 0; i < tabcontent.length; i++) {
           tabcontent[i].style.display = "none";
         }
-        // Remove the background color of all tablinks/buttons
-        //tablinks = document.getElementsByClassName("tablink");
-        //for (i = 0; i < tablinks.length; i++) {
-        //  tablinks[i].style.backgroundColor ="";
-        //}
-        // Show the specific tab content
+ 
         document.getElementById(pageName).style.display = "block";
-        // Add the specific color to the button used to open the tab content
-        //elmnt.style.backgroundColor = color;
+
       }
-      // Get the element with id="defaultOpen" and click on it
-      //document.getElementById("Home").click();
+
     </script>
   </head>
 
@@ -481,69 +474,6 @@
       <!--</div>-->
       <!--</div>-->
       <hr />
-      <!-- Features -->
-      <div class="container-wrapper container-wrapper--red">
-        <div class="container features-container content-container">
-          <section class="features">
-            <div class="row">
-              <div class="col-12 page-header">
-                <h2 class="text-uppercase">Features:</h2>
-                <hr
-                  class="block-divider block-divider--short block-divider--white"
-                />
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-12 col-md-6 col-lg-4">
-                <div class="feature">
-                  <h3>
-                    <i class="fas fa-gift d-none d-sm-block"></i> Feature 1
-                    <span class="badge badge-success">NEW!</span>
-                  </h3>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                  </p>
-                  <p><a class="btn btn-sm btn-light" href="">Read More</a></p>
-                </div>
-              </div>
-              <div class="col-12 col-md-6 col-lg-4">
-                <div class="feature">
-                  <h3>
-                    <i class="fas fa-credit-card d-none d-sm-block"></i> Feature
-                    2
-                  </h3>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                  </p>
-                  <p><a class="btn btn-sm btn-light" href="">Read More</a></p>
-                </div>
-              </div>
-              <div class="col-12 d-md-none d-lg-block col-lg-4">
-                <div class="feature">
-                  <h3>
-                    <i class="fas fa-times-circle d-none d-sm-block"></i>
-                    Feature 3
-                  </h3>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                  </p>
-                  <p><a class="btn btn-sm btn-light" href="">Read More</a></p>
-                </div>
-              </div>
-            </div>
-          </section>
-          <!-- /.features -->
-        </div>
-      </div>
     </div>
 
     <div id="Contact" class="container tabcontent">
@@ -617,7 +547,8 @@
     </div>
 
     <div id="Home" class="container mt-1">
-      <h2 class="subtitle text-capitalize" id="newsType"></h2>
+      <a class="nav-link" onclick="openPage('Home', this)" id="Home" href="index.html"><p class="text-bg-light" id="heading"></p></a>
+                 
       <div class="row">
         <div class="row" id="newsdetailsHigh"></div>
       </div>
@@ -713,12 +644,80 @@
         <div class="modal-content">
           <!-- Modal Header -->
           <div class="modal-header">
-            <h4 class="modal-title">Modal Heading</h4>
+            <h4 class="modal-title">Contact Us</h4>
             <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
           </div>
 
           <!-- Modal body -->
-          <div class="modal-body">Modal body..</div>
+          <div class="modal-body"><div id="Contact">
+            <div class="row">
+              <div class="col">
+                <!--<h3 class="contact-heading uppercase text-center">Contact Us?</h3>-->
+                <div class="container">
+                  <form
+                    action="https://formsubmit.co/3ff3c7d19757c90df59af76b7af0b0b9"
+                    method="POST"
+                  >
+                    <div class="form-group">
+                      <div class="form-row">
+                        <div class="col">
+                          <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label"
+                              >Full Name</label
+                            >
+                            <input
+                              type="text"
+                              class="form-control"
+                              name="name"
+                              placeholder="Full name"
+                              require
+                            />
+                          </div>
+                        </div>
+                        <div class="col">
+                          <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label"
+                              >Email address</label
+                            >
+                            <input
+                              type="email"
+                              name="email"
+                              class="form-control"
+                              placeholder="name@example.com"
+                              required
+                            />
+                          </div>
+                        </div>
+                        <div class="col">
+                          <div class="mb-3">
+                            <input
+                              type="hidden"
+                              name="_next"
+                              value="http://127.0.0.1:3000/webzinoy/index.html"
+                            />
+                          </div>
+                        </div>
+                        <div class="col">
+                          <div class="mb-3">
+                            <textarea
+                              placeholder="Your Message"
+                              class="form-control"
+                              name="message"
+                              rows="10"
+                              required
+                            ></textarea>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <button type="submit" class="btn btn-lg btn-dark btn-block">
+                      Submit Form
+                    </button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div></div>
 
           <!-- Modal footer -->
           <div class="modal-footer">

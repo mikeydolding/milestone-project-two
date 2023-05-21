@@ -234,7 +234,7 @@ Click [Here](https://help.github.com/en/github/creating-cloning-and-archiving-re
 
 - Thank-you-word-cloud.jpg, [Wikimedia Commons](https://creativecommons.org/licenses/by-sa/4.0) CC BY-SA 4.0, via Wikimedia Commons
 
-- https://schtirlitz.ru/800/600/http/luxe-host.ru/wp-content/uploads/b/4/9/b49112a201d5f7bf04fcf051337f725f.gif
+- Gif loader, [Logo](https://schtirlitz.ru/800/600/http/luxe-host.ru/wp-content/uploads/b/4/9/b49112a201d5f7bf04fcf051337f725f.gif)
 
 <!--- All Images were created by the developer.-->
 

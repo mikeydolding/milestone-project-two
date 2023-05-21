@@ -26,15 +26,18 @@ var newsContent = document.getElementById("newsContent");
 var newsDescription = document.getElementById("newsDescription");
 
 var newsDataArr = [];
-var newsType = "home";
 var countryCode = "";
 var countryName = "";
+var newsType ="home"
+var heading = document.getElementById("heading");
+heading.innerHTML = `<div class="d-flex justify-content-center"><div id="loader"><img src="assets/images/loader.gif" alt="O" /></div></div>`
 
 searchBtn.addEventListener("click", function (e) {
   countryName = document.getElementById("inputCountry").value;
   console.log("Search Button countryCode", countryName);
   let country = countries.find((item) => item.name === countryName);
   countryCode = country.code;
+  newsType = "home";
   //document.getElementById("newsType").innerHTML = newsType;
   //console.log("EntertainmentNewsType",newsType);
   fetchNewsDefault(e);
@@ -44,7 +47,7 @@ searchBtn.addEventListener("click", function (e) {
 
 entertainmentBtn.addEventListener("click", function (e) {
   newsType = "entertainment";
-  document.getElementById("newsType").innerHTML = newsType;
+  document.getElementById("heading").innerHTML = newsType;
   fetchNews(e);
   //newsType.innerHTML = "<h4>Entertainment</h4>";
   //fetchEntertainmentNews();
@@ -52,59 +55,60 @@ entertainmentBtn.addEventListener("click", function (e) {
 
 foodBtn.addEventListener("click", function (e) {
   newsType = "food,health";
-  document.getElementById("newsType").innerHTML = newsType;
+  document.getElementById("heading").innerHTML = newsType;
   fetchNews(e);
 });
 
 technologyBtn.addEventListener("click", function (e) {
   newsType = "technology,science";
-  document.getElementById("newsType").innerHTML = newsType;
+  document.getElementById("heading").innerHTML = newsType;
   fetchNews(e);
 });
 
 businessBtn.addEventListener("click", function (e) {
   newsType = "business,tourism";
-  document.getElementById("newsType").innerHTML = newsType;
+  document.getElementById("heading").innerHTML = newsType;
   fetchNews(e);
 });
 
 environmentBtn.addEventListener("click", function (e) {
   newsType = "environment";
-  document.getElementById("newsType").innerHTML = newsType;
+  document.getElementById("heading").innerHTML = newsType;
   fetchNews(e);
 });
 
-if (newsType === "home" && countryCode === "") {
+if (newsType === "home" ) {
   console.log("HomenewsType", newsType);
   console.log("countryCode", countryCode);
 
   window.onload = function (e) {
+    heading.innerHTML = `<div class="d-flex justify-content-center"><p>Enter a Country</p></div>`
     fetch("https://api.country.is")
       .then((res) => res.json())
       .then((response) => {
-        if(!response){
-          let newsType = document.getElementById("newsType");
-          newsType.innerHTML = `<div class="d-flex justify-content-center"><div id="loader"><img src="assets/images/loader.gif" alt="O" /></div></div>`
-        }
-        countryCode = response.country;
-        let country = countries.find((item) => item.code === countryCode);
-        countryName = country.name;
-        document.getElementById("inputCountry").placeholder = countryName;
-        console.log("Country: ", countryName);
-        let newsType = document.getElementById("newsType");
-        newsType.innerHTML = "<h1>Headlines</h1>";
-        //newsType.innerHTML = `<div class="d-flex justify-content-center"><div id="loader"><img src="assets/images/loader.gif" alt="O" /></div></div>`
-        fetchNewsDefault(e);
+        heading.innerHTML = "";
+          countryCode = response.country;
+          let country = countries.find((item) => item.code === countryCode);
+          countryName = country.name;
+          document.getElementById("inputCountry").placeholder = countryName;
+          console.log("Country: ", countryName);
+          heading.innerHTML = "<h1>Headlines</h1>";
+          //newsType.innerHTML = `<div class="d-flex justify-content-center"><div id="loader"><img src="assets/images/loader.gif" alt="O" /></div></div>`
+          fetchNewsDefault(e);
+        
+       
       })
       .catch((data, status) => {
         console.log("Request failed");
       });
   };
-} else {
-  let newsType = document.getElementById("newsType");
+} else if(countryName) {
+  let heading = document.getElementById("heading");
         //newsType.innerHTML = "<h1>Headlines</h1>";
-        newsType.innerHTML = `<div class="d-flex justify-content-center"><div id="loader"><img src="assets/images/loader.gif" alt="O" /></div></div>`
+        heading.innerHTML = `<div class="d-flex justify-content-center"><div id="loader">Enter a country`
   console.log("HomenewsType", newsType);
+} else {
+  
 }
 
 //function myTopic() {
@@ -119,7 +123,7 @@ async function fetchNewsDefault(e) {
 
   console.log("fetchNewsDefault");
   e.preventDefault();
-  let url = `https://newsdata.io/api/1/news?apikey=${API_KEY}&country=${countryCode}&category=tourism,environment,food,health,technology`;
+  let url = `https://newsdata.io/api/1/news?apikey=${API_KEY}&country=${countryCode}&category=tourism,environment,food,health,technology,entertainment`;
   const response = await fetch(url);
   if (!response.ok) {
     console.log(response.status);
