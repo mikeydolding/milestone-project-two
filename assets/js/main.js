@@ -92,7 +92,7 @@ if (newsType === "home" ) {
           countryName = country.name;
           document.getElementById("inputCountry").placeholder = countryName;
           console.log("Country: ", countryName);
-          //heading.innerHTML = `<h1>${countryName}</h1>`;
+          heading.innerHTML = `<h1>Top News</h1>`;
           fetchNewsDefault(e);       
       })
       .catch((error) => {
@@ -111,7 +111,7 @@ async function fetchNewsDefault(e) {
   document.getElementById("newsdetailsHigh").innerHTML = "";
   document.getElementById("newsdetailsMedium").innerHTML = "";
   document.getElementById("newsdetailsLow").innerHTML = "";
-  heading.innerHTML = `<div class="d-flex justify-content-center"><div id="loader"><img src="assets/images/loader.gif" alt="O" /></div></div>`
+  //heading.innerHTML = `<div class="d-flex justify-content-center"><div id="loader"><img src="assets/images/loader.gif" alt="O" /></div></div>`
 
   console.log("fetchNewsDefault");
   e.preventDefault();
@@ -121,13 +121,10 @@ async function fetchNewsDefault(e) {
     console.log(response.statusText);
     heading.innerHTML = `<h5>No data found.</h5>`;
     return;
-    //const message = `An error has occured: ${response.status}`;
-    //throw new Error(message);
   } else {
     const data = await response.json();
     const filteredData = await data.results.filter((i) => i.image_url !== null);
     newsDataArr = filteredData;
-    console.log("newsDataArr", newsDataArr);
     displayNews();
   }
 }
@@ -146,7 +143,7 @@ async function fetchNews(e) {
 
   const response = await fetch(url);
   if (!response.ok) {
-    console.log('response',response)
+    console.log(response.statusText);
     newsdetailsHigh.innerHTML = `<h5>No data found.</h5>`;
     //var resetTime = new Date(errorResponse.getResponseHeader('X-RateLimit-Reset') * 1000);
     //            $("#gh-user-data").html(`<h4>Too many requests, please wait until ${resetTime.toLocaleTimeString()}</h4>`);
