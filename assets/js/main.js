@@ -28,9 +28,9 @@ var newsDescription = document.getElementById("newsDescription");
 var newsDataArr = [];
 var countryCode = "";
 var countryName = "";
-var newsType ="home"
+var newsType ="headlines"
 var heading = document.getElementById("heading");
-heading.innerHTML = `<div class="d-flex justify-content-center"><div id="loader"><img src="assets/images/loader.gif" alt="O" /></div></div>`
+//heading.innerHTML = `<div class="d-flex justify-content-center"><div id="loader"><img src="assets/images/loading.gif" alt="O" /></div></div>`
 
 searchBtn.addEventListener("click", function (e) {
   countryName = document.getElementById("inputCountry").value;
@@ -38,7 +38,7 @@ searchBtn.addEventListener("click", function (e) {
   let country = countries.find((item) => item.name === countryName);
   countryCode = country.code;
   newsType = "home";
-  //document.getElementById("newsType").innerHTML = newsType;
+  heading.innerHTML = `<h1><p class="text-capitalize">${newsType}</p></h1>`;
   //console.log("EntertainmentNewsType",newsType);
   fetchNewsDefault(e);
   //newsType.innerHTML = "<h4>Entertainment</h4>";
@@ -47,7 +47,7 @@ searchBtn.addEventListener("click", function (e) {
 
 entertainmentBtn.addEventListener("click", function (e) {
   newsType = "entertainment";
-  document.getElementById("heading").innerHTML = newsType;
+  heading.innerHTML = `<h1><p class="text-capitalize">${newsType}</p></h1>`;
   fetchNews(e);
   //newsType.innerHTML = "<h4>Entertainment</h4>";
   //fetchEntertainmentNews();
@@ -55,44 +55,46 @@ entertainmentBtn.addEventListener("click", function (e) {
 
 foodBtn.addEventListener("click", function (e) {
   newsType = "food,health";
-  document.getElementById("heading").innerHTML = newsType;
+  heading.innerHTML = `<h1><p class="text-capitalize">${newsType}</p></h1>`;
   fetchNews(e);
 });
 
 technologyBtn.addEventListener("click", function (e) {
   newsType = "technology,science";
-  document.getElementById("heading").innerHTML = newsType;
+  heading.innerHTML = `<h1><p class="text-capitalize">${newsType}</p></h1>`;
   fetchNews(e);
 });
 
 businessBtn.addEventListener("click", function (e) {
   newsType = "business,tourism";
-  document.getElementById("heading").innerHTML = newsType;
+  heading.innerHTML = `<h1><p class="text-capitalize">${newsType}</p></h1>`;
   fetchNews(e);
 });
 
 environmentBtn.addEventListener("click", function (e) {
   newsType = "environment";
-  document.getElementById("heading").innerHTML = newsType;
+  heading.innerHTML = `<h1><p class="text-capitalize">${newsType}</p></h1>`;
   fetchNews(e);
 });
 
-if (newsType === "home" ) {
+if (newsType === "headlines" ) {
   console.log("HomenewsType", newsType);
   console.log("countryCode", countryCode);
 
   window.onload = function (e) {
-    heading.innerHTML = `<div class="d-flex justify-content-center"><div id="loader"><img src="assets/images/loader.gif" alt="O" /></div></div>`
+    //heading.innerHTML = `<div class="d-flex justify-content-center"><img src="assets/images/loading.gif" alt="loading" height="30"
+    ///></div></div>`
     fetch("https://api.country.is")
       .then((res) => res.json())
       .then((response) => {
-        heading.innerHTML = "";
+        heading.innerHTML = ""
           countryCode = response.country;
           let country = countries.find((item) => item.code === countryCode);
           countryName = country.name;
           document.getElementById("inputCountry").placeholder = countryName;
           console.log("Country: ", countryName);
-          heading.innerHTML = `<h1>Top News</h1>`;
+          heading.innerHTML = `<h1><p class="text-capitalize">${newsType}</p></h1><div class="d-flex justify-content-center"><img src="assets/images/loading.gif" alt="loading" height="30"
+          /></div>`;
           fetchNewsDefault(e);       
       })
       .catch((error) => {
@@ -100,8 +102,7 @@ if (newsType === "home" ) {
       });
   };
 } else if(!countryName) {
-  //let heading = document.getElementById("heading");
-        heading.innerHTML = "<h1>Enter a country</h1>";
+  heading.innerHTML = "<h1>Enter a country</h1>";
 } else {
   
 }
@@ -119,7 +120,8 @@ async function fetchNewsDefault(e) {
   const response = await fetch(url);
   if(!response.ok) {
     console.log(response.statusText);
-    heading.innerHTML = `<h5>No data found.</h5>`;
+    heading.innerHTML = `<h1><p class="text-capitalize">${newsType}</p></h1>`;
+    newsdetailsHigh.innerHTML = `<h5>${response.statusText}</h5>`;
     return;
   } else {
     const data = await response.json();
@@ -144,9 +146,10 @@ async function fetchNews(e) {
   const response = await fetch(url);
   if (!response.ok) {
     console.log(response.statusText);
-    newsdetailsHigh.innerHTML = `<h5>No data found.</h5>`;
+    heading.innerHTML = `<h1><p class="text-capitalize">${newsType}</p></h1>`;
+    newsdetailsHigh.innerHTML = `<h5>${response.statusText}</h5>`;
     //var resetTime = new Date(errorResponse.getResponseHeader('X-RateLimit-Reset') * 1000);
-    //            $("#gh-user-data").html(`<h4>Too many requests, please wait until ${resetTime.toLocaleTimeString()}</h4>`);
+    //heading.innerHTML = `<h4>Too many requests, please wait until ${resetTime.toLocaleTimeString()}</h4>`;
     return;
   } else {
     const data = await response.json();
@@ -157,6 +160,7 @@ async function fetchNews(e) {
 }
 
 function displayNews() {
+  heading.innerHTML = `<h1>${newsType}</h1>`
   newsdetailsHigh.innnerHTML = "";
   newsdetailsMedium.innnerHTML = "";
   newsdetailsLow.innnerHTML = "";

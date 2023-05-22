@@ -38,9 +38,6 @@ body {
   box-sizing: border-box;
 }
 
-body {
-  font: 16px Arial;
-}
 
 /*the container must be positioned relative:*/
 
@@ -125,5 +122,10 @@ input[type=submit] {
   padding: 50px 50px;
   /*height: 100%;*/
 }
+
+.h1 .capitalize {
+  display: inline-block;
+}
+
 
 
