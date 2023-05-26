@@ -4,8 +4,6 @@
 
 This website allows users to get entertainment information from countries around the world.
 
-<h2 align="center"><img src="https://i.ibb.co/TYvTXz1/Example-CI.png"></h2>
-
 ## User Experience (UX)
 
 -   ### User stories
