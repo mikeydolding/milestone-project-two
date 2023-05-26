@@ -95,7 +95,7 @@ if (newsType === "headlines" ) {
           console.log("Country: ", countryName);
           heading.innerHTML = `<h1><p class="text-capitalize">${newsType}</p></h1><div class="d-flex justify-content-center"><img src="assets/images/loading.gif" alt="loading" height="30"
           /></div>`;
-          fetchNewsDefault(e);       
+          //fetchNewsDefault(e);       
       })
       .catch((error) => {
         console.log("Request failed",error);

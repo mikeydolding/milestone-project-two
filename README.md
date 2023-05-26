@@ -226,7 +226,9 @@ Click [Here](https://help.github.com/en/github/creating-cloning-and-archiving-re
 
 ### Content
 
-- All content was written by the developer.
+- News content provided by [NEWSDATA.IO](https://newsdata.io/search-news)
+
+- 
 
 ### Media
 
@@ -245,7 +247,16 @@ ezgif.com
 - Carousel image#6,[Golden fall in Russia: 11 atmospheric PHOTOS](https://www.rbth.com/lifestyle/335562-golden-fall-russia)
 - Carousel image#7[du-lich-quang-tay-trung-quoc-khoi-hanh-thu-5-hang-tuan-1555125464.jpg](https://vngo.vn/du-lich/carnaval-trung-thu-dem-ram-xuong-pho-tai-pho-di-bo-ho-guom-dl3609),
 
+### Testing write-up
 
+When updating code on VS code, the  website will automatically reload and fetch content from API https://newsdata.io/search-news too many times (main.js  fetchNewsDefault() and cause an CORS error. One fix is to disable the fetchNewsDefault() function in main.js to prevent too many fetch requests to the API service provider and cause the API service provider to block the website.
+
+In further development, an dedicated API will be build for the website.
+
+### Deployment write-up
+
+The site was last deployed to the github-pages environment by the pages build and deployment workflow.
+The site is live at https://mikeydolding.github.io/milestone-project-two/
 <!--- All Images were created by the developer.-->
 
 ### Acknowledgements
