@@ -1,8 +1,31 @@
 <h1 align="center">Mikedolding Milestone Project 2</h1>
 
-[View the live project here.](https://mikeydolding.github.io/milestone-project-two/)
 
-This website allows users to get entertainment information from countries around the world.
+- [Webzinoy!](#Webzinoy!)
+  * [Overview](#overview)
+  * [User Experience (UX)](#User Experience (UX))
+  * [Design](#Design)
+  * [Data Model](#data-model)
+  * [Testing](#testing)
+    + [Unfixed Bugs](#unfixed-bugs)
+    + [Validator Testing](#validator-testing)
+  * [Deployment](#deployment)
+  * [Development](#development)
+    + [Languages](#languages)
+    + [Tools](#tools)
+  * [Credits & Attributions](#credits---attributions)
+    + [Attribution](#attributions-)
+    + [Other](#other)
+
+
+## Webzinoy! [View the live project here.](https://mikeydolding.github.io/milestone-project-two/)
+
+## Overview
+Webzinoy! allows users to get news information from countries around the world.
+The website has a number of features, including:
+- A contact site owner email page
+- A javascript code to consume news API
+- An 'About Us' page with carousel of images
 
 ## User Experience (UX)
 
@@ -26,17 +49,23 @@ This website allows users to get entertainment information from countries around
         2. As a Frequent User, I want to check to see if there are any new updated news from the organisation.
         3. As a Frequent User, I want to sign up to the Newsletter so that I am emailed any major updates and/or changes to the website or organisation.-->
 
--   ### Design
-    -   #### Colour Scheme
-        -   The two main colours used are Code Insititue cyan, blue,  white, black.
-    -   #### Typography
-        -   The Roboto font is the main font used throughout the whole website with Sans Serif as the fallback font in case for any reason the font isn't being imported into the site correctly. Roboto is a clean font used frequently in programming, so it is both attractive and appropriate.
-    -   #### Imagery
-        -   Imagery is important. The large, background hero image is designed to be striking and catch the user's attention. It also has a modern, energetic aesthetic.
+### Design
+  -   ### Colour Scheme
+      -   The two main colours used are Code Insititue cyan, blue,  white, black.
+  -   ### Typography
+      -   The Roboto font is the main font used throughout the whole website with Sans Serif as the fallback font in case for any reason the font isn't being imported into the site correctly. Roboto is a clean font used frequently in programming, so it is both attractive and appropriate.
+  -   #### Imagery
+      -   Imagery is important. The large, background hero image is designed to be striking and catch the user's attention. It also has a modern, energetic aesthetic.
 
-*   ### Wireframes
+## Features
 
-    -   Sitemap - 
+  -   Responsive on all device sizes
+
+  -   Interactive elements
+
+### Wireframes
+
+    -   Sitemap -
 ![Wireframe-sitemap](assets/images/sitemap.png)
 
     -   Home Page Wireframe  -
@@ -44,11 +73,6 @@ This website allows users to get entertainment information from countries around
 
     -   Contact Us Page Wireframe - [View](https://github.com/)
 
-## Features
-
--   Responsive on all device sizes
-
--   Interactive elements
 
 ## Technologies Used
 
@@ -228,7 +252,7 @@ Click [Here](https://help.github.com/en/github/creating-cloning-and-archiving-re
 
 - News content provided by [NEWSDATA.IO](https://newsdata.io/search-news)
 
-- 
+-
 
 ### Media
 
