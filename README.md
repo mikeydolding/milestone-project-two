@@ -6,16 +6,16 @@
   * [User Experience (UX)](#User Experience (UX))
   * [Design](#Design)
   * [Data Model](#data-model)
-  * [Testing](#testing)
-    + [Unfixed Bugs](#unfixed-bugs)
-    + [Validator Testing](#validator-testing)
+  * [Testing](#Testing)
+    + [Known Bugs: CORS error](#Known Bugs: CORS error)
+    + [Validator Testing](#Validator Testing)
   * [Deployment](#deployment)
-  * [Development](#development)
-    + [Languages](#languages)
-    + [Tools](#tools)
-  * [Credits & Attributions](#credits---attributions)
-    + [Attribution](#attributions-)
-    + [Other](#other)
+  * [Technologies Used](#Technologies Used)
+    + [Languages](#Languages Used)
+    + [Frameworks, Libraries & Programs Used](#Frameworks, Libraries & Programs Used)
+    + [GitHub Pages](#GitHub Pages)
+  * [Credits & Attributions](#Credits)
+  * [Acknowledgements](#Acknowledgements)
 
 
 ## Webzinoy! [View the live project here.](https://mikeydolding.github.io/milestone-project-two/)
@@ -28,89 +28,6 @@ The website has a number of features, including:
 - An 'About Us' page with carousel of images
 
 ## User Experience (UX)
-
--   ### User stories
-
-
-    -   #### First Time Visitor Goals
-
-        1. As a First Time Visitor, I want to easily understand the main purpose of the site and learn more about the organisation.
-        2. As a First Time Visitor, I want to be able to easily navigate throughout the site to find content.
-        3. As a First Time Visitor, I want to look for testimonials to understand what their users think of them and see if they are trusted. I also want to locate their social media links to see their followings on social media to determine how trusted and known they are.
-
-    -   #### Returning Visitor Goals
-
-        1. As a Returning Visitor, I want to find the news in different cities and countries around the world and be able to provide my own feedback .
-        2. As a Returning Visitor, I want to find the best way to get in contact with the organisation with any questions I may have.
-        <!--3. As a Returning Visitor, I want to find community links.-->
-<!--
-    -   #### Frequent User Goals
-        1. As a Frequent User, I want to check to see if there are any newly updated pricess.
-        2. As a Frequent User, I want to check to see if there are any new updated news from the organisation.
-        3. As a Frequent User, I want to sign up to the Newsletter so that I am emailed any major updates and/or changes to the website or organisation.-->
-
-### Design
-  -   ### Colour Scheme
-      -   The two main colours used are Code Insititue cyan, blue,  white, black.
-  -   ### Typography
-      -   The Roboto font is the main font used throughout the whole website with Sans Serif as the fallback font in case for any reason the font isn't being imported into the site correctly. Roboto is a clean font used frequently in programming, so it is both attractive and appropriate.
-  -   #### Imagery
-      -   Imagery is important. The large, background hero image is designed to be striking and catch the user's attention. It also has a modern, energetic aesthetic.
-
-## Features
-
-  -   Responsive on all device sizes
-
-  -   Interactive elements
-
-### Wireframes
-
-    -   Sitemap -
-![Wireframe-sitemap](assets/images/sitemap.png)
-
-    -   Home Page Wireframe  -
-![Wireframe-home](assets/images/home.png)
-
-    -   Contact Us Page Wireframe - [View](https://github.com/)
-
-
-## Technologies Used
-
-### Languages Used
-
--   [HTML5](https://en.wikipedia.org/wiki/HTML5)
--   [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
--   [Javascript](https://en.wikipedia.org/wiki/JavaScript)
--   [jquery-3.6.4.min.js](https://code.jquery.com/)
-### Frameworks, Libraries & Programs Used
-
-1. [Bootstrap 5.1:](https://getbootstrap.com/docs/5.1/)
-    - Bootstrap was used to assist with the responsiveness and styling of the website.
-1. [Google Fonts:](https://fonts.google.com/)
-    - Google fonts were used to import the 'Titillium Web' font into the style.css file which is used on all pages throughout the project.
-1. [Font Awesome:](https://fontawesome.com/)
-    - Font Awesome was used on all pages throughout the website to add icons for aesthetic and UX purposes.
-1. [jQuery:](https://jquery.com/)
-    - jQuery came with Bootstrap to make the navbar responsive but was also used for the smooth scroll function in JavaScript.
-1. [Git](https://git-scm.com/)
-    - Git was used for version control by utilizing the Gitpod terminal to commit to Git and Push to GitHub.
-1. [GitHub:](https://github.com/)
-    - GitHub is used to store the projects code after being pushed from Git.
-1. [Photoshop:](https://www.adobe.com/ie/products/photoshop.html)
-    - Photoshop was used to create the logo, resizing images and editing photos for the website.
-1. [Balsamiq:](https://balsamiq.com/)
-    - Balsamiq was used to create the [wireframes](https://github.com/) during the design process.
-1. [smtp.elasticemail.com](https://smtpjs.com/v3/smtp.js)
-    -  To send email from Javascript
-
-## Testing
-
-The W3C Markup Validator and W3C CSS Validator Services were used to validate every page of the project to ensure there were no syntax errors in the project.
-
--   [W3C Markup Validator](https://jigsaw.w3.org/css-validator/#validate_by_input) - [Results](https://github.com/)
--   [W3C CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_input) - [Results](https://github.com/)
-
-### Testing User Stories from User Experience (UX) Section
 
 -   #### First Time Visitor Goals
 
@@ -166,20 +83,103 @@ The W3C Markup Validator and W3C CSS Validator Services were used to validate ev
         2. To the right hand side of the footer the user can see "Subscribe to our Newsletter" and are prompted to Enter their email address.
         3. There is a "Submit" button to the right hand side of the input field which is located close to the field and can easily be distinguished.
 
-### Further Testing
+### Design
+
+  -   #### Colour Scheme
+      -   The two main colours used are Code Insititue cyan, blue,  white, black.
+  -   #### Typography
+      -   The Roboto font is the main font used throughout the whole website with Sans Serif as the fallback font in case for any reason the font isn't being imported into the site correctly. Roboto is a clean font used frequently in programming, so it is both attractive and appropriate.
+  -   #### Imagery
+      -   Imagery is important. The large, background hero image is designed to be striking and catch the user's attention. It also has a modern, energetic aesthetic.
+
+### Features
+
+  -   Responsive on all device sizes
+
+  -   Interactive elements
+
+### Wireframes
+
+    -   Sitemap -
+![Wireframe-sitemap](assets/images/sitemap.png)
+
+    -   Home Page Wireframe  -
+![Wireframe-home](assets/images/home.png)
+
+    -   Contact Us Page Wireframe - [View](https://github.com/)
+
+## Technologies Used
+
+### Languages Used
+
+-   [HTML5](https://en.wikipedia.org/wiki/HTML5)
+-   [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
+-   [Javascript](https://en.wikipedia.org/wiki/JavaScript)
+-   [jquery-3.6.4.min.js](https://code.jquery.com/)
+
+### Frameworks, Libraries & Programs Used
+
+1. [Bootstrap 5.1:](https://getbootstrap.com/docs/5.1/)
+    - Bootstrap was used to assist with the responsiveness and styling of the website.
+1. [Google Fonts:](https://fonts.google.com/)
+    - Google fonts were used to import the 'Titillium Web' font into the style.css file which is used on all pages throughout the project.
+1. [Font Awesome:](https://fontawesome.com/)
+    - Font Awesome was used on all pages throughout the website to add icons for aesthetic and UX purposes.
+1. [jQuery:](https://jquery.com/)
+    - jQuery came with Bootstrap to make the navbar responsive but was also used for the smooth scroll function in JavaScript.
+1. [Git](https://git-scm.com/)
+    - Git was used for version control by utilizing the Gitpod terminal to commit to Git and Push to GitHub.
+1. [GitHub:](https://github.com/)
+    - GitHub is used to store the projects code after being pushed from Git.
+1. [Gimp:](https://www.gimp.com
+    - Photoshop was used to create the logo, resizing images and editing photos for the website.
+1. [Balsamiq:](https://balsamiq.com/)
+    - Balsamiq was used to create the [wireframes](https://github.com/) during the design process.
+1. [smtp.elasticemail.com](https://smtpjs.com/v3/smtp.js)
+    -  To send email from Javascript
+1. [Newsdata.io API](https://newsdata.io/search-news)
+    -  To fetch news content from arount the world
+
+
+### Testing
+
+In testing the application a number of bugs were discovered:
 
 -   The Website was tested on Google Chrome, Internet Explorer, Microsoft Edge and Safari browsers.
 -   The website was viewed on a variety of devices such as Desktop, Laptop, iPhone7, iPhone 8 & iPhoneX.
 -   A large amount of testing was done to ensure that all pages were linking correctly.
 -   Friends and family members were asked to review the site and documentation to point out any bugs and/or user experience issues.
 
-### Known Bugs
+##  Validator Testing
 
--   On some mobile devices the Hero Image pushes the size of screen out more than any of the other content on the page.
-    -   A white gap can be seen to the right of the footer and navigation bar as a result.
--   On Microsoft Edge and Internet Explorer Browsers, all links in Navbar are pushed upwards when hovering over them.
+The W3C Markup Validator and W3C CSS Validator Services were used to validate every page of the project to ensure there were no syntax errors in the project.
+
+-   [W3C Markup Validator](https://jigsaw.w3.org/css-validator/#validate_by_input) - [Results](https://github.com/)
+-   [W3C CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_input) - [Results](https://github.com/)
+
+**Known Bugs: CORS error**
+
+- When updating code on VS code, the  website will automatically reload and fetch content from API https://newsdata.io/search-news too many times (main.js  fetchNewsDefault() and cause an CORS error.
+
+**Fix**
+
+- One fix is to disable the fetchNewsDefault() function in main.js to prevent  fetch requests to the API service provider which cause the API service provider to block the website.
+
+### Further Testing
+
+-   The Website was tested on Mozilla Firefox and Safari browsers.
+-   The website was viewed on a variety of devices such as Desktop, Laptop, Android mobile,  iPhone7.
+-   An amount of testing was done to ensure that all pages were linking correctly.
+-   Friends were asked to review the site and documentation to point out any bugs and/or user experience issues.
+
 
 ## Deployment
+
+- The site was last deployed to the github-pages environment by the pages build and deployment workflow.
+
+- The site is live at https://mikeydolding.github.io/milestone-project-two/
+
+- In further development, an independant dedicated API and database of news content will be built for the website.
 
 ### GitHub Pages
 
@@ -271,17 +271,6 @@ ezgif.com
 - Carousel image#6,[Golden fall in Russia: 11 atmospheric PHOTOS](https://www.rbth.com/lifestyle/335562-golden-fall-russia)
 - Carousel image#7[du-lich-quang-tay-trung-quoc-khoi-hanh-thu-5-hang-tuan-1555125464.jpg](https://vngo.vn/du-lich/carnaval-trung-thu-dem-ram-xuong-pho-tai-pho-di-bo-ho-guom-dl3609),
 
-### Testing write-up
-
-When updating code on VS code, the  website will automatically reload and fetch content from API https://newsdata.io/search-news too many times (main.js  fetchNewsDefault() and cause an CORS error. One fix is to disable the fetchNewsDefault() function in main.js to prevent too many fetch requests to the API service provider and cause the API service provider to block the website.
-
-In further development, an dedicated API will be build for the website.
-
-### Deployment write-up
-
-The site was last deployed to the github-pages environment by the pages build and deployment workflow.
-The site is live at https://mikeydolding.github.io/milestone-project-two/
-<!--- All Images were created by the developer.-->
 
 ### Acknowledgements
 
