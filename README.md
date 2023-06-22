@@ -127,24 +127,25 @@ The website has a number of features, including:
 
 1. [Bootstrap 5.1:](https://getbootstrap.com/docs/5.1/)
    - Bootstrap was used to assist with the responsiveness and styling of the website.
-1. [Google Fonts:](https://fonts.google.com/)
+2. [Google Fonts:](https://fonts.google.com/)
    - Google fonts were used to import the 'Titillium Web' font into the style.css file which is used on all pages throughout the project.
-1. [Font Awesome:](https://fontawesome.com/)
+3. [Font Awesome:](https://fontawesome.com/)
    - Font Awesome was used on all pages throughout the website to add icons for aesthetic and UX purposes.
-1. [jQuery:](https://jquery.com/)
+4. [jQuery:](https://jquery.com/)
    - jQuery came with Bootstrap to make the navbar responsive but was also used for the smooth scroll function in JavaScript.
-1. [Git](https://git-scm.com/)
+5. [Git](https://git-scm.com/)
    - Git was used for version control by utilizing the Gitpod terminal to commit to Git and Push to GitHub.
-1. [GitHub:](https://github.com/)
+6. [GitHub:](https://github.com/)
    - GitHub is used to store the projects code after being pushed from Git.
-1. [Gimp:](https://www.gimp.com
+7. [Gimp:](https://www.gimp.com
    - Photoshop was used to create the logo, resizing images and editing photos for the website.
-1. [Balsamiq:](https://balsamiq.com/)
+8. [Balsamiq:](https://balsamiq.com/)
    - Balsamiq was used to create the [wireframes](https://github.com/) during the design process.
-1. [smtp.elasticemail.com](https://smtpjs.com/v3/smtp.js)
+9. [smtp.elasticemail.com](https://smtpjs.com/v3/smtp.js)
    - To send email from Javascript
-1. [Newsdata.io API](https://newsdata.io/search-news)
-   - To fetch news content from arount the world
+10. [Newsdata.io API](https://newsdata.io/search-news)
+
+- To fetch news content from arount the world
 
 ### Testing
 
@@ -154,6 +155,8 @@ In testing the application a number of bugs were discovered:
 - The website was viewed on a variety of devices such as Desktop, Laptop, iPhone7, iPhone 8 & iPhoneX.
 - A large amount of testing was done to ensure that all pages were linking correctly.
 - Friends and family members were asked to review the site and documentation to point out any bugs and/or user experience issues.
+
+- Used VS code Live Preview extension to hosts a local server and view HTML site
 
 ## Validator Testing
 
