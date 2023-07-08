@@ -29,7 +29,7 @@ The website has a number of features, including:
 
 ## User Experience (UX)
 
-- #### First Time Visitor Goals
+- ### First Time Visitor Goals
 
   1. As a First Time Visitor, I want to easily understand the main purpose of the site and learn more about the organisation.
 
@@ -43,7 +43,7 @@ The website has a number of features, including:
      2. At the bottom of the first 3 pages there is a redirection call to action to ensure the user always has somewhere to go and doesn't feel trapped as they get to the bottom of the page.
      3. On the Contact Us Page, after a form response is submitted, the page refreshes and the user is brought to the top of the page where the navigation bar is.
 
-- #### Returning Visitor Goals
+- ### Returning Visitor Goals
 
   1. As a Returning Visitor, I want to find the new news items from around the world.
 
@@ -55,34 +55,32 @@ The website has a number of features, including:
      2. Here they can fill out the contact us form.
      3. The email button is set up to automatically send user information and messages to email account of site owner
 
-
-- #### Frequent User Goals
+- ### Frequent User Goals
 
   1. As a Returning Visitor, I want to find the new news items from around the world.
 
      1. These are updated whenever the page is reloaded.
 
+## Design
 
-### Design
+- ### Colour Scheme
 
-- #### Colour Scheme
+  - The three main colours used are Code Insititue cyan, blue, white, black.
 
-  - The two main colours used are Code Insititue cyan, blue, white, black.
-
-- #### Typography
+- ### Typography
 
   - The Roboto font is the main font used throughout the whole website with Sans Serif as the fallback font in case for any reason the font isn't being imported into the site correctly. Roboto is a clean font used frequently in programming, so it is both attractive and appropriate.
 
-- #### Imagery
+- ### Imagery
   - Imagery is important. The large, background hero image is designed to be striking and catch the user's attention. It also has a modern, energetic aesthetic.
 
-### Features
+## Features
 
 - Responsive on all device sizes
 
 - Interactive elements
 
-### Wireframes
+## Wireframes
 
     -   Sitemap -
 
@@ -96,14 +94,20 @@ The website has a number of features, including:
 
 ## Technologies Used
 
-### Languages Used
+- HTML5
+- CSS3
+- Bootstrap
+- Jquery
+- Javascript
+
+## Languages Used
 
 - [HTML5](https://en.wikipedia.org/wiki/HTML5)
 - [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
 - [Javascript](https://en.wikipedia.org/wiki/JavaScript)
 - [jquery-3.6.4.min.js](https://code.jquery.com/)
 
-### Frameworks, Libraries & Programs Used
+## Frameworks, Libraries & Programs Used
 
 1. [Bootstrap 5.1:](https://getbootstrap.com/docs/5.1/)
    - Bootstrap was used to assist with the responsiveness and styling of the website.
@@ -127,7 +131,7 @@ The website has a number of features, including:
 
 - To fetch news content from arount the world
 
-### Testing
+## Testing
 
 In testing the application a number of bugs were discovered:
 
@@ -135,7 +139,6 @@ In testing the application a number of bugs were discovered:
 - The website was viewed on a variety of devices such as Desktop, Laptop, iPhone7, iPhone 8 & iPhoneX.
 - A large amount of testing was done to ensure that all pages were linking correctly.
 - Friends and family members were asked to review the site and documentation to point out any bugs and/or user experience issues.
-
 - Used VS code Live Preview extension to hosts a local server and view HTML site
 
 ## Validator Testing
@@ -145,7 +148,7 @@ The W3C Markup Validator and W3C CSS Validator Services were used to validate ev
 - [W3C Markup Validator](https://jigsaw.w3.org/css-validator/#validate_by_input) - [Results](https://github.com/)
 - [W3C CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_input) - [Results](https://github.com/)
 
-### Known Bugs: CORS error
+## Known Bugs: CORS error
 
 - When updating code on VS code, the website will automatically reload and fetch content from API <https://newsdata.io/search-news> too many times (main.js fetchNewsDefault() and cause an CORS error.
 
@@ -153,7 +156,7 @@ The W3C Markup Validator and W3C CSS Validator Services were used to validate ev
 
 - One fix is to disable the fetchNewsDefault() function in main.js to prevent fetch requests to the API service provider which cause the API service provider to block the website.
 
-### Further Testing
+## Further Testing
 
 - The Website was tested on Mozilla Firefox and Safari browsers.
 - The website was viewed on a variety of devices such as Desktop, Laptop, Android mobile, iPhone7.
